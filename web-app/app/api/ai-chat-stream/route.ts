@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 import { geminiService } from '@/lib/gemini'
 
 export async function POST(request: NextRequest) {
@@ -9,14 +9,12 @@ export async function POST(request: NextRequest) {
     // Check if user is authenticated
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      return new Response('Unauthorized', { status: 401 })
     }
 
     // Check if Gemini API key is configured
     if (!process.env.GOOGLE_AI_API_KEY) {
-      return NextResponse.json({ 
-        error: 'AI chat is not configured. Please set GOOGLE_AI_API_KEY environment variable.' 
-      }, { status: 503 })
+      return new Response('AI chat is not configured', { status: 503 })
     }
 
     const body = await request.json()
@@ -31,9 +29,7 @@ export async function POST(request: NextRequest) {
     } = body
 
     if (!message || message.trim().length === 0) {
-      return NextResponse.json({ 
-        error: 'Message is required' 
-      }, { status: 400 })
+      return new Response('Message is required', { status: 400 })
     }
 
     // Get user's current context for personalized responses
@@ -105,86 +101,66 @@ export async function POST(request: NextRequest) {
       }))
     }
 
-    // Generate AI response
-    const aiResponse = await geminiService.chatWithAssistant(message, userContext)
+    // Generate AI response stream
+    const result = await geminiService.chatWithAssistantStream(message, userContext)
 
-    // Save chat interaction for future context
-    if (session_id) {
-      try {
-        await supabase
-          .from('activity_log')
-          .insert({
-            user_id: user.id,
-            activity_type: 'ai_chat',
-            details: {
-              message,
-              response: aiResponse,
-              session_id,
-              context_used: Object.keys(userContext)
+    // Create a readable stream for the response
+    const encoder = new TextEncoder()
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const chunk of result.stream) {
+            const chunkText = chunk.text()
+            if (chunkText) {
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: chunkText })}\n\n`))
             }
-          })
-      } catch (logError) {
-        console.error('Error logging chat:', logError)
+          }
+          
+          // Send final response and save to database
+          const finalResponse = await result.response
+          const fullText = finalResponse.text()
+          
+          // Save chat interaction for future context
+          if (session_id) {
+            try {
+              await supabase
+                .from('activity_log')
+                .insert({
+                  user_id: user.id,
+                  activity_type: 'ai_chat_stream',
+                  details: {
+                    message,
+                    response: fullText,
+                    session_id,
+                    context_used: Object.keys(userContext)
+                  }
+                })
+            } catch (logError) {
+              console.error('Error logging chat:', logError)
+            }
+          }
+          
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: '', done: true })}\n\n`))
+          controller.close()
+        } catch (error) {
+          console.error('Streaming error:', error)
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: 'Stream error occurred' })}\n\n`))
+          controller.close()
+        }
       }
-    }
+    })
 
-    return NextResponse.json({ 
-      response: aiResponse,
-      context_used: userContext,
-      timestamp: new Date().toISOString()
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Transfer-Encoding': 'chunked',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
+      }
     })
 
   } catch (error) {
-    console.error('Error in AI chat:', error)
-    return NextResponse.json({ 
-      error: error instanceof Error ? error.message : 'Failed to process chat message' 
-    }, { status: 500 })
-  }
-}
-
-export async function GET(request: NextRequest) {
-  try {
-    const supabase = await createClient()
-    
-    // Check if user is authenticated
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-    if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
-    const { searchParams } = new URL(request.url)
-    const sessionId = searchParams.get('session_id')
-    const limit = parseInt(searchParams.get('limit') || '20')
-
-    let query = supabase
-      .from('activity_log')
-      .select('details, timestamp')
-      .eq('user_id', user.id)
-      .eq('activity_type', 'ai_chat')
-      .order('timestamp', { ascending: false })
-      .limit(limit)
-
-    if (sessionId) {
-      query = query.eq('details->>session_id', sessionId)
-    }
-
-    const { data, error } = await query
-
-    if (error) {
-      console.error('Error fetching chat history:', error)
-      return NextResponse.json({ error: 'Failed to fetch chat history' }, { status: 500 })
-    }
-
-    const chatHistory = data?.map(log => ({
-      user_message: log.details?.message,
-      ai_response: log.details?.response,
-      timestamp: log.timestamp
-    })) || []
-
-    return NextResponse.json({ chat_history: chatHistory })
-
-  } catch (error) {
-    console.error('Error in chat history retrieval:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('Error in AI chat stream:', error)
+    return new Response('Internal server error', { status: 500 })
   }
 }

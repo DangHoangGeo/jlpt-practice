@@ -1,11 +1,74 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI, SchemaType } from '@google/generative-ai';
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY!);
 
 export class GeminiService {
   private model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
-  private chatModel = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
+  private chatModel = genAI.getGenerativeModel({ 
+    model: 'gemini-2.5-flash',
+    tools: [{
+      functionDeclarations: [
+        {
+          name: 'save_quiz_questions',
+          description: 'Save generated quiz questions to the database for future practice',
+          parameters: {
+            type: SchemaType.OBJECT,
+            properties: {
+              questions: {
+                type: SchemaType.ARRAY,
+                description: 'Array of quiz questions to save',
+                items: {
+                  type: SchemaType.OBJECT,
+                  properties: {
+                    question_text: { type: SchemaType.STRING },
+                    options: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
+                    answer_index: { type: SchemaType.NUMBER },
+                    explanation: { type: SchemaType.STRING },
+                    difficulty_level: { type: SchemaType.STRING }
+                  }
+                }
+              }
+            },
+            required: ['questions']
+          }
+        },
+        {
+          name: 'get_user_weak_areas',
+          description: 'Get user\'s weak areas and recent mistakes from database',
+          parameters: {
+            type: SchemaType.OBJECT,
+            properties: {
+              limit: { type: SchemaType.NUMBER, description: 'Number of weak areas to retrieve' }
+            }
+          }
+        },
+        {
+          name: 'save_vocabulary_item',
+          description: 'Save new vocabulary item to user\'s personal collection',
+          parameters: {
+            type: SchemaType.OBJECT,
+            properties: {
+              term: { type: SchemaType.STRING, description: 'The vocabulary term' },
+              reading: { type: SchemaType.STRING, description: 'The reading/pronunciation' },
+              meaning_en: { type: SchemaType.STRING, description: 'English meaning' },
+              example_sentence: { type: SchemaType.STRING, description: 'Example sentence' },
+              difficulty_level: { type: SchemaType.STRING, description: 'Difficulty level' }
+            },
+            required: ['term', 'reading', 'meaning_en']
+          }
+        },
+        {
+          name: 'get_study_progress',
+          description: 'Get current study progress and statistics',
+          parameters: {
+            type: SchemaType.OBJECT,
+            properties: {}
+          }
+        }
+      ]
+    }]
+  });
 
   /**
    * Generate practice questions based on user's weak vocabulary/grammar items
@@ -315,7 +378,7 @@ Keep under 60 words total. Use emojis and markdown formatting.`;
   }
 
   /**
-   * Personal Assistant Chat - Interactive conversation for JLPT N1 preparation
+   * Personal Assistant Chat - Interactive conversation with function calling
    */
   async chatWithAssistant(
     message: string,
@@ -325,9 +388,11 @@ Keep under 60 words total. Use emojis and markdown formatting.`;
       daysRemaining?: number;
       studyHistory?: Array<{ topic: string; correct: number; total: number; date: string }>;
       chatHistory?: Array<{ role: 'user' | 'assistant'; content: string }>;
+      userId?: string;
+      baseUrl?: string;
     } = {}
   ) {
-    const { currentScores, weakAreas, daysRemaining = 4, studyHistory, chatHistory } = userContext;
+    const { currentScores, weakAreas, daysRemaining = 4, studyHistory, chatHistory, userId, baseUrl } = userContext;
     
     const systemPrompt = `You are a personalized JLPT N1 study assistant. Your role is to help this student pass the N1 exam in ${daysRemaining} days.
 
@@ -337,9 +402,16 @@ Keep under 60 words total. Use emojis and markdown formatting.`;
 - Days remaining: ${daysRemaining}
 - Known weak areas: ${weakAreas?.join(', ') || 'To be determined'}
 
+**Available Functions:**
+You can call these functions to help the student:
+- save_quiz_questions: When generating practice questions, ALWAYS offer to save them for later reuse
+- get_user_weak_areas: Get detailed analysis of student's weak areas
+- save_vocabulary_item: When student encounters new vocabulary, offer to save it
+- get_study_progress: Get latest progress statistics
+
 **Your Responsibilities:**
 1. 📚 **Study Planning**: Create intensive, focused study plans
-2. 🎯 **Targeted Practice**: Generate practice questions for weak areas
+2. 🎯 **Targeted Practice**: Generate practice questions (and save them for reuse)
 3. 📖 **Reading Strategies**: Improve reading comprehension and speed
 4. 💡 **Learning Tips**: Provide memory techniques and shortcuts
 5. 📊 **Progress Tracking**: Analyze performance and adjust strategies
@@ -358,6 +430,8 @@ ${studyHistory?.slice(-5).map(s => `- ${s.topic}: ${s.correct}/${s.total} on ${s
 **Conversation History:**
 ${chatHistory?.slice(-6).map(h => `${h.role}: ${h.content}`).join('\n') || 'New conversation'}
 
+Remember to use functions when appropriate to help the student save progress and access their data.
+
 Respond naturally and helpfully to the student's message. Always be specific and practical.`;
 
     const prompt = `${systemPrompt}
@@ -369,6 +443,15 @@ Respond as their personal JLPT N1 assistant:`;
     try {
       const result = await this.chatModel.generateContent(prompt);
       const response = await result.response;
+      
+      // Handle function calls if present
+      const functionCalls = response.functionCalls();
+      if (functionCalls && functionCalls.length > 0 && userId && baseUrl) {
+        for (const functionCall of functionCalls) {
+          await this.handleFunctionCall(functionCall, { userId, baseUrl });
+        }
+      }
+      
       return response.text();
     } catch (error) {
       console.error('Error in AI chat:', error);
@@ -584,6 +667,122 @@ Return as JSON:
     } catch (error) {
       console.error('Error generating intensive review:', error);
       throw new Error('Failed to generate intensive review');
+    }
+  }
+
+  /**
+   * Enhanced chat with streaming support and function calling
+   */
+  async chatWithAssistantStream(
+    message: string,
+    userContext: {
+      currentScores?: { vocabulary_grammar: number; reading: number };
+      weakAreas?: string[];
+      daysRemaining?: number;
+      studyHistory?: Array<{ topic: string; correct: number; total: number; date: string }>;
+      chatHistory?: Array<{ role: 'user' | 'assistant'; content: string }>;
+      userId?: string;
+      baseUrl?: string;
+    }
+  ) {
+    const { currentScores, weakAreas, daysRemaining = 4, studyHistory, chatHistory } = userContext;
+    
+    const systemPrompt = `You are a personalized JLPT N1 study assistant. Your role is to help this student pass the N1 exam in ${daysRemaining} days.
+
+**Student's Current Status:**
+- Vocabulary/Grammar: ${currentScores?.vocabulary_grammar || 'Unknown'}/60 (needs 19/60 to pass)
+- Reading: ${currentScores?.reading || 'Unknown'}/60 (needs 19/60 to pass)
+- Days remaining: ${daysRemaining}
+- Known weak areas: ${weakAreas?.join(', ') || 'To be determined'}
+
+**Available Functions:**
+You can call these functions to help the student:
+- save_quiz_questions: When generating practice questions, ALWAYS offer to save them for later reuse
+- get_user_weak_areas: Get detailed analysis of student's weak areas
+- save_vocabulary_item: When student encounters new vocabulary, offer to save it
+- get_study_progress: Get latest progress statistics
+
+**Your Responsibilities:**
+1. 📚 **Study Planning**: Create intensive, focused study plans
+2. 🎯 **Targeted Practice**: Generate practice questions (mention they can be saved for reuse)
+3. 📖 **Reading Strategies**: Improve reading comprehension and speed
+4. 💡 **Learning Tips**: Provide memory techniques and shortcuts
+5. 📊 **Progress Tracking**: Analyze performance and adjust strategies
+6. 🧠 **Mental Preparation**: Boost confidence and exam strategies
+
+**Important Guidelines:**
+- When creating quiz questions, mention they can be saved to database for future practice
+- When student mentions new vocabulary, offer to help them save it to their collection
+- Be encouraging but realistic about the time constraint
+- Provide actionable, specific advice
+- Use Japanese examples when helpful
+
+**Current Study History:**
+${studyHistory?.slice(-5).map(s => `- ${s.topic}: ${s.correct}/${s.total} on ${s.date}`).join('\n') || 'No recent history'}
+
+**Conversation History:**
+${chatHistory?.slice(-6).map(h => `${h.role}: ${h.content}`).join('\n') || 'New conversation'}
+
+Student says: "${message}"
+
+Respond as their personal JLPT N1 assistant:`;
+
+    try {
+      const result = await this.chatModel.generateContentStream(systemPrompt);
+      return result;
+    } catch (error) {
+      console.error('Error in AI chat stream:', error);
+      throw new Error('Failed to get AI response');
+    }
+  }
+
+  /**
+   * Handle function calls from Gemini
+   */
+  async handleFunctionCall(functionCall: { name: string; args: Record<string, any> }, userContext: { userId: string; baseUrl: string }) {
+    const { name, args } = functionCall;
+    const { userId, baseUrl } = userContext;
+
+    try {
+      switch (name) {
+        case 'save_quiz_questions':
+          const response = await fetch(`${baseUrl}/api/ai-questions`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              questions: args.questions,
+              user_id: userId,
+              source: 'ai_chat_generated'
+            })
+          });
+          return await response.json();
+
+        case 'get_user_weak_areas':
+          const weakResponse = await fetch(`${baseUrl}/api/weakness-analysis?limit=${args.limit || 10}`);
+          return await weakResponse.json();
+
+        case 'save_vocabulary_item':
+          const vocabResponse = await fetch(`${baseUrl}/api/user-vocabulary`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              ...args,
+              user_id: userId,
+              source: 'ai_chat'
+            })
+          });
+          return await vocabResponse.json();
+
+        case 'get_study_progress':
+          const progressResponse = await fetch(`${baseUrl}/api/dashboard-stats`);
+          return await progressResponse.json();
+
+        default:
+          throw new Error(`Unknown function: ${name}`);
+      }
+    } catch (error) {
+      console.error(`Error executing function ${name}:`, error);
+      return { error: `Failed to execute ${name}` };
     }
   }
 }

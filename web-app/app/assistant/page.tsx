@@ -2,7 +2,7 @@ import { AIChatAssistant } from "@/components/ai-chat-assistant"
 
 export default function AssistantPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 pb-32">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">🤖 Your Personal JLPT N1 Assistant</h1>
         <p className="text-muted-foreground">

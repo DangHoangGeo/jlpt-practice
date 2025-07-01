@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { 
   Bot, 
@@ -73,7 +72,7 @@ export function AIChatAssistant() {
     const initialMessage: ChatMessage = {
       id: 'welcome',
       role: 'assistant',
-      content: `👋 Hi! I&apos;m your personal JLPT N1 assistant. I see you have only 4 days left and need to improve significantly:
+      content: `👋 Hi! I'm your personal JLPT N1 assistant. I see you have only 4 days left and need to improve significantly:
 
 📊 **Current Status:**
 - Vocabulary/Grammar: 17/60 (need 19+ to pass)
@@ -93,7 +92,7 @@ export function AIChatAssistant() {
 - "Generate reading practice"
 - "What should I focus on today?"
 
-Let&apos;s make these 4 days count! 💪`,
+Let's make these 4 days count! 💪`,
       timestamp: new Date().toISOString()
     };
     setMessages([initialMessage]);
@@ -120,8 +119,18 @@ Let&apos;s make these 4 days count! 💪`,
     setInput("");
     setIsLoading(true);
 
+    // Create placeholder for streaming response
+    const assistantMessageId = `assistant_${Date.now()}`;
+    const assistantMessage: ChatMessage = {
+      id: assistantMessageId,
+      role: 'assistant',
+      content: '',
+      timestamp: new Date().toISOString()
+    };
+    setMessages(prev => [...prev, assistantMessage]);
+
     try {
-      const response = await fetch('/api/ai-chat', {
+      const response = await fetch('/api/ai-chat-stream', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,28 +142,73 @@ Let&apos;s make these 4 days count! 💪`,
         })
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        const assistantMessage: ChatMessage = {
-          id: `assistant_${Date.now()}`,
-          role: 'assistant',
-          content: data.response,
-          timestamp: data.timestamp
-        };
-        setMessages(prev => [...prev, assistantMessage]);
+      if (response.ok && response.body) {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let accumulatedContent = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          const chunk = decoder.decode(value, { stream: true });
+          const lines = chunk.split('\n');
+
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              try {
+                const data = JSON.parse(line.slice(6));
+                if (data.content) {
+                  accumulatedContent += data.content;
+                  // Update the message in real-time
+                  setMessages(prev => prev.map(msg => 
+                    msg.id === assistantMessageId 
+                      ? { ...msg, content: accumulatedContent }
+                      : msg
+                  ));
+                }
+                if (data.done) {
+                  break;
+                }
+              } catch {
+                // Ignore JSON parse errors for incomplete chunks
+              }
+            }
+          }
+        }
       } else {
-        const error = await response.json();
-        throw new Error(error.error || 'Failed to get AI response');
+        // Fallback to regular API if streaming fails
+        const fallbackResponse = await fetch('/api/ai-chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: userMessage.content,
+            chat_history: messages.slice(-10).map(m => ({ role: m.role, content: m.content })),
+            session_id: sessionId
+          })
+        });
+
+        if (fallbackResponse.ok) {
+          const data = await fallbackResponse.json();
+          setMessages(prev => prev.map(msg => 
+            msg.id === assistantMessageId 
+              ? { ...msg, content: data.response }
+              : msg
+          ));
+        } else {
+          throw new Error('Failed to get AI response');
+        }
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      const errorMessage: ChatMessage = {
-        id: `error_${Date.now()}`,
-        role: 'assistant',
-        content: '❌ Sorry, I encountered an error. Please try again or check your connection.',
-        timestamp: new Date().toISOString()
-      };
-      setMessages(prev => [...prev, errorMessage]);
+      const errorMessage = '❌ Sorry, I encountered an error. Please try again or check your connection.';
+      setMessages(prev => prev.map(msg => 
+        msg.id === assistantMessageId 
+          ? { ...msg, content: errorMessage }
+          : msg
+      ));
     } finally {
       setIsLoading(false);
     }
@@ -228,11 +282,11 @@ Would you like me to help you with any specific part of this plan?`,
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="h-[600px] grid grid-cols-1 lg:grid-cols-3 gap-6">
       {/* Main Chat */}
-      <div className="lg:col-span-2">
-        <Card className="h-[700px] flex flex-col">
-          <CardHeader className="pb-3">
+      <div className="lg:col-span-2 flex flex-col">
+        <Card className="flex-1 flex flex-col min-h-0">
+          <CardHeader className="flex-shrink-0 pb-3">
             <CardTitle className="flex items-center gap-2">
               <Bot className="h-5 w-5 text-blue-500" />
               JLPT N1 Personal Assistant
@@ -245,82 +299,82 @@ Would you like me to help you with any specific part of this plan?`,
               Your AI tutor for intensive N1 preparation. Ask questions, get study plans, practice together!
             </CardDescription>
           </CardHeader>
-          
-          <CardContent className="flex-1 flex flex-col">
-            <ScrollArea className="flex-1 pr-4">
-              <div className="space-y-4">
-                {messages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                  >
-                    <div className={`flex gap-3 max-w-[80%] ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-                        message.role === 'user' 
-                          ? 'bg-blue-500 text-white' 
-                          : 'bg-green-500 text-white'
-                      }`}>
-                        {message.role === 'user' ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
-                      </div>
-                      <div className={`rounded-lg p-3 ${
-                        message.role === 'user'
-                          ? 'bg-blue-500 text-white'
-                          : 'bg-muted'
-                      }`}>
-                        <div className="whitespace-pre-wrap text-sm">
-                          {message.content}
+
+          <CardContent className="flex-1 max-h-[600px] flex flex-col p-0 min-h-0">
+            <div className="flex-1 min-h-0 overflow-y-auto">
+                <div className="space-y-4 pr-4">
+                  {messages.map((message) => (
+                    <div
+                      key={message.id}
+                      className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                    >
+                      <div className={`flex gap-3 max-w-[80%] ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
+                          message.role === 'user' 
+                            ? 'bg-blue-500 text-white' 
+                            : 'bg-green-500 text-white'
+                        }`}>
+                          {message.role === 'user' ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
                         </div>
-                        <div className="text-xs opacity-70 mt-1">
-                          {new Date(message.timestamp).toLocaleTimeString()}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                {isLoading && (
-                  <div className="flex justify-start">
-                    <div className="flex gap-3">
-                      <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center">
-                        <Bot className="h-4 w-4" />
-                      </div>
-                      <div className="bg-muted rounded-lg p-3">
-                        <div className="flex items-center gap-1">
-                          <RefreshCw className="h-3 w-3 animate-spin" />
-                          <span className="text-sm">Thinking...</span>
+                        <div className={`rounded-lg p-3 ${
+                          message.role === 'user'
+                            ? 'bg-blue-500 text-white'
+                            : 'bg-muted'
+                        }`}>
+                          <div className="whitespace-pre-wrap text-sm">
+                            {message.content}
+                          </div>
+                          <div className="text-xs opacity-70 mt-1">
+                            {new Date(message.timestamp).toLocaleTimeString()}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  ))}
+                  {isLoading && (
+                    <div className="flex justify-start">
+                      <div className="flex gap-3">
+                        <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center">
+                          <Bot className="h-4 w-4" />
+                        </div>
+                        <div className="bg-muted rounded-lg p-3">
+                          <div className="flex items-center gap-1">
+                            <RefreshCw className="h-3 w-3 animate-spin" />
+                            <span className="text-sm">Thinking...</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </div>
+            </div>
+            
+            <div className="flex-shrink-0 border-t bg-background px-6 py-4">
+              <div className="flex gap-2">
+                <Input
+                  placeholder="Ask me anything about JLPT N1 preparation..."
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  className="flex-1"
+                  disabled={isLoading}
+                />
+                <Button 
+                  onClick={sendMessage} 
+                  disabled={isLoading || !input.trim()}
+                  size="sm"
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
               </div>
-              <div ref={messagesEndRef} />
-            </ScrollArea>
-            
-            <Separator className="my-4" />
-            
-            <div className="flex gap-2">
-              <Input
-                placeholder="Ask me anything about JLPT N1 preparation..."
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="flex-1"
-                disabled={isLoading}
-              />
-              <Button 
-                onClick={sendMessage} 
-                disabled={isLoading || !input.trim()}
-                size="sm"
-              >
-                <Send className="h-4 w-4" />
-              </Button>
             </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Quick Actions */}
-      <div className="space-y-6">
+      <div className="flex flex-col space-y-6">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
