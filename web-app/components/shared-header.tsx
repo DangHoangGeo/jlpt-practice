@@ -9,14 +9,29 @@ import {
   FileText, 
   Lightbulb, 
   BarChart3,
-  User
+  User,
+  Menu
 } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export async function SharedHeader() {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  const navLinks = [
+    { href: "/", icon: BarChart3, text: "Dashboard" },
+    { href: "/quiz/vocab", icon: BookOpen, text: "Vocabulary Quiz" },
+    { href: "/quiz/grammar", icon: FileText, text: "Grammar Quiz" },
+    { href: "/flashcards", icon: Brain, text: "Flashcards" },
+    { href: "/my-content", icon: User, text: "My Content" },
+    { href: "/tips", icon: Lightbulb, text: "Tips" },
+  ];
 
   return (
     <header className="w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
@@ -34,48 +49,16 @@ export async function SharedHeader() {
           {/* Navigation Menu */}
           {user && (
             <nav className="hidden md:flex items-center gap-6">
-              <Link 
-                href="/" 
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <BarChart3 className="h-4 w-4" />
-                Dashboard
-              </Link>
-              <Link 
-                href="/quiz/vocab" 
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <BookOpen className="h-4 w-4" />
-                Vocabulary Quiz
-              </Link>
-              <Link 
-                href="/quiz/grammar" 
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <FileText className="h-4 w-4" />
-                Grammar Quiz
-              </Link>
-              <Link 
-                href="/flashcards" 
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Brain className="h-4 w-4" />
-                Flashcards
-              </Link>
-              <Link 
-                href="/my-content" 
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <User className="h-4 w-4" />
-                My Content
-              </Link>
-              <Link 
-                href="/tips" 
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Lightbulb className="h-4 w-4" />
-                Tips
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <link.icon className="h-4 w-4" />
+                  {link.text}
+                </Link>
+              ))}
             </nav>
           )}
 
@@ -83,52 +66,40 @@ export async function SharedHeader() {
           <div className="flex items-center gap-4">
             <ThemeSwitcher />
             <AuthButton />
+            {user && (
+              <div className="md:hidden">
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button variant="outline" size="icon">
+                      <Menu className="h-6 w-6" />
+                      <span className="sr-only">Open navigation menu</span>
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="left">
+                    <div className="flex flex-col gap-4 py-6">
+                      <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
+                          <Brain className="h-6 w-6 text-primary" />
+                          <span>JLPT N1 Practice</span>
+                      </Link>
+                      <nav className="flex flex-col gap-4">
+                        {navLinks.map(link => (
+                            <Link 
+                                key={link.href}
+                                href={link.href} 
+                                className="flex items-center gap-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                <link.icon className="h-5 w-5" />
+                                {link.text}
+                            </Link>
+                        ))}
+                      </nav>
+                    </div>
+                  </SheetContent>
+                </Sheet>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {user && (
-          <nav className="md:hidden pb-4">
-            <div className="flex flex-wrap gap-2">
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/" className="flex items-center gap-1">
-                  <BarChart3 className="h-3 w-3" />
-                  Dashboard
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/quiz/vocab" className="flex items-center gap-1">
-                  <BookOpen className="h-3 w-3" />
-                  Vocab
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/quiz/grammar" className="flex items-center gap-1">
-                  <FileText className="h-3 w-3" />
-                  Grammar
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/flashcards" className="flex items-center gap-1">
-                  <Brain className="h-3 w-3" />
-                  Cards
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/my-content" className="flex items-center gap-1">
-                  <User className="h-3 w-3" />
-                  My Content
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/tips" className="flex items-center gap-1">
-                  <Lightbulb className="h-3 w-3" />
-                  Tips
-                </Link>
-              </Button>
-            </div>
-          </nav>
-        )}
       </div>
     </header>
   );
