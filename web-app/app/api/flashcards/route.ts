@@ -41,13 +41,31 @@ export async function GET(request: NextRequest) {
     
     const { searchParams } = new URL(request.url)
     const section = searchParams.get('section') // 'vocab' or 'grammar'
-    const filter = searchParams.get('filter') || 'due' // 'due', 'new', 'mastered', 'all'
+    const filter = searchParams.get('filter') || 'due' // 'due', 'new', 'mastered', 'all', 'difficult', 'ai-generated'
+    const search = searchParams.get('search') || '' // search term
     const limit = parseInt(searchParams.get('limit') || '20')
     
     if (!section || !['vocab', 'grammar'].includes(section)) {
       return NextResponse.json({ error: 'Invalid section parameter' }, { status: 400 })
     }
     
+    // Handle AI-generated flashcards
+    if (filter === 'ai-generated') {
+      const { data: aiFlashcards, error: aiError } = await supabase
+        .from('ai_generated_flashcards')
+        .select('*')
+        .eq('user_id', user.id)
+        .eq('item_type', section)
+        .limit(limit)
+      
+      if (aiError) {
+        console.error('AI flashcards fetch error:', aiError)
+        return NextResponse.json({ error: 'Failed to fetch AI flashcards' }, { status: 500 })
+      }
+      
+      return NextResponse.json({ flashcards: aiFlashcards || [] })
+    }
+
     // Get items first
     let itemsQuery
     
@@ -55,10 +73,20 @@ export async function GET(request: NextRequest) {
       itemsQuery = supabase
         .from('vocabulary_items')
         .select('*')
+        
+      // Apply search filter if provided
+      if (search) {
+        itemsQuery = itemsQuery.or(`term.ilike.%${search}%,reading.ilike.%${search}%,meaning_en.ilike.%${search}%`)
+      }
     } else {
       itemsQuery = supabase
         .from('grammar_items')
         .select('*')
+        
+      // Apply search filter if provided
+      if (search) {
+        itemsQuery = itemsQuery.or(`term.ilike.%${search}%,reading.ilike.%${search}%,meaning_en.ilike.%${search}%`)
+      }
     }
     
     const { data: itemsData, error: itemsError } = await itemsQuery
@@ -96,6 +124,11 @@ export async function GET(request: NextRequest) {
           return progress.next_review <= today && !progress.is_mastered
         case 'mastered':
           return progress?.is_mastered
+        case 'difficult':
+          if (!progress) return false // Need progress data to determine difficulty
+          const totalAttempts = progress.correct_count + progress.incorrect_count
+          const accuracy = totalAttempts > 0 ? progress.correct_count / totalAttempts : 1
+          return accuracy < 0.6 && totalAttempts >= 3 // Less than 60% accuracy with at least 3 attempts
         case 'all':
         default:
           return true
@@ -161,7 +194,7 @@ export async function PATCH(request: NextRequest) {
       
       newProgress = {
         ...nextReview,
-        is_mastered: known && currentProgress.interval >= 30 // Mark as mastered if known and interval is high
+        is_mastered: known && currentProgress.interval >= 10 // Mark as mastered if known and interval is high
       }
       
       const { error: updateError } = await supabase

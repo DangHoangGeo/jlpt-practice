@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { QuizCard } from "@/components/quiz-card";
+import { EnhancedQuizCard } from "@/components/enhanced-quiz-card";
 
 export default async function VocabQuiz() {
   const supabase = await createClient();
@@ -34,7 +34,7 @@ export default async function VocabQuiz() {
           </Link>
         </div>
 
-        <QuizCard section="vocab" />
+        <EnhancedQuizCard section="vocab" />
       </div>
     </div>
   );

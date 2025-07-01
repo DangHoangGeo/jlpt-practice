@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, XCircle, RotateCcw } from "lucide-react";
+import { AIExplanation } from "@/components/ai-explanation";
 
 interface Question {
   id: string;
@@ -13,18 +14,27 @@ interface Question {
   answer_index: number;
   explanation: string;
   vocabulary_items?: {
+    id: string;
     term: string;
     reading: string;
     meaning_en: string;
     example_jp: string;
   };
   grammar_items?: {
+    id: string;
     term: string;
     reading: string;
     meaning_en: string;
     meaning_vi: string;
     example_jp: string;
   };
+}
+
+interface QuizResult {
+  question: Question;
+  userAnswer: number;
+  isCorrect: boolean;
+  timeSpent: number;
 }
 
 interface QuizCardProps {
@@ -39,6 +49,10 @@ export function QuizCard({ section }: QuizCardProps) {
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [questionStartTime, setQuestionStartTime] = useState(Date.now());
+  const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
+  const [showDetailedResults, setShowDetailedResults] = useState(false);
+  const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   const fetchQuestions = useCallback(async () => {
     try {
@@ -78,18 +92,74 @@ export function QuizCard({ section }: QuizCardProps) {
   const handleSubmit = () => {
     if (selectedAnswer === null) return;
     
+    const isCorrect = selectedAnswer === currentQuestion.answer_index;
+    const timeSpent = Date.now() - questionStartTime;
+    
+    console.log(`Question ${currentQuestionIndex + 1}: ${isCorrect ? 'Correct' : 'Incorrect'}`);
+    
     setShowResult(true);
     setScore(prev => ({
-      correct: prev.correct + (selectedAnswer === currentQuestion.answer_index ? 1 : 0),
+      correct: prev.correct + (isCorrect ? 1 : 0),
       total: prev.total + 1
     }));
+
+    // Store result for detailed review
+    const result: QuizResult = {
+      question: currentQuestion,
+      userAnswer: selectedAnswer,
+      isCorrect,
+      timeSpent
+    };
+    setQuizResults(prev => {
+      const newResults = [...prev, result];
+      console.log(`Quiz results updated:`, newResults);
+      return newResults;
+    });
+
+    // Log the activity
+    logActivity(isCorrect);
+  };
+
+  const logActivity = async (isCorrect: boolean) => {
+    try {
+      await fetch('/api/activity', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          activity_type: 'quiz_answer',
+          item_id: currentQuestion.vocabulary_items?.id || currentQuestion.grammar_items?.id,
+          item_type: section,
+          details: {
+            question_id: currentQuestion.id,
+            question_text: currentQuestion.question_text,
+            user_answer_index: selectedAnswer,
+            correct_answer_index: currentQuestion.answer_index,
+            correct: isCorrect,
+            options: currentQuestion.options
+          },
+          response_time_ms: Date.now() - questionStartTime,
+          confidence_level: isCorrect ? 4 : 2 // Simple confidence scoring
+        })
+      });
+    } catch (error) {
+      console.error('Error logging activity:', error);
+    }
   };
 
   const handleNext = () => {
+    console.log(`Current question: ${currentQuestionIndex + 1}/${questions.length}`);
+    
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
       setSelectedAnswer(null);
       setShowResult(false);
+      setQuestionStartTime(Date.now()); // Reset timer for new question
+    } else {
+      // Quiz is complete
+      console.log('Quiz completed! Total results:', quizResults.length + 1);
+      setIsQuizComplete(true);
     }
   };
 
@@ -98,6 +168,10 @@ export function QuizCard({ section }: QuizCardProps) {
     setSelectedAnswer(null);
     setShowResult(false);
     setScore({ correct: 0, total: 0 });
+    setQuestionStartTime(Date.now());
+    setQuizResults([]);
+    setShowDetailedResults(false);
+    setIsQuizComplete(false);
     fetchQuestions();
   };
 
@@ -141,9 +215,102 @@ export function QuizCard({ section }: QuizCardProps) {
   }
 
   const currentQuestion = questions[currentQuestionIndex];
-  const isQuizComplete = currentQuestionIndex === questions.length - 1 && showResult;
 
   if (isQuizComplete) {
+    if (showDetailedResults) {
+      return (
+        <div className="w-full max-w-4xl mx-auto space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-center flex items-center justify-between">
+                <span>Quiz Results</span>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setShowDetailedResults(false)}
+                >
+                  Back to Summary
+                </Button>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                {quizResults.map((result, index) => (
+                  <Card key={index} className={`border-2 ${result.isCorrect ? 'border-green-200' : 'border-red-200'}`}>
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-lg font-medium">Question {index + 1}</h3>
+                        <div className="flex items-center gap-2">
+                          {result.isCorrect ? (
+                            <Badge className="bg-green-100 text-green-800">
+                              <CheckCircle className="h-3 w-3 mr-1" />
+                              Correct
+                            </Badge>
+                          ) : (
+                            <Badge className="bg-red-100 text-red-800">
+                              <XCircle className="h-3 w-3 mr-1" />
+                              Incorrect
+                            </Badge>
+                          )}
+                          <Badge variant="outline">
+                            {Math.round(result.timeSpent / 1000)}s
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="font-medium">{result.question.question_text}</p>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {result.question.options.map((option, optionIndex) => {
+                          let className = "p-3 rounded border text-left ";
+                          if (optionIndex === result.question.answer_index) {
+                            className += "border-green-500 bg-green-50 text-green-800";
+                          } else if (optionIndex === result.userAnswer && !result.isCorrect) {
+                            className += "border-red-500 bg-red-50 text-red-800";
+                          } else {
+                            className += "border-gray-200 bg-gray-50";
+                          }
+
+                          return (
+                            <div key={optionIndex} className={className}>
+                              <div className="flex items-center justify-between">
+                                <span>{option}</span>
+                                {optionIndex === result.question.answer_index && (
+                                  <CheckCircle className="h-4 w-4 text-green-600" />
+                                )}
+                                {optionIndex === result.userAnswer && !result.isCorrect && (
+                                  <XCircle className="h-4 w-4 text-red-600" />
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <h4 className="font-medium mb-2">Explanation:</h4>
+                        <p className="text-sm text-gray-700">{result.question.explanation}</p>
+                      </div>
+
+                      {!result.isCorrect && (
+                        <AIExplanation
+                          question={result.question.question_text}
+                          userAnswer={result.question.options[result.userAnswer]}
+                          correctAnswer={result.question.options[result.question.answer_index]}
+                          options={result.question.options}
+                          itemType={section}
+                        />
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      );
+    }
+
     return (
       <Card className="w-full max-w-2xl mx-auto">
         <CardHeader>
@@ -159,7 +326,27 @@ export function QuizCard({ section }: QuizCardProps) {
             </div>
           </div>
           
+          <div className="mb-6">
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="bg-green-50 p-3 rounded-lg">
+                <div className="text-green-800 font-medium">Correct</div>
+                <div className="text-2xl font-bold text-green-600">{score.correct}</div>
+              </div>
+              <div className="bg-red-50 p-3 rounded-lg">
+                <div className="text-red-800 font-medium">Incorrect</div>
+                <div className="text-2xl font-bold text-red-600">{score.total - score.correct}</div>
+              </div>
+            </div>
+          </div>
+          
           <div className="flex gap-4 justify-center">
+            <Button 
+              onClick={() => setShowDetailedResults(true)} 
+              variant="outline"
+              className="flex items-center gap-2"
+            >
+              View Detailed Results
+            </Button>
             <Button onClick={handleRestart} className="flex items-center gap-2">
               <RotateCcw className="h-4 w-4" />
               Try Again
@@ -188,15 +375,15 @@ export function QuizCard({ section }: QuizCardProps) {
           <h3 className="text-lg font-medium mb-4">{currentQuestion.question_text}</h3>
           
           {/* Context Information */}
-          {section === "vocab" && currentQuestion.vocabulary_items && (
+          {showResult && section === "vocab" && currentQuestion.vocabulary_items && (
             <div className="bg-blue-50 p-4 rounded-lg mb-4">
               <p className="text-sm text-gray-600 mb-1">Context:</p>
               <p className="font-medium">{currentQuestion.vocabulary_items.term} ({currentQuestion.vocabulary_items.reading})</p>
               <p className="text-sm text-gray-600">{currentQuestion.vocabulary_items.example_jp}</p>
             </div>
           )}
-          
-          {section === "grammar" && currentQuestion.grammar_items && (
+
+          {showResult && section === "grammar" && currentQuestion.grammar_items && (
             <div className="bg-green-50 p-4 rounded-lg mb-4">
               <p className="text-sm text-gray-600 mb-1">Pattern:</p>
               <p className="font-medium">{currentQuestion.grammar_items.term}</p>
@@ -247,14 +434,27 @@ export function QuizCard({ section }: QuizCardProps) {
 
         {/* Explanation */}
         {showResult && (
-          <div className="bg-gray-50 p-4 rounded-lg mb-6">
-            <h4 className="font-medium mb-2">Explanation:</h4>
-            <p className="text-sm text-gray-700">{currentQuestion.explanation}</p>
+          <div className="space-y-4">
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Explanation:</h4>
+              <p className="text-sm text-gray-700">{currentQuestion.explanation}</p>
+            </div>
+            
+            {/* AI Explanation for wrong answers */}
+            {selectedAnswer !== currentQuestion.answer_index && (
+              <AIExplanation
+                question={currentQuestion.question_text}
+                userAnswer={currentQuestion.options[selectedAnswer!]}
+                correctAnswer={currentQuestion.options[currentQuestion.answer_index]}
+                options={currentQuestion.options}
+                itemType={section}
+              />
+            )}
           </div>
         )}
 
         {/* Action Buttons */}
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-6">
           <div></div> {/* Spacer */}
           {!showResult ? (
             <Button 

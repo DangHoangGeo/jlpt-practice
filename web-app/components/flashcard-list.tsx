@@ -29,7 +29,7 @@ interface FlashcardItem {
 interface FlashcardProps {
   item: FlashcardItem;
   itemType: "vocab" | "grammar";
-  onReview: (known: boolean) => void;
+  onReview: (known: boolean, type: "vocab" | "grammar") => void;
 }
 
 function Flashcard({ item, itemType, onReview }: FlashcardProps) {
@@ -40,7 +40,7 @@ function Flashcard({ item, itemType, onReview }: FlashcardProps) {
   };
 
   const handleReview = (known: boolean) => {
-    onReview(known);
+    onReview(known, itemType);
     setIsFlipped(false);
   };
 
@@ -200,7 +200,7 @@ export function FlashcardList() {
     }
   };
 
-  const handleGrammarReview = async (known: boolean) => {
+  const handleGrammarReview = async (known: boolean, type: 'vocab' | 'grammar') => {
     const currentCard = grammarCards[currentGrammarIndex];
     if (!currentCard) return;
 
@@ -212,7 +212,7 @@ export function FlashcardList() {
         },
         body: JSON.stringify({
           item_id: currentCard.id,
-          item_type: "grammar",
+          item_type: type,
           known,
         }),
       });

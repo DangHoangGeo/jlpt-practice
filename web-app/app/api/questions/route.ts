@@ -13,7 +13,8 @@ export async function GET(request: NextRequest) {
     
     const { searchParams } = new URL(request.url)
     const section = searchParams.get('section') // 'vocab' or 'grammar'
-    const filter = searchParams.get('filter') || 'all' // 'due', 'new', 'all'
+    const filter = searchParams.get('filter') || 'all' // 'due', 'new', 'all', 'difficult', 'ai-generated'
+    const search = searchParams.get('search') || '' // search term
     const limit = parseInt(searchParams.get('limit') || '20')
     const userId = user.id
     
@@ -38,6 +39,14 @@ export async function GET(request: NextRequest) {
             section
           )
         `)
+      
+      // Apply search filter if provided
+      if (search) {
+        query = query.or(
+          `vocabulary_items.term.ilike.%${search}%,vocabulary_items.reading.ilike.%${search}%,vocabulary_items.meaning_en.ilike.%${search}%`,
+          { foreignTable: 'vocabulary_items' }
+        )
+      }
     } else {
       query = supabase
         .from('grammar_questions')
@@ -53,16 +62,24 @@ export async function GET(request: NextRequest) {
             section
           )
         `)
+      
+      // Apply search filter if provided
+      if (search) {
+        query = query.or(
+          `grammar_items.term.ilike.%${search}%,grammar_items.reading.ilike.%${search}%,grammar_items.meaning_en.ilike.%${search}%`,
+          { foreignTable: 'grammar_items' }
+        )
+      }
     }
     
     // Apply filtering based on user progress
-    if (filter === 'due' || filter === 'new') {
+    if (filter === 'due' || filter === 'new' || filter === 'difficult' || filter === 'ai-generated') {
       console.log('Filtering by:', filter, 'for section:', section, 'user:', userId)
       
       // Join with flashcard_progress to filter by review status
       const { data: progressData, error: progressError } = await supabase
         .from('flashcard_progress')
-        .select('item_id, next_review, is_mastered')
+        .select('item_id, next_review, is_mastered, correct_count, incorrect_count')
         .eq('user_id', userId)
         .eq('item_type', section)
       
@@ -73,6 +90,23 @@ export async function GET(request: NextRequest) {
       
       console.log('Progress data:', progressData?.length, 'records')
       const progressMap = new Map(progressData.map(p => [p.item_id, p]))
+      
+      // Get AI-generated questions if filter is ai-generated
+      if (filter === 'ai-generated') {
+        const { data: aiQuestions, error: aiError } = await supabase
+          .from('ai_generated_questions')
+          .select('*')
+          .eq('user_id', userId)
+          .eq('item_type', section)
+          .limit(limit)
+        
+        if (aiError) {
+          console.error('AI questions fetch error:', aiError)
+          return NextResponse.json({ error: 'Failed to fetch AI questions' }, { status: 500 })
+        }
+        
+        return NextResponse.json({ questions: aiQuestions || [] })
+      }
       
       const { data: questionsData, error: questionsError } = await query.limit(limit * 3) // Get more to filter
       
@@ -107,6 +141,13 @@ export async function GET(request: NextRequest) {
           const isDue = progress.next_review <= today && !progress.is_mastered
           console.log(`Due check: next_review=${progress.next_review}, today=${today}, is_mastered=${progress.is_mastered}, result=${isDue}`)
           return isDue
+        } else if (filter === 'difficult') {
+          if (!progress) return false // Need progress data to determine difficulty
+          const totalAttempts = progress.correct_count + progress.incorrect_count
+          const accuracy = totalAttempts > 0 ? progress.correct_count / totalAttempts : 1
+          const isDifficult = accuracy < 0.6 && totalAttempts >= 3 // Less than 60% accuracy with at least 3 attempts
+          console.log(`Difficult check: accuracy=${accuracy}, attempts=${totalAttempts}, result=${isDifficult}`)
+          return isDifficult
         }
         return true
       }) || []

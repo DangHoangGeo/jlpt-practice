@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
           if (typeof options === 'string') {
             try {
               options = JSON.parse(options)
-            } catch (e) {
+            } catch {
               console.error('Failed to parse options:', options)
               continue
             }
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
           if (typeof options === 'string') {
             try {
               options = JSON.parse(options)
-            } catch (e) {
+            } catch {
               console.error('Failed to parse options:', options)
               continue
             }
