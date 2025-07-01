@@ -1,12 +1,12 @@
-import { GoogleGenerativeAI, SchemaType } from '@google/generative-ai';
+import { GoogleGenerativeAI, SchemaType, FunctionCall } from '@google/generative-ai';
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY!);
 
 export class GeminiService {
-  private model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+  private model = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
   private chatModel = genAI.getGenerativeModel({ 
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-pro',
     tools: [{
       functionDeclarations: [
         {
@@ -739,7 +739,7 @@ Respond as their personal JLPT N1 assistant:`;
   /**
    * Handle function calls from Gemini
    */
-  async handleFunctionCall(functionCall: { name: string; args: Record<string, any> }, userContext: { userId: string; baseUrl: string }) {
+  async handleFunctionCall(functionCall: FunctionCall, userContext: { userId: string; baseUrl: string }) {
     const { name, args } = functionCall;
     const { userId, baseUrl } = userContext;
 
@@ -750,7 +750,7 @@ Respond as their personal JLPT N1 assistant:`;
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              questions: args.questions,
+              questions: (args as { questions: unknown[] }).questions,
               user_id: userId,
               source: 'ai_chat_generated'
             })
@@ -758,7 +758,7 @@ Respond as their personal JLPT N1 assistant:`;
           return await response.json();
 
         case 'get_user_weak_areas':
-          const weakResponse = await fetch(`${baseUrl}/api/weakness-analysis?limit=${args.limit || 10}`);
+          const weakResponse = await fetch(`${baseUrl}/api/weakness-analysis?limit=${(args as { limit?: number }).limit || 10}`);
           return await weakResponse.json();
 
         case 'save_vocabulary_item':
