@@ -10,7 +10,8 @@ import {
   Lightbulb, 
   BarChart3,
   User,
-  Menu
+  Menu,
+  Bot
 } from "lucide-react";
 import {
   Sheet,
@@ -26,6 +27,7 @@ export async function SharedHeader() {
 
   const navLinks = [
     { href: "/", icon: BarChart3, text: "Dashboard" },
+    { href: "/assistant", icon: Bot, text: "AI Assistant" },
     { href: "/quiz/vocab", icon: BookOpen, text: "Vocabulary Quiz" },
     { href: "/quiz/grammar", icon: FileText, text: "Grammar Quiz" },
     { href: "/flashcards", icon: Brain, text: "Flashcards" },

@@ -4,7 +4,8 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY!);
 
 export class GeminiService {
-  private model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+  private model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+  private chatModel = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
 
   /**
    * Generate practice questions based on user's weak vocabulary/grammar items
@@ -310,6 +311,279 @@ Keep under 60 words total. Use emojis and markdown formatting.`;
     } catch (error) {
       console.error('Error generating study hint:', error);
       throw new Error('Failed to generate study hint');
+    }
+  }
+
+  /**
+   * Personal Assistant Chat - Interactive conversation for JLPT N1 preparation
+   */
+  async chatWithAssistant(
+    message: string,
+    userContext: {
+      currentScores?: { vocabulary_grammar: number; reading: number };
+      weakAreas?: string[];
+      daysRemaining?: number;
+      studyHistory?: Array<{ topic: string; correct: number; total: number; date: string }>;
+      chatHistory?: Array<{ role: 'user' | 'assistant'; content: string }>;
+    } = {}
+  ) {
+    const { currentScores, weakAreas, daysRemaining = 4, studyHistory, chatHistory } = userContext;
+    
+    const systemPrompt = `You are a personalized JLPT N1 study assistant. Your role is to help this student pass the N1 exam in ${daysRemaining} days.
+
+**Student's Current Status:**
+- Vocabulary/Grammar: ${currentScores?.vocabulary_grammar || 'Unknown'}/60 (needs 19/60 to pass)
+- Reading: ${currentScores?.reading || 'Unknown'}/60 (needs 19/60 to pass)
+- Days remaining: ${daysRemaining}
+- Known weak areas: ${weakAreas?.join(', ') || 'To be determined'}
+
+**Your Responsibilities:**
+1. 📚 **Study Planning**: Create intensive, focused study plans
+2. 🎯 **Targeted Practice**: Generate practice questions for weak areas
+3. 📖 **Reading Strategies**: Improve reading comprehension and speed
+4. 💡 **Learning Tips**: Provide memory techniques and shortcuts
+5. 📊 **Progress Tracking**: Analyze performance and adjust strategies
+6. 🧠 **Mental Preparation**: Boost confidence and exam strategies
+
+**Communication Style:**
+- Be encouraging but realistic about the time constraint
+- Provide actionable, specific advice
+- Use Japanese examples when helpful
+- Break down complex concepts simply
+- Be available 24/7 for questions and support
+
+**Current Study History:**
+${studyHistory?.slice(-5).map(s => `- ${s.topic}: ${s.correct}/${s.total} on ${s.date}`).join('\n') || 'No recent history'}
+
+**Conversation History:**
+${chatHistory?.slice(-6).map(h => `${h.role}: ${h.content}`).join('\n') || 'New conversation'}
+
+Respond naturally and helpfully to the student's message. Always be specific and practical.`;
+
+    const prompt = `${systemPrompt}
+
+Student says: "${message}"
+
+Respond as their personal JLPT N1 assistant:`;
+
+    try {
+      const result = await this.chatModel.generateContent(prompt);
+      const response = await result.response;
+      return response.text();
+    } catch (error) {
+      console.error('Error in AI chat:', error);
+      throw new Error('Failed to get AI response');
+    }
+  }
+
+  /**
+   * Generate Emergency Study Plan for remaining days
+   */
+  async generateEmergencyStudyPlan(
+    userScores: { vocabulary_grammar: number; reading: number },
+    daysRemaining: number,
+    availableHoursPerDay: number,
+    weakAreas: string[] = []
+  ) {
+    const prompt = `Create an EMERGENCY STUDY PLAN for JLPT N1 exam in ${daysRemaining} days.
+
+**Current Situation:**
+- Vocabulary/Grammar: ${userScores.vocabulary_grammar}/60 (need 19+ to pass, currently ${userScores.vocabulary_grammar < 19 ? 'BELOW' : 'AT/ABOVE'} passing)
+- Reading: ${userScores.reading}/60 (need 19+ to pass, currently ${userScores.reading < 19 ? 'BELOW' : 'AT/ABOVE'} passing)
+- Study time available: ${availableHoursPerDay} hours/day
+- Total study time: ${daysRemaining * availableHoursPerDay} hours
+- Weak areas: ${weakAreas.join(', ') || 'General'}
+
+**Requirements:**
+1. Must prioritize areas most likely to gain points quickly
+2. Include specific daily tasks and time allocation
+3. Balance vocabulary/grammar vs reading based on current scores
+4. Include rest and review time
+5. Provide exam day strategy
+
+Return as structured JSON:
+{
+  "overall_strategy": "Priority focus explanation",
+  "daily_plans": [
+    {
+      "day": 1,
+      "theme": "Day theme",
+      "morning_session": {
+        "duration": "2 hours",
+        "focus": "High-impact vocabulary",
+        "specific_tasks": ["Task 1", "Task 2"],
+        "target_items": 50
+      },
+      "afternoon_session": {
+        "duration": "2 hours", 
+        "focus": "Reading comprehension",
+        "specific_tasks": ["Task 1", "Task 2"],
+        "target_passages": 3
+      },
+      "evening_session": {
+        "duration": "1 hour",
+        "focus": "Review and weak areas",
+        "specific_tasks": ["Review mistakes", "Test yourself"]
+      },
+      "daily_goal": "Specific measurable goal"
+    }
+  ],
+  "exam_day_strategy": {
+    "timing": "Section timing recommendations",
+    "question_order": "Which questions to tackle first",
+    "guessing_strategy": "Smart guessing techniques"
+  },
+  "emergency_tips": ["Quick wins tip 1", "Quick wins tip 2"],
+  "motivation": "Encouraging message"
+}`;
+
+    try {
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        return JSON.parse(jsonMatch[0]);
+      } else {
+        throw new Error('Could not parse JSON from AI response');
+      }
+    } catch (error) {
+      console.error('Error generating emergency study plan:', error);
+      throw new Error('Failed to generate emergency study plan');
+    }
+  }
+
+  /**
+   * Analyze reading passage and generate targeted questions
+   */
+  async generateReadingPractice(
+    passage: string,
+    difficulty: 'N1',
+    questionCount: number = 5
+  ) {
+    const prompt = `Create ${questionCount} JLPT N1 level reading comprehension questions for this passage:
+
+"${passage}"
+
+Generate questions that test:
+1. Main idea comprehension
+2. Detail understanding  
+3. Inference and implication
+4. Vocabulary in context
+5. Author's intent/opinion
+
+Return as JSON:
+{
+  "passage_analysis": {
+    "main_topic": "Brief description",
+    "difficulty_level": "Assessment of difficulty",
+    "key_vocabulary": ["word1", "word2", "word3"],
+    "grammar_patterns": ["pattern1", "pattern2"]
+  },
+  "questions": [
+    {
+      "question_text": "Question in Japanese",
+      "question_type": "main_idea|detail|inference|vocabulary",
+      "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+      "answer_index": 0,
+      "explanation": "Why this answer is correct",
+      "reading_strategy": "How to approach this type of question"
+    }
+  ],
+  "reading_tips": ["Tip for this passage type"],
+  "time_target": "Recommended time to solve"
+}`;
+
+    try {
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        return JSON.parse(jsonMatch[0]);
+      } else {
+        throw new Error('Could not parse JSON from AI response');
+      }
+    } catch (error) {
+      console.error('Error generating reading practice:', error);
+      throw new Error('Failed to generate reading practice');
+    }
+  }
+
+  /**
+   * Generate intensive review session for weak areas
+   */
+  async generateIntensiveReview(
+    weakItems: Array<{
+      term: string;
+      reading: string;
+      meaning: string;
+      type: 'vocab' | 'grammar';
+      mistakeCount: number;
+    }>,
+    sessionLength: number = 30 // minutes
+  ) {
+    const prompt = `Create an INTENSIVE REVIEW SESSION (${sessionLength} minutes) for these problematic items:
+
+${weakItems.map(item => `- ${item.term} (${item.reading}): ${item.meaning} [${item.type}, ${item.mistakeCount} mistakes]`).join('\n')}
+
+Create a structured review session with:
+1. Memory techniques for each item
+2. Practice exercises
+3. Common mistake patterns
+4. Quick test at the end
+
+Return as JSON:
+{
+  "session_overview": {
+    "total_time": "${sessionLength} minutes",
+    "items_covered": ${weakItems.length},
+    "focus_strategy": "How to approach these items"
+  },
+  "memory_techniques": [
+    {
+      "item": "term",
+      "technique": "Specific memory trick",
+      "association": "What to associate it with",
+      "example": "Usage example"
+    }
+  ],
+  "practice_exercises": [
+    {
+      "exercise_type": "fill_in_blank|multiple_choice|sentence_creation",
+      "instruction": "What to do",
+      "items": ["Exercise items"],
+      "time_limit": "2 minutes"
+    }
+  ],
+  "quick_test": {
+    "questions": [
+      {
+        "prompt": "Test question",
+        "answer": "Correct answer",
+        "alternatives": ["Wrong option 1", "Wrong option 2"]
+      }
+    ]
+  },
+  "success_tips": ["Tip 1", "Tip 2"]
+}`;
+
+    try {
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        return JSON.parse(jsonMatch[0]);
+      } else {
+        throw new Error('Could not parse JSON from AI response');
+      }
+    } catch (error) {
+      console.error('Error generating intensive review:', error);
+      throw new Error('Failed to generate intensive review');
     }
   }
 }
