@@ -41,9 +41,12 @@ export async function POST(request: NextRequest) {
           const { error } = await supabase
             .from('grammar_items')
             .insert({
-              pattern: item.pattern,
-              description: item.description,
-              example: item.example || ''
+              term: item.term,
+              reading: item.reading || '',
+              meaning_en: item.meaning_en,
+              meaning_vi: item.meaning_vi || '',
+              example_jp: item.example_jp || '',
+              section: 'grammar'
             })
           
           if (!error) insertedCount++
@@ -63,14 +66,25 @@ export async function POST(request: NextRequest) {
       } else if (section === 'vocab_questions') {
         // Insert vocabulary questions
         for (const item of data) {
+          // Parse options if it's a string
+          let options = item.options
+          if (typeof options === 'string') {
+            try {
+              options = JSON.parse(options)
+            } catch (e) {
+              console.error('Failed to parse options:', options)
+              continue
+            }
+          }
+          
           const { error } = await supabase
-            .from('questions')
+            .from('vocab_questions')
             .insert({
+              vocabulary_item_id: item.vocabulary_item_id,
               question_text: item.question_text,
-              options: item.options,
-              answer_index: item.answer_index,
-              explanation: item.explanation,
-              section: 'vocabulary'
+              options: options,
+              answer_index: parseInt(item.answer_index),
+              explanation: item.explanation
             })
           
           if (!error) insertedCount++
@@ -78,14 +92,25 @@ export async function POST(request: NextRequest) {
       } else if (section === 'grammar_questions') {
         // Insert grammar questions
         for (const item of data) {
+          // Parse options if it's a string
+          let options = item.options
+          if (typeof options === 'string') {
+            try {
+              options = JSON.parse(options)
+            } catch (e) {
+              console.error('Failed to parse options:', options)
+              continue
+            }
+          }
+          
           const { error } = await supabase
-            .from('questions')
+            .from('grammar_questions')
             .insert({
+              grammar_item_id: item.grammar_item_id,
               question_text: item.question_text,
-              options: item.options,
-              answer_index: item.answer_index,
-              explanation: item.explanation,
-              section: 'grammar'
+              options: options,
+              answer_index: parseInt(item.answer_index),
+              explanation: item.explanation
             })
           
           if (!error) insertedCount++

@@ -19,9 +19,11 @@ interface Question {
     example_jp: string;
   };
   grammar_items?: {
-    pattern: string;
-    description: string;
-    example: string;
+    term: string;
+    reading: string;
+    meaning_en: string;
+    meaning_vi: string;
+    example_jp: string;
   };
 }
 
@@ -48,10 +50,14 @@ export function QuizCard({ section }: QuizCardProps) {
       }
       
       const data = await response.json();
+      console.log('Quiz API response:', data);
+      console.log('Questions received:', data.questions?.length);
       setQuestions(data.questions || []);
       
       if (data.questions?.length === 0) {
         setError("No questions available. Try adding some content first!");
+      } else {
+        setError(null); // Clear any previous errors
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
@@ -193,8 +199,8 @@ export function QuizCard({ section }: QuizCardProps) {
           {section === "grammar" && currentQuestion.grammar_items && (
             <div className="bg-green-50 p-4 rounded-lg mb-4">
               <p className="text-sm text-gray-600 mb-1">Pattern:</p>
-              <p className="font-medium">{currentQuestion.grammar_items.pattern}</p>
-              <p className="text-sm text-gray-600">{currentQuestion.grammar_items.example}</p>
+              <p className="font-medium">{currentQuestion.grammar_items.term}</p>
+              <p className="text-sm text-gray-600">{currentQuestion.grammar_items.example_jp}</p>
             </div>
           )}
         </div>

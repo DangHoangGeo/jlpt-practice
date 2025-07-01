@@ -11,9 +11,12 @@ interface VocabularyItem {
 }
 
 interface GrammarItem {
-  pattern: string
-  description: string
-  example: string
+  term: string
+  reading: string
+  meaning_en: string
+  meaning_vi: string
+  example_jp: string
+  section: string
 }
 
 interface Question {
@@ -133,16 +136,19 @@ async function processVocabularyItems(supabase: SupabaseClient, items: Vocabular
 
 async function processGrammarItems(supabase: SupabaseClient, items: GrammarItem[], batchId: string) {
   const grammarItems = items.map(item => ({
-    pattern: item.pattern,
-    description: item.description,
-    example: item.example,
+    term: item.term,
+    reading: item.reading,
+    meaning_en: item.meaning_en,
+    meaning_vi: item.meaning_vi,
+    example_jp: item.example_jp,
+    section: item.section,
     import_batch: batchId
   }))
   
   const { error } = await supabase
     .from('grammar_items')
     .upsert(grammarItems, { 
-      onConflict: 'pattern',
+      onConflict: 'term',
       ignoreDuplicates: false 
     })
   

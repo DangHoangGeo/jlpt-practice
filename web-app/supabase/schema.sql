@@ -18,9 +18,12 @@ CREATE TABLE vocabulary_items (
 -- Grammar Patterns
 CREATE TABLE grammar_items (
   id            uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
-  pattern       text        NOT NULL,                         -- e.g. "～か～ないかのうちに"
-  description   text        NOT NULL,                         -- English rule
-  example       text        NOT NULL,                         -- sentence with "_____"
+  term          text        NOT NULL,                         -- Grammar pattern
+  reading       text        NOT NULL,                         -- furigana/reading
+  meaning_en    text        NOT NULL,                         -- English explanation
+  meaning_vi    text        NOT NULL,                         -- Vietnamese explanation
+  example_jp    text        NOT NULL,                         -- Japanese example sentence
+  section       text        NOT NULL CHECK(section = 'grammar'),
   created_at    timestamptz NOT NULL DEFAULT now()
 );
 
@@ -71,7 +74,8 @@ CREATE TABLE section_tips (
 -- Create indexes for better performance
 CREATE INDEX idx_vocabulary_items_section ON vocabulary_items(section);
 CREATE INDEX idx_vocabulary_items_term ON vocabulary_items(term);
-CREATE INDEX idx_grammar_items_pattern ON grammar_items(pattern);
+CREATE INDEX idx_grammar_items_term ON grammar_items(term);
+CREATE INDEX idx_grammar_items_section ON grammar_items(section);
 CREATE INDEX idx_flashcard_progress_user_review ON flashcard_progress(user_id, next_review);
 CREATE INDEX idx_flashcard_progress_user_type ON flashcard_progress(user_id, item_type);
 CREATE INDEX idx_section_tips_section ON section_tips(section);

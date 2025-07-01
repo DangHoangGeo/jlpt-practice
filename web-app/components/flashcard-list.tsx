@@ -69,11 +69,16 @@ function Flashcard({ item, itemType, onReview }: FlashcardProps) {
                 </>
               ) : (
                 <>
-                  <div className="text-2xl font-bold mb-4 text-gray-900">
-                    {item.pattern}
+                  <div className="text-3xl font-bold mb-2 text-gray-900">
+                    {item.term}
                   </div>
+                  {item.reading && (
+                    <div className="text-lg text-gray-600 mb-4">
+                      ({item.reading})
+                    </div>
+                  )}
                   <Badge variant="outline" className="mb-4">
-                    Grammar Pattern
+                    Grammar
                   </Badge>
                 </>
               )}
@@ -90,24 +95,10 @@ function Flashcard({ item, itemType, onReview }: FlashcardProps) {
                   {item.meaning_vi}
                 </div>
               )}
-              {itemType === "vocab" && item.example_jp && (
+              {item.example_jp && (
                 <div className="bg-gray-50 p-3 rounded-lg mb-4">
                   <p className="text-sm text-gray-700">{item.example_jp}</p>
                 </div>
-              )}
-              {itemType === "grammar" && (
-                <>
-                  {item.description && (
-                    <div className="text-sm text-gray-600 mb-3">
-                      {item.description}
-                    </div>
-                  )}
-                  {item.example && (
-                    <div className="bg-gray-50 p-3 rounded-lg mb-4">
-                      <p className="text-sm text-gray-700">{item.example}</p>
-                    </div>
-                  )}
-                </>
               )}
             </div>
           )}
