@@ -1,0 +1,227 @@
+[
+  {
+    "kanji": "形",
+    "furigana": "かたち",
+    "english": "shape; form",
+    "vietnamese": "hình dạng",
+    "example_jp": "形が変わった。",
+    "example_en": "The shape has changed.",
+    "example_vi": "Hình dạng đã thay đổi."
+  },
+  {
+    "kanji": "状",
+    "furigana": "じょう",
+    "english": "condition; appearance",
+    "vietnamese": "tình trạng; trạng thái",
+    "example_jp": "異常な状態。",
+    "example_en": "Abnormal condition.",
+    "example_vi": "Tình trạng bất thường."
+  },
+  {
+    "kanji": "性",
+    "furigana": "せい",
+    "english": "nature; gender",
+    "vietnamese": "tính chất; giới tính",
+    "example_jp": "性格が明るい。",
+    "example_en": "Has a cheerful personality.",
+    "example_vi": "Có tính cách vui vẻ."
+  },
+  {
+    "kanji": "格",
+    "furigana": "かく",
+    "english": "status; rank",
+    "vietnamese": "địa vị; hạng",
+    "example_jp": "資格を取る。",
+    "example_en": "Obtain a qualification.",
+    "example_vi": "Lấy bằng cấp."
+  },
+  {
+    "kanji": "費",
+    "furigana": "ひ",
+    "english": "cost; expense",
+    "vietnamese": "chi phí",
+    "example_jp": "交通費が高い。",
+    "example_en": "Transportation cost is high.",
+    "example_vi": "Chi phí đi lại cao."
+  },
+  {
+    "kanji": "資",
+    "furigana": "し",
+    "english": "resources; capital",
+    "vietnamese": "tài nguyên; vốn",
+    "example_jp": "資源を守る。",
+    "example_en": "Protect resources.",
+    "example_vi": "Bảo vệ tài nguyên."
+  },
+  {
+    "kanji": "財",
+    "furigana": "ざい",
+    "english": "wealth; finance",
+    "vietnamese": "tài sản; tài chính",
+    "example_jp": "財産を管理する。",
+    "example_en": "Manage assets.",
+    "example_vi": "Quản lý tài sản."
+  },
+  {
+    "kanji": "産",
+    "furigana": "さん",
+    "english": "produce; industry",
+    "vietnamese": "sản xuất; công nghiệp",
+    "example_jp": "農産物を輸出する。",
+    "example_en": "Export agricultural products.",
+    "example_vi": "Xuất khẩu nông sản."
+  },
+  {
+    "kanji": "商",
+    "furigana": "しょう",
+    "english": "commerce; trade",
+    "vietnamese": "thương mại",
+    "example_jp": "商業施設が増える。",
+    "example_en": "Commercial facilities are increasing.",
+    "example_vi": "Cơ sở thương mại đang tăng lên."
+  },
+  {
+    "kanji": "販",
+    "furigana": "はん",
+    "english": "sell; marketing",
+    "vietnamese": "bán hàng",
+    "example_jp": "新製品を販売する。",
+    "example_en": "Sell a new product.",
+    "example_vi": "Bán sản phẩm mới."
+  },
+  {
+    "kanji": "値",
+    "furigana": "ね",
+    "english": "price; value",
+    "vietnamese": "giá trị; giá cả",
+    "example_jp": "値段が高い。",
+    "example_en": "The price is high.",
+    "example_vi": "Giá cao."
+  },
+  {
+    "kanji": "税",
+    "furigana": "ぜい",
+    "english": "tax",
+    "vietnamese": "thuế",
+    "example_jp": "税金を払う。",
+    "example_en": "Pay taxes.",
+    "example_vi": "Nộp thuế."
+  },
+  {
+    "kanji": "収",
+    "furigana": "しゅう",
+    "english": "income; gather",
+    "vietnamese": "thu nhập; thu thập",
+    "example_jp": "収入を得る。",
+    "example_en": "Gain income.",
+    "example_vi": "Kiếm thu nhập."
+  },
+  {
+    "kanji": "給",
+    "furigana": "きゅう",
+    "english": "salary; supply",
+    "vietnamese": "lương; cung cấp",
+    "example_jp": "給料が上がる。",
+    "example_en": "Salary increases.",
+    "example_vi": "Tăng lương."
+  },
+  {
+    "kanji": "雇",
+    "furigana": "やと",
+    "english": "employ; hire",
+    "vietnamese": "thuê; tuyển dụng",
+    "example_jp": "スタッフを雇う。",
+    "example_en": "Hire staff.",
+    "example_vi": "Tuyển nhân viên."
+  },
+  {
+    "kanji": "職",
+    "furigana": "しょく",
+    "english": "job; employment",
+    "vietnamese": "công việc; nghề nghiệp",
+    "example_jp": "就職活動をする。",
+    "example_en": "Job hunting.",
+    "example_vi": "Tìm việc làm."
+  },
+  {
+    "kanji": "退",
+    "furigana": "たい",
+    "english": "retire; retreat",
+    "vietnamese": "rút lui; nghỉ việc",
+    "example_jp": "会社を退職する。",
+    "example_en": "Retire from the company.",
+    "example_vi": "Nghỉ việc ở công ty."
+  },
+  {
+    "kanji": "辞",
+    "furigana": "じ",
+    "english": "resign; word",
+    "vietnamese": "từ chức; từ ngữ",
+    "example_jp": "辞書で意味を調べる。",
+    "example_en": "Look up the meaning in a dictionary.",
+    "example_vi": "Tra nghĩa bằng từ điển."
+  },
+  {
+    "kanji": "労",
+    "furigana": "ろう",
+    "english": "labor; effort",
+    "vietnamese": "lao động; nỗ lực",
+    "example_jp": "労働条件を改善する。",
+    "example_en": "Improve working conditions.",
+    "example_vi": "Cải thiện điều kiện lao động."
+  },
+  {
+    "kanji": "働",
+    "furigana": "はたら",
+    "english": "to work",
+    "vietnamese": "làm việc",
+    "example_jp": "毎日働いている。",
+    "example_en": "I work every day.",
+    "example_vi": "Tôi làm việc mỗi ngày."
+  },
+  {
+    "kanji": "能",
+    "furigana": "のう",
+    "english": "ability; performance",
+    "vietnamese": "năng lực; khả năng",
+    "example_jp": "彼は能力がある。",
+    "example_en": "He has ability.",
+    "example_vi": "Anh ấy có năng lực."
+  },
+  {
+    "kanji": "効",
+    "furigana": "こう",
+    "english": "effect; efficiency",
+    "vietnamese": "hiệu quả",
+    "example_jp": "効果が出る。",
+    "example_en": "The effect shows.",
+    "example_vi": "Hiệu quả được thể hiện."
+  },
+  {
+    "kanji": "績",
+    "furigana": "せき",
+    "english": "achievement",
+    "vietnamese": "thành tích",
+    "example_jp": "成績が上がる。",
+    "example_en": "Grades go up.",
+    "example_vi": "Thành tích tăng lên."
+  },
+  {
+    "kanji": "価",
+    "furigana": "か",
+    "english": "value; worth",
+    "vietnamese": "giá trị",
+    "example_jp": "価値がある。",
+    "example_en": "It has value.",
+    "example_vi": "Nó có giá trị."
+  },
+  {
+    "kanji": "評",
+    "furigana": "ひょう",
+    "english": "review; evaluate",
+    "vietnamese": "đánh giá",
+    "example_jp": "評価が高い。",
+    "example_en": "Highly rated.",
+    "example_vi": "Được đánh giá cao."
+  }
+]

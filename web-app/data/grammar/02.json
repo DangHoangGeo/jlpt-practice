@@ -1,0 +1,218 @@
+[
+  {
+    "grammar": "〜に堪えない",
+    "furigana": "〜にたえない",
+    "english": "cannot bear; extremely (emotion)",
+    "vietnamese": "không chịu nổi; vô cùng",
+    "example_jp": "感謝（かんしゃ）に堪（た）えません。",
+    "example_en": "I am deeply grateful.",
+    "example_vi": "Tôi vô cùng biết ơn."
+  },
+  {
+    "grammar": "〜か否か",
+    "furigana": "〜かいなか",
+    "english": "whether or not",
+    "vietnamese": "hay không",
+    "example_jp": "行（い）くか否（いな）か決（き）めていない。",
+    "example_en": "I haven’t decided whether to go or not.",
+    "example_vi": "Tôi vẫn chưa quyết định có đi hay không."
+  },
+  {
+    "grammar": "〜をよそに",
+    "furigana": "〜をよそに",
+    "english": "ignoring; in defiance of",
+    "vietnamese": "mặc kệ; bất chấp",
+    "example_jp": "周囲（しゅうい）をよそに彼（かれ）は笑（わら）っていた。",
+    "example_en": "He laughed, ignoring everyone around.",
+    "example_vi": "Anh ấy cứ cười, mặc kệ những người xung quanh."
+  },
+  {
+    "grammar": "〜を余儀なくされる",
+    "furigana": "〜をよぎなくされる",
+    "english": "be forced to",
+    "vietnamese": "bị buộc phải",
+    "example_jp": "辞職（じしょく）を余儀（よぎ）なくされた。",
+    "example_en": "He was forced to resign.",
+    "example_vi": "Anh ấy bị buộc phải từ chức."
+  },
+  {
+    "grammar": "〜にかかわる",
+    "furigana": "〜にかかわる",
+    "english": "related to; concerning",
+    "vietnamese": "liên quan đến",
+    "example_jp": "命（いのち）にかかわる問題（もんだい）だ。",
+    "example_en": "It’s a matter of life and death.",
+    "example_vi": "Đây là vấn đề liên quan đến tính mạng."
+  },
+  {
+    "grammar": "〜にもまして",
+    "furigana": "〜にもまして",
+    "english": "even more than; above all",
+    "vietnamese": "hơn cả; trên hết là",
+    "example_jp": "去年（きょねん）にもまして暑（あつ）い。",
+    "example_en": "Even hotter than last year.",
+    "example_vi": "Nóng hơn cả năm ngoái."
+  },
+  {
+    "grammar": "〜といえども",
+    "furigana": "〜といえども",
+    "english": "even though; even if",
+    "vietnamese": "dù là; cho dù",
+    "example_jp": "子供（こども）といえども礼儀（れいぎ）は必要（ひつよう）だ。",
+    "example_en": "Even a child needs manners.",
+    "example_vi": "Dù là trẻ con cũng cần có lễ phép."
+  },
+  {
+    "grammar": "〜たところで",
+    "furigana": "〜たところで",
+    "english": "even if; no matter how much",
+    "vietnamese": "dù có... thì cũng không",
+    "example_jp": "今（いま）から走（はし）ったところで間（ま）に合（あ）わない。",
+    "example_en": "Even if I run now, I won’t make it in time.",
+    "example_vi": "Dù có chạy bây giờ cũng không kịp."
+  },
+  {
+    "grammar": "〜べくもない",
+    "furigana": "〜べくもない",
+    "english": "cannot possibly",
+    "vietnamese": "không thể nào mà",
+    "example_jp": "勝利（しょうり）を望（のぞ）むべくもない。",
+    "example_en": "There’s no way to hope for victory.",
+    "example_vi": "Không thể nào mong giành chiến thắng."
+  },
+  {
+    "grammar": "〜とあっては",
+    "furigana": "〜とあっては",
+    "english": "if it is the case",
+    "vietnamese": "nếu đúng là; nếu như",
+    "example_jp": "命（いのち）に関（かん）わることとあっては仕方（しかた）がない。",
+    "example_en": "If it’s a matter of life and death, it can’t be helped.",
+    "example_vi": "Nếu là chuyện liên quan đến tính mạng thì đành chịu thôi."
+  },
+  {
+    "grammar": "〜をもじさない",
+    "furigana": "〜をもじさない",
+    "english": "not hesitate to",
+    "vietnamese": "không ngần ngại",
+    "example_jp": "彼（かれ）は犠牲（ぎせい）をも辞（じ）さない。",
+    "example_en": "He won’t hesitate to make sacrifices.",
+    "example_vi": "Anh ấy sẵn sàng hy sinh."
+  },
+  {
+    "grammar": "〜ところを",
+    "furigana": "〜ところを",
+    "english": "although; even though",
+    "vietnamese": "trong lúc; mặc dù",
+    "example_jp": "お忙（いそが）しいところをすみません。",
+    "example_en": "Sorry to bother you while you're busy.",
+    "example_vi": "Xin lỗi đã làm phiền lúc anh đang bận."
+  },
+  {
+    "grammar": "〜んがために",
+    "furigana": "〜んがために",
+    "english": "in order to (formal)",
+    "vietnamese": "để mà (trang trọng)",
+    "example_jp": "成功（せいこう）せんがために全力（ぜんりょく）を尽（つ）くす。",
+    "example_en": "Do your best in order to succeed.",
+    "example_vi": "Dốc toàn lực để thành công."
+  },
+  {
+    "grammar": "〜を限りに",
+    "furigana": "〜をかぎりに",
+    "english": "starting from; as of",
+    "vietnamese": "từ... trở đi",
+    "example_jp": "今日（きょう）を限（かぎ）りにタバコをやめる。",
+    "example_en": "I’ll quit smoking starting today.",
+    "example_vi": "Từ hôm nay tôi sẽ bỏ thuốc lá."
+  },
+  {
+    "grammar": "〜ものともせず",
+    "furigana": "〜ものともせず",
+    "english": "despite; in defiance of",
+    "vietnamese": "mặc cho; bất chấp",
+    "example_jp": "困難（こんなん）をものともせず前進（ぜんしん）した。",
+    "example_en": "Moved forward despite the difficulties.",
+    "example_vi": "Tiến lên bất chấp khó khăn."
+  },
+  {
+    "grammar": "〜まじき",
+    "furigana": "〜まじき",
+    "english": "unacceptable for; unbecoming",
+    "vietnamese": "không thể chấp nhận được với tư cách là",
+    "example_jp": "教師（きょうし）にあるまじき行為（こうい）だ。",
+    "example_en": "Such behavior is unacceptable for a teacher.",
+    "example_vi": "Hành vi như vậy không chấp nhận được đối với một giáo viên."
+  },
+  {
+    "grammar": "〜を踏まえて",
+    "furigana": "〜をふまえて",
+    "english": "based on; in light of",
+    "vietnamese": "dựa trên; xét đến",
+    "example_jp": "前例（ぜんれい）を踏（ふ）まえて判断（はんだん）する。",
+    "example_en": "Make a decision based on precedent.",
+    "example_vi": "Dựa trên tiền lệ để đưa ra phán đoán."
+  },
+  {
+    "grammar": "〜に即して",
+    "furigana": "〜にそくして",
+    "english": "in accordance with",
+    "vietnamese": "theo đúng; căn cứ vào",
+    "example_jp": "法律（ほうりつ）に即（そく）して処理（しょり）する。",
+    "example_en": "Handle it according to the law.",
+    "example_vi": "Xử lý theo đúng pháp luật."
+  },
+  {
+    "grammar": "〜といったところだ",
+    "furigana": "〜といったところだ",
+    "english": "would be about; at best",
+    "vietnamese": "cùng lắm là; chỉ khoảng",
+    "example_jp": "準備（じゅんび）は半分（はんぶん）といったところだ。",
+    "example_en": "The preparations are about halfway done.",
+    "example_vi": "Việc chuẩn bị mới chỉ xong một nửa thôi."
+  },
+  {
+    "grammar": "〜にしてみれば",
+    "furigana": "〜にしてみれば",
+    "english": "from the perspective of",
+    "vietnamese": "đối với; từ góc nhìn của",
+    "example_jp": "子供（こども）にしてみれば大人（おとな）の考（かんが）えは理解（りかい）しにくい。",
+    "example_en": "From a child’s perspective, adult thinking is hard to understand.",
+    "example_vi": "Với trẻ con thì suy nghĩ của người lớn thật khó hiểu."
+  },
+  {
+    "grammar": "〜といったらない",
+    "furigana": "〜といったらない",
+    "english": "unbelievably; extremely",
+    "vietnamese": "không thể tả được; vô cùng",
+    "example_jp": "彼（かれ）の失礼（しつれい）さといったらない。",
+    "example_en": "His rudeness is beyond words.",
+    "example_vi": "Sự thô lỗ của anh ta không thể tả được."
+  },
+  {
+    "grammar": "〜こととて",
+    "furigana": "〜こととて",
+    "english": "because (formal/literary)",
+    "vietnamese": "bởi vì (trang trọng)",
+    "example_jp": "急（きゅう）なこととて、ご理解（りかい）ください。",
+    "example_en": "Please understand, as this is sudden.",
+    "example_vi": "Mong quý vị thông cảm vì chuyện này quá đột ngột."
+  },
+  {
+    "grammar": "〜べからず",
+    "furigana": "〜べからず",
+    "english": "must not; don’t",
+    "vietnamese": "cấm; không được",
+    "example_jp": "ここに入（はい）るべからず。",
+    "example_en": "Do not enter here.",
+    "example_vi": "Cấm vào khu vực này."
+  },
+  {
+    "grammar": "〜べからざる",
+    "furigana": "〜べからざる",
+    "english": "unforgivable; unacceptable",
+    "vietnamese": "không thể tha thứ; không thể chấp nhận",
+    "example_jp": "法（ほう）を犯（おか）すべからざる行為（こうい）。",
+    "example_en": "An act that must not break the law.",
+    "example_vi": "Hành vi không thể chấp nhận được vì vi phạm pháp luật."
+  }
+]

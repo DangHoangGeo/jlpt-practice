@@ -1,0 +1,227 @@
+[
+  {
+    "word": "介入",
+    "furigana": "かいにゅう",
+    "english": "intervention; interference",
+    "vietnamese": "can thiệp",
+    "example_jp": "政府が問題に介入した。",
+    "example_en": "The government intervened in the issue.",
+    "example_vi": "Chính phủ đã can thiệp vào vấn đề đó."
+  },
+  {
+    "word": "回避",
+    "furigana": "かいひ",
+    "english": "avoidance; evasion",
+    "vietnamese": "tránh né",
+    "example_jp": "責任を回避する。",
+    "example_en": "Avoid responsibility.",
+    "example_vi": "Tránh né trách nhiệm."
+  },
+  {
+    "word": "確保",
+    "furigana": "かくほ",
+    "english": "securing; ensuring",
+    "vietnamese": "đảm bảo",
+    "example_jp": "安全を確保する。",
+    "example_en": "Ensure safety.",
+    "example_vi": "Đảm bảo an toàn."
+  },
+  {
+    "word": "過剰",
+    "furigana": "かじょう",
+    "english": "excessive",
+    "vietnamese": "quá mức",
+    "example_jp": "過剰なストレスは体に悪い。",
+    "example_en": "Excessive stress is bad for the body.",
+    "example_vi": "Căng thẳng quá mức có hại cho cơ thể."
+  },
+  {
+    "word": "過密",
+    "furigana": "かみつ",
+    "english": "overcrowded",
+    "vietnamese": "quá tải; đông đúc",
+    "example_jp": "都市の過密化が進んでいる。",
+    "example_en": "Urban overcrowding is progressing.",
+    "example_vi": "Tình trạng đô thị quá tải ngày càng tăng."
+  },
+  {
+    "word": "我慢",
+    "furigana": "がまん",
+    "english": "patience; endurance",
+    "vietnamese": "chịu đựng; nhẫn nhịn",
+    "example_jp": "痛みを我慢する。",
+    "example_en": "Endure the pain.",
+    "example_vi": "Chịu đựng cơn đau."
+  },
+  {
+    "word": "幹部",
+    "furigana": "かんぶ",
+    "english": "executive; management",
+    "vietnamese": "cán bộ; lãnh đạo",
+    "example_jp": "幹部会議が開かれる。",
+    "example_en": "An executive meeting is held.",
+    "example_vi": "Họp ban lãnh đạo được tổ chức."
+  },
+  {
+    "word": "規模",
+    "furigana": "きぼ",
+    "english": "scale; scope",
+    "vietnamese": "quy mô",
+    "example_jp": "大規模なイベント。",
+    "example_en": "A large-scale event.",
+    "example_vi": "Sự kiện quy mô lớn."
+  },
+  {
+    "word": "拠点",
+    "furigana": "きょてん",
+    "english": "base; location",
+    "vietnamese": "cơ sở; địa điểm chính",
+    "example_jp": "海外に拠点を持つ。",
+    "example_en": "Have a base overseas.",
+    "example_vi": "Có cơ sở ở nước ngoài."
+  },
+  {
+    "word": "供給",
+    "furigana": "きょうきゅう",
+    "english": "supply; provision",
+    "vietnamese": "cung cấp",
+    "example_jp": "水の供給が止まった。",
+    "example_en": "The water supply stopped.",
+    "example_vi": "Nguồn cung nước bị cắt."
+  },
+  {
+    "word": "業績",
+    "furigana": "ぎょうせき",
+    "english": "performance; achievement",
+    "vietnamese": "thành tích; kết quả kinh doanh",
+    "example_jp": "会社の業績が良い。",
+    "example_en": "The company's performance is good.",
+    "example_vi": "Thành tích kinh doanh của công ty tốt."
+  },
+  {
+    "word": "強調",
+    "furigana": "きょうちょう",
+    "english": "emphasis; stress",
+    "vietnamese": "nhấn mạnh",
+    "example_jp": "重要性を強調する。",
+    "example_en": "Emphasize the importance.",
+    "example_vi": "Nhấn mạnh tầm quan trọng."
+  },
+  {
+    "word": "均衡",
+    "furigana": "きんこう",
+    "english": "balance; equilibrium",
+    "vietnamese": "cân bằng",
+    "example_jp": "均衡の取れた食事。",
+    "example_en": "A balanced diet.",
+    "example_vi": "Chế độ ăn uống cân bằng."
+  },
+  {
+    "word": "組織",
+    "furigana": "そしき",
+    "english": "organization; system",
+    "vietnamese": "tổ chức",
+    "example_jp": "組織を改編する。",
+    "example_en": "Reorganize the structure.",
+    "example_vi": "Tái tổ chức bộ máy."
+  },
+  {
+    "word": "傾向",
+    "furigana": "けいこう",
+    "english": "trend; tendency",
+    "vietnamese": "khuynh hướng",
+    "example_jp": "若者にこの傾向がある。",
+    "example_en": "This tendency is seen in young people.",
+    "example_vi": "Giới trẻ có khuynh hướng này."
+  },
+  {
+    "word": "携帯",
+    "furigana": "けいたい",
+    "english": "mobile; portable",
+    "vietnamese": "di động; cầm tay",
+    "example_jp": "携帯電話を持っている。",
+    "example_en": "I have a mobile phone.",
+    "example_vi": "Tôi có điện thoại di động."
+  },
+  {
+    "word": "見解",
+    "furigana": "けんかい",
+    "english": "opinion; view",
+    "vietnamese": "quan điểm",
+    "example_jp": "専門家の見解を聞く。",
+    "example_en": "Listen to the expert’s opinion.",
+    "example_vi": "Lắng nghe quan điểm của chuyên gia."
+  },
+  {
+    "word": "厳密",
+    "furigana": "げんみつ",
+    "english": "strict; precise",
+    "vietnamese": "nghiêm ngặt; chính xác",
+    "example_jp": "厳密に言えば違う。",
+    "example_en": "Strictly speaking, it’s different.",
+    "example_vi": "Nói chính xác thì nó khác."
+  },
+  {
+    "word": "見通し",
+    "furigana": "みとおし",
+    "english": "outlook; forecast",
+    "vietnamese": "triển vọng; dự báo",
+    "example_jp": "明るい見通しが立つ。",
+    "example_en": "A bright outlook emerges.",
+    "example_vi": "Có triển vọng tươi sáng."
+  },
+  {
+    "word": "構成",
+    "furigana": "こうせい",
+    "english": "composition; structure",
+    "vietnamese": "cấu trúc; tổ chức",
+    "example_jp": "文章の構成を考える。",
+    "example_en": "Think about the structure of the essay.",
+    "example_vi": "Suy nghĩ về cấu trúc bài văn."
+  },
+  {
+    "word": "貢献",
+    "furigana": "こうけん",
+    "english": "contribution",
+    "vietnamese": "đóng góp",
+    "example_jp": "社会に貢献する。",
+    "example_en": "Contribute to society.",
+    "example_vi": "Đóng góp cho xã hội."
+  },
+  {
+    "word": "考慮",
+    "furigana": "こうりょ",
+    "english": "consideration",
+    "vietnamese": "xem xét",
+    "example_jp": "条件を考慮する。",
+    "example_en": "Consider the conditions.",
+    "example_vi": "Xem xét các điều kiện."
+  },
+  {
+    "word": "合意",
+    "furigana": "ごうい",
+    "english": "agreement; consent",
+    "vietnamese": "đồng thuận; nhất trí",
+    "example_jp": "両者が合意に達した。",
+    "example_en": "Both parties reached an agreement.",
+    "example_vi": "Hai bên đã đạt được sự đồng thuận."
+  },
+  {
+    "word": "拡大",
+    "furigana": "かくだい",
+    "english": "expansion; enlargement",
+    "vietnamese": "mở rộng",
+    "example_jp": "市場を拡大する。",
+    "example_en": "Expand the market.",
+    "example_vi": "Mở rộng thị trường."
+  },
+  {
+    "word": "行方",
+    "furigana": "ゆくえ",
+    "english": "whereabouts; direction",
+    "vietnamese": "tung tích; hướng đi",
+    "example_jp": "行方が分からない。",
+    "example_en": "The whereabouts are unknown.",
+    "example_vi": "Không biết tung tích."
+  }
+]

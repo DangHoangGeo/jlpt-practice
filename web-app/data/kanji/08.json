@@ -1,0 +1,92 @@
+[
+  {
+    "kanji": "試",
+    "furigana": "し",
+    "english": "test; try",
+    "vietnamese": "thử; kiểm tra",
+    "example_jp": "新しい方法を試す。",
+    "example_en": "Try a new method.",
+    "example_vi": "Thử phương pháp mới."
+  },
+  {
+    "kanji": "験",
+    "furigana": "けん",
+    "english": "test; verify",
+    "vietnamese": "kiểm nghiệm",
+    "example_jp": "実験を行う。",
+    "example_en": "Conduct an experiment.",
+    "example_vi": "Thực hiện thí nghiệm."
+  },
+  {
+    "kanji": "質",
+    "furigana": "しつ",
+    "english": "quality; question",
+    "vietnamese": "chất lượng; câu hỏi",
+    "example_jp": "品質が高い。",
+    "example_en": "High quality.",
+    "example_vi": "Chất lượng cao."
+  },
+  {
+    "kanji": "問",
+    "furigana": "と",
+    "english": "question; ask",
+    "vietnamese": "hỏi; câu hỏi",
+    "example_jp": "質問をする。",
+    "example_en": "Ask a question.",
+    "example_vi": "Đặt câu hỏi."
+  },
+  {
+    "kanji": "答",
+    "furigana": "こた",
+    "english": "answer; respond",
+    "vietnamese": "trả lời",
+    "example_jp": "質問に答える。",
+    "example_en": "Answer the question.",
+    "example_vi": "Trả lời câu hỏi."
+  },
+  {
+    "kanji": "解",
+    "furigana": "かい",
+    "english": "solve; answer",
+    "vietnamese": "giải quyết; đáp án",
+    "example_jp": "問題を解く。",
+    "example_en": "Solve the problem.",
+    "example_vi": "Giải bài toán."
+  },
+  {
+    "kanji": "説",
+    "furigana": "せつ",
+    "english": "explanation; theory",
+    "vietnamese": "giải thích; lý thuyết",
+    "example_jp": "説明を受ける。",
+    "example_en": "Receive an explanation.",
+    "example_vi": "Được giải thích."
+  },
+  {
+    "kanji": "論",
+    "furigana": "ろん",
+    "english": "argument; discourse",
+    "vietnamese": "luận; tranh luận",
+    "example_jp": "議論が続く。",
+    "example_en": "The debate continues.",
+    "example_vi": "Cuộc tranh luận tiếp tục."
+  },
+  {
+    "kanji": "証",
+    "furigana": "しょう",
+    "english": "proof; certificate",
+    "vietnamese": "chứng minh; giấy chứng nhận",
+    "example_jp": "証明書を提出する。",
+    "example_en": "Submit a certificate.",
+    "example_vi": "Nộp giấy chứng nhận."
+  },
+  {
+    "kanji": "識",
+    "furigana": "しき",
+    "english": "knowledge; awareness",
+    "vietnamese": "nhận thức; hiểu biết",
+    "example_jp": "常識を身につける。",
+    "example_en": "Learn common sense.",
+    "example_vi": "Học kiến thức phổ thông."
+  }
+]

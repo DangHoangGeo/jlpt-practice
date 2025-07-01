@@ -1,0 +1,200 @@
+[
+  {
+    "phrase": "〜にかかわらず",
+    "furigana": "〜にかかわらず",
+    "english": "regardless of; despite",
+    "vietnamese": "bất kể; không liên quan đến",
+    "example_jp": "天候（てんこう）にかかわらず試合（しあい）は行（おこな）われる。",
+    "example_en": "The match will take place regardless of the weather.",
+    "example_vi": "Trận đấu vẫn diễn ra bất kể thời tiết như thế nào."
+  },
+  {
+    "phrase": "〜としたら",
+    "furigana": "〜としたら",
+    "english": "if we assume that ~",
+    "vietnamese": "giả sử là ~",
+    "example_jp": "留学（りゅうがく）するとしたら、アメリカに行（い）きたい。",
+    "example_en": "If I were to study abroad, I’d want to go to the U.S.",
+    "example_vi": "Nếu đi du học, tôi muốn đến Mỹ."
+  },
+  {
+    "phrase": "〜てからでないと",
+    "furigana": "〜てからでないと",
+    "english": "unless ~ is done first",
+    "vietnamese": "nếu chưa ~ thì không thể ~",
+    "example_jp": "許可（きょか）をもらってからでないと入（はい）れません。",
+    "example_en": "You can’t enter unless you get permission first.",
+    "example_vi": "Nếu chưa được phép thì không được vào."
+  },
+  {
+    "phrase": "〜にすれば",
+    "furigana": "〜にすれば",
+    "english": "from the perspective of ~",
+    "vietnamese": "đối với ~",
+    "example_jp": "親（おや）にすれば心配（しんぱい）だろう。",
+    "example_en": "From a parent's point of view, they must be worried.",
+    "example_vi": "Đối với cha mẹ thì chắc chắn sẽ lo lắng."
+  },
+  {
+    "phrase": "〜といっても",
+    "furigana": "〜といっても",
+    "english": "even though I say ~; although ~",
+    "vietnamese": "dù nói là ~ nhưng",
+    "example_jp": "旅行（りょこう）といっても近場（ちかば）に行（い）くだけです。",
+    "example_en": "Although I say 'travel', I’m just going nearby.",
+    "example_vi": "Dù nói là đi du lịch nhưng thực ra chỉ đi gần thôi."
+  },
+  {
+    "phrase": "〜に違いない",
+    "furigana": "〜にちがいない",
+    "english": "must be; no doubt",
+    "vietnamese": "chắc chắn là ~",
+    "example_jp": "あの人（ひと）は先生（せんせい）に違（ちが）いない。",
+    "example_en": "That person must be the teacher.",
+    "example_vi": "Người đó chắc chắn là thầy giáo."
+  },
+  {
+    "phrase": "〜ようがない",
+    "furigana": "〜ようがない",
+    "english": "there’s no way to ~",
+    "vietnamese": "không có cách nào mà ~",
+    "example_jp": "彼（かれ）の連絡先（れんらくさき）が分（わ）からないから、連絡（れんらく）しようがない。",
+    "example_en": "I don’t know his contact, so there’s no way to reach him.",
+    "example_vi": "Tôi không biết cách liên lạc với anh ấy nên không thể nào gọi được."
+  },
+  {
+    "phrase": "〜ないことには〜ない",
+    "furigana": "〜ないことには〜ない",
+    "english": "unless ~, ~ won’t happen",
+    "vietnamese": "nếu không ~ thì không thể ~",
+    "example_jp": "本当（ほんとう）のことを言（い）わないことには、解決（かいけつ）しない。",
+    "example_en": "Unless you tell the truth, it won’t be resolved.",
+    "example_vi": "Nếu không nói sự thật thì không thể giải quyết được."
+  },
+  {
+    "phrase": "〜末に",
+    "furigana": "〜すえに",
+    "english": "after (much...) finally",
+    "vietnamese": "sau khi ~ thì cuối cùng",
+    "example_jp": "悩（なや）んだ末（すえ）に決断（けつだん）した。",
+    "example_en": "After much worry, I finally made a decision.",
+    "example_vi": "Sau nhiều lần trăn trở, tôi đã quyết định."
+  },
+  {
+    "phrase": "〜だけあって",
+    "furigana": "〜だけあって",
+    "english": "as expected of ~; indeed ~",
+    "vietnamese": "quả đúng là ~; tương xứng với ~",
+    "example_jp": "彼（かれ）はプロだけあって演技（えんぎ）がうまい。",
+    "example_en": "As expected of a pro, his acting is superb.",
+    "example_vi": "Quả đúng là chuyên nghiệp, diễn xuất của anh ấy rất giỏi."
+  },
+  {
+    "phrase": "〜どころではない",
+    "furigana": "〜どころではない",
+    "english": "this is not the time for ~",
+    "vietnamese": "không phải lúc để ~",
+    "example_jp": "遊（あそ）びに行（い）くどころではない。",
+    "example_en": "This is not the time to go play.",
+    "example_vi": "Bây giờ không phải lúc để đi chơi."
+  },
+  {
+    "phrase": "〜に応じて",
+    "furigana": "〜におうじて",
+    "english": "depending on ~",
+    "vietnamese": "ứng với; theo ~",
+    "example_jp": "収入（しゅうにゅう）に応（おう）じて生活（せいかつ）も変（か）わる。",
+    "example_en": "Life changes depending on income.",
+    "example_vi": "Cuộc sống thay đổi tùy theo thu nhập."
+  },
+  {
+    "phrase": "〜を通じて",
+    "furigana": "〜をつうじて",
+    "english": "through; via",
+    "vietnamese": "thông qua; suốt",
+    "example_jp": "仕事（しごと）を通（つう）じて成長（せいちょう）した。",
+    "example_en": "I grew through my work.",
+    "example_vi": "Tôi đã trưởng thành thông qua công việc."
+  },
+  {
+    "phrase": "〜をはじめ",
+    "furigana": "〜をはじめ",
+    "english": "starting with ~",
+    "vietnamese": "trước hết là ~",
+    "example_jp": "社長（しゃちょう）をはじめ、多（おお）くの人（ひと）が参加（さんか）した。",
+    "example_en": "Many people participated, starting with the president.",
+    "example_vi": "Nhiều người tham gia, trước hết là giám đốc."
+  },
+  {
+    "phrase": "〜恐れがある",
+    "furigana": "〜おそれがある",
+    "english": "there is a fear that ~",
+    "vietnamese": "có nguy cơ ~",
+    "example_jp": "地震（じしん）が起（お）こる恐（おそ）れがある。",
+    "example_en": "There is a risk of an earthquake.",
+    "example_vi": "Có nguy cơ xảy ra động đất."
+  },
+  {
+    "phrase": "〜ことから",
+    "furigana": "〜ことから",
+    "english": "because of; due to",
+    "vietnamese": "bởi vì ~; do ~",
+    "example_jp": "火（ひ）が出（で）たことから避難（ひなん）した。",
+    "example_en": "We evacuated because of the fire.",
+    "example_vi": "Do có hỏa hoạn nên đã sơ tán."
+  },
+  {
+    "phrase": "〜ということだ",
+    "furigana": "〜ということだ",
+    "english": "it means that ~; I've heard that ~",
+    "vietnamese": "nghe nói là ~; có nghĩa là ~",
+    "example_jp": "彼（かれ）は来（こ）ないということだ。",
+    "example_en": "It means he won’t come.",
+    "example_vi": "Nghe nói anh ta sẽ không đến."
+  },
+  {
+    "phrase": "〜ことなく",
+    "furigana": "〜ことなく",
+    "english": "without doing ~",
+    "vietnamese": "mà không ~",
+    "example_jp": "彼（かれ）は休（やす）むことなく働（はたら）き続（つづ）けた。",
+    "example_en": "He kept working without rest.",
+    "example_vi": "Anh ấy tiếp tục làm việc không nghỉ."
+  },
+  {
+    "phrase": "〜ことにしている",
+    "furigana": "〜ことにしている",
+    "english": "make it a rule to ~",
+    "vietnamese": "xem như là ~; quyết định ~",
+    "example_jp": "毎朝（まいあさ）ジョギングすることにしている。",
+    "example_en": "I make it a rule to jog every morning.",
+    "example_vi": "Tôi quyết định chạy bộ mỗi sáng."
+  },
+  {
+    "phrase": "〜ことになっている",
+    "furigana": "〜ことになっている",
+    "english": "be supposed to ~; it is decided that ~",
+    "vietnamese": "được quy định là ~; dự kiến là ~",
+    "example_jp": "会議（かいぎ）は10時（じ）に始（はじ）まることになっている。",
+    "example_en": "The meeting is scheduled to start at 10.",
+    "example_vi": "Cuộc họp dự kiến bắt đầu lúc 10 giờ."
+  },
+  {
+    "phrase": "〜ようになっている",
+    "furigana": "〜ようになっている",
+    "english": "be arranged so that ~",
+    "vietnamese": "được thiết lập sao cho ~",
+    "example_jp": "このドアは自動（じどう）で閉（し）まるようになっている。",
+    "example_en": "This door is set to close automatically.",
+    "example_vi": "Cửa này được cài để tự động đóng lại."
+  },
+  {
+    "phrase": "〜うちに",
+    "furigana": "〜うちに",
+    "english": "while; during the time ~",
+    "vietnamese": "trong khi còn ~",
+    "example_jp": "若（わか）いうちにたくさん挑戦（ちょうせん）したい。",
+    "example_en": "I want to try many things while I’m young.",
+    "example_vi": "Tôi muốn thử nhiều điều khi còn trẻ."
+  }
+]

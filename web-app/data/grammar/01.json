@@ -1,0 +1,218 @@
+[
+  {
+    "grammar": "〜にあって",
+    "furigana": "〜にあって",
+    "english": "in the situation of; under",
+    "vietnamese": "trong hoàn cảnh; trong tình huống",
+    "example_jp": "困難（こんなん）な状況（じょうきょう）にあっても諦（あきら）めなかった。",
+    "example_en": "Even in a difficult situation, he didn’t give up.",
+    "example_vi": "Dù trong hoàn cảnh khó khăn, anh ấy vẫn không bỏ cuộc."
+  },
+  {
+    "grammar": "〜に至るまで",
+    "furigana": "〜にいたるまで",
+    "english": "up to; until",
+    "vietnamese": "cho đến khi; tới mức",
+    "example_jp": "髪型（かみがた）に至（いた）るまで彼女の真似（まね）をしている。",
+    "example_en": "He imitates her even down to her hairstyle.",
+    "example_vi": "Anh ấy bắt chước cô ấy đến cả kiểu tóc."
+  },
+  {
+    "grammar": "〜を皮切りに",
+    "furigana": "〜をかわきりに",
+    "english": "starting with; beginning with",
+    "vietnamese": "bắt đầu từ",
+    "example_jp": "東京（とうきょう）を皮切（かわき）りに全国（ぜんこく）で公演（こうえん）を行（おこな）う。",
+    "example_en": "Starting with Tokyo, the tour will be held nationwide.",
+    "example_vi": "Bắt đầu từ Tokyo, buổi biểu diễn sẽ được tổ chức trên toàn quốc."
+  },
+  {
+    "grammar": "〜にして",
+    "furigana": "〜にして",
+    "english": "only when; even though",
+    "vietnamese": "chỉ khi; ngay cả",
+    "example_jp": "これはプロにしても難（むずか）しい問題（もんだい）だ。",
+    "example_en": "Even for a professional, this is a difficult problem.",
+    "example_vi": "Ngay cả với chuyên gia, đây cũng là vấn đề khó."
+  },
+  {
+    "grammar": "〜あっての",
+    "furigana": "〜あっての",
+    "english": "because of; thanks to",
+    "vietnamese": "nhờ có; vì có",
+    "example_jp": "皆（みな）さんあっての成功（せいこう）です。",
+    "example_en": "This success is thanks to everyone.",
+    "example_vi": "Thành công này là nhờ mọi người."
+  },
+  {
+    "grammar": "〜ではあるまいし",
+    "furigana": "〜ではあるまいし",
+    "english": "it’s not like; it’s not as if",
+    "vietnamese": "đâu phải là; chẳng phải là",
+    "example_jp": "子供（こども）ではあるまいし、泣（な）くのはやめなさい。",
+    "example_en": "You’re not a child, so stop crying.",
+    "example_vi": "Đâu phải trẻ con mà khóc hoài vậy."
+  },
+  {
+    "grammar": "〜ともなると",
+    "furigana": "〜ともなると",
+    "english": "when it comes to; once you are",
+    "vietnamese": "khi đã là; đến mức",
+    "example_jp": "社会人（しゃかいじん）ともなると、責任（せきにん）が重（おも）くなる。",
+    "example_en": "When you become a working adult, responsibilities increase.",
+    "example_vi": "Khi đã là người đi làm thì trách nhiệm cũng lớn hơn."
+  },
+  {
+    "grammar": "〜ないまでも",
+    "furigana": "〜ないまでも",
+    "english": "even if not; although not to the extent of",
+    "vietnamese": "dù không đến mức... nhưng",
+    "example_jp": "毎日（まいにち）とは言（い）わないまでも、週（しゅう）に一回（いっかい）は運動（うんどう）した方（ほう）がいい。",
+    "example_en": "Even if not daily, it's good to exercise once a week.",
+    "example_vi": "Dù không phải mỗi ngày, nhưng một tuần một lần cũng tốt."
+  },
+  {
+    "grammar": "〜ながらに",
+    "furigana": "〜ながらに",
+    "english": "while; since",
+    "vietnamese": "trong khi; vừa",
+    "example_jp": "生（う）まれながらに才能（さいのう）を持（も）っている。",
+    "example_en": "He has talent since birth.",
+    "example_vi": "Anh ấy có tài năng từ khi sinh ra."
+  },
+  {
+    "grammar": "〜を限りに",
+    "furigana": "〜をかぎりに",
+    "english": "starting from; as of",
+    "vietnamese": "kể từ; chấm dứt từ",
+    "example_jp": "今日（きょう）を限（かぎ）りに酒（さけ）をやめます。",
+    "example_en": "I'm quitting drinking starting today.",
+    "example_vi": "Từ hôm nay tôi sẽ bỏ rượu."
+  },
+  {
+    "grammar": "〜そばから",
+    "furigana": "〜そばから",
+    "english": "as soon as; right after",
+    "vietnamese": "vừa... là",
+    "example_jp": "習（なら）ったそばから忘（わす）れてしまう。",
+    "example_en": "I forget right after learning.",
+    "example_vi": "Học xong là quên liền."
+  },
+  {
+    "grammar": "〜かたわら",
+    "furigana": "〜かたわら",
+    "english": "while doing...; besides",
+    "vietnamese": "vừa... vừa; bên cạnh",
+    "example_jp": "彼（かれ）は会社員（かいしゃいん）のかたわら小説（しょうせつ）を書（か）いている。",
+    "example_en": "He writes novels while working full time.",
+    "example_vi": "Anh ấy vừa làm công ty vừa viết tiểu thuyết."
+  },
+  {
+    "grammar": "〜ずにはおかない",
+    "furigana": "〜ずにはおかない",
+    "english": "cannot help but; will definitely",
+    "vietnamese": "chắc chắn sẽ; không thể không",
+    "example_jp": "この映画（えいが）は感動（かんどう）せずにはおかない。",
+    "example_en": "This movie is sure to move you.",
+    "example_vi": "Bộ phim này chắc chắn sẽ khiến bạn cảm động."
+  },
+  {
+    "grammar": "〜を禁じ得ない",
+    "furigana": "〜をきんじえない",
+    "english": "cannot help but (feel)",
+    "vietnamese": "không thể kìm được",
+    "example_jp": "彼（かれ）の話（はなし）を聞（き）いて涙（なみだ）を禁（きん）じ得（え）なかった。",
+    "example_en": "I couldn’t help crying after hearing his story.",
+    "example_vi": "Nghe chuyện của anh ấy mà tôi không kìm được nước mắt."
+  },
+  {
+    "grammar": "〜にたえる",
+    "furigana": "〜にたえる",
+    "english": "worth doing; can bear",
+    "vietnamese": "đáng để; có thể chịu được",
+    "example_jp": "彼（かれ）の作品（さくひん）は賞賛（しょうさん）にたえる。",
+    "example_en": "His work is worthy of praise.",
+    "example_vi": "Tác phẩm của anh ấy rất đáng được khen ngợi."
+  },
+  {
+    "grammar": "〜をもって",
+    "furigana": "〜をもって",
+    "english": "with; by means of",
+    "vietnamese": "bằng; với",
+    "example_jp": "本日（ほんじつ）をもって退職（たいしょく）します。",
+    "example_en": "I resign as of today.",
+    "example_vi": "Tôi xin nghỉ việc kể từ hôm nay."
+  },
+  {
+    "grammar": "〜べく",
+    "furigana": "〜べく",
+    "english": "in order to",
+    "vietnamese": "để mà",
+    "example_jp": "成功（せいこう）すべく努力（どりょく）する。",
+    "example_en": "Make efforts to succeed.",
+    "example_vi": "Cố gắng để thành công."
+  },
+  {
+    "grammar": "〜ばこそ",
+    "furigana": "〜ばこそ",
+    "english": "precisely because",
+    "vietnamese": "chính vì",
+    "example_jp": "愛（あい）していればこそ別（わか）れるのです。",
+    "example_en": "It's precisely because I love you that I’m leaving.",
+    "example_vi": "Chính vì yêu nên tôi mới rời xa bạn."
+  },
+  {
+    "grammar": "〜とあって",
+    "furigana": "〜とあって",
+    "english": "because; due to",
+    "vietnamese": "bởi vì; do",
+    "example_jp": "人気（にんき）作家（さっか）とあって、会場（かいじょう）は満員（まんいん）だ。",
+    "example_en": "Since he's a popular writer, the venue is full.",
+    "example_vi": "Vì là nhà văn nổi tiếng nên hội trường kín chỗ."
+  },
+  {
+    "grammar": "〜ではすまない",
+    "furigana": "〜ではすまない",
+    "english": "cannot be settled by...",
+    "vietnamese": "không chỉ... là xong",
+    "example_jp": "謝（あやま）るだけではすまない。",
+    "example_en": "Just an apology won't be enough.",
+    "example_vi": "Không thể chỉ xin lỗi mà xong chuyện được."
+  },
+  {
+    "grammar": "〜たりとも",
+    "furigana": "〜たりとも",
+    "english": "not even (one...)",
+    "vietnamese": "dù chỉ (một...) cũng không",
+    "example_jp": "一秒（いちびょう）たりとも無駄（むだ）にできない。",
+    "example_en": "Not even a second can be wasted.",
+    "example_vi": "Không thể lãng phí dù chỉ một giây."
+  },
+  {
+    "grammar": "〜までもない",
+    "furigana": "〜までもない",
+    "english": "no need to; needless to",
+    "vietnamese": "không đến mức phải",
+    "example_jp": "言（い）うまでもないが、試験（しけん）は重要（じゅうよう）だ。",
+    "example_en": "It goes without saying, but the exam is important.",
+    "example_vi": "Không cần nói cũng biết, kỳ thi rất quan trọng."
+  },
+  {
+    "grammar": "〜にもほどがある",
+    "furigana": "〜にもほどがある",
+    "english": "too much; excessive",
+    "vietnamese": "quá mức; không thể chấp nhận",
+    "example_jp": "冗談（じょうだん）にもほどがある！",
+    "example_en": "That joke goes too far!",
+    "example_vi": "Đùa gì mà quá đáng vậy!"
+  },
+  {
+    "grammar": "〜に足る",
+    "furigana": "〜にたる",
+    "english": "worth; sufficient to",
+    "vietnamese": "đáng để; xứng đáng để",
+    "example_jp": "信頼（しんらい）に足（た）る人物（じんぶつ）だ。",
+    "example_en": "He is a person worthy of trust.",
+    "example_vi": "Anh ta là người đáng tin cậy."
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "word": "反映",
+    "furigana": "はんえい",
+    "english": "reflection; influence",
+    "vietnamese": "phản ánh",
+    "example_jp": "結果に努力が反映された。",
+    "example_en": "Efforts were reflected in the results.",
+    "example_vi": "Kết quả phản ánh sự nỗ lực."
+  },
+  {
+    "word": "反発",
+    "furigana": "はんぱつ",
+    "english": "resistance; backlash",
+    "vietnamese": "phản kháng",
+    "example_jp": "新制度に反発する声が上がる。",
+    "example_en": "Voices opposing the new system arise.",
+    "example_vi": "Xuất hiện tiếng nói phản đối hệ thống mới."
+  },
+  {
+    "word": "否定",
+    "furigana": "ひてい",
+    "english": "denial; negation",
+    "vietnamese": "phủ định",
+    "example_jp": "その事実を否定できない。",
+    "example_en": "You can’t deny the fact.",
+    "example_vi": "Không thể phủ nhận sự thật đó."
+  },
+  {
+    "word": "批判",
+    "furigana": "ひはん",
+    "english": "criticism",
+    "vietnamese": "phê phán; chỉ trích",
+    "example_jp": "政府の対応を批判する。",
+    "example_en": "Criticize the government's response.",
+    "example_vi": "Chỉ trích cách ứng phó của chính phủ."
+  },
+  {
+    "word": "頻繁",
+    "furigana": "ひんぱん",
+    "english": "frequent",
+    "vietnamese": "thường xuyên",
+    "example_jp": "最近地震が頻繁に起きている。",
+    "example_en": "Earthquakes have been occurring frequently.",
+    "example_vi": "Dạo này động đất xảy ra thường xuyên."
+  },
+  {
+    "word": "描写",
+    "furigana": "びょうしゃ",
+    "english": "description; depiction",
+    "vietnamese": "miêu tả",
+    "example_jp": "感情の描写が巧みだ。",
+    "example_en": "The emotional depiction is skillful.",
+    "example_vi": "Miêu tả cảm xúc rất tinh tế."
+  },
+  {
+    "word": "復旧",
+    "furigana": "ふっきゅう",
+    "english": "restoration; recovery",
+    "vietnamese": "phục hồi",
+    "example_jp": "道路が復旧された。",
+    "example_en": "The road was restored.",
+    "example_vi": "Con đường đã được khôi phục."
+  },
+  {
+    "word": "普及",
+    "furigana": "ふきゅう",
+    "english": "spread; popularization",
+    "vietnamese": "phổ cập",
+    "example_jp": "スマートフォンが普及している。",
+    "example_en": "Smartphones are becoming widespread.",
+    "example_vi": "Điện thoại thông minh đang ngày càng phổ biến."
+  },
+  {
+    "word": "分析",
+    "furigana": "ぶんせき",
+    "english": "analysis",
+    "vietnamese": "phân tích",
+    "example_jp": "データを分析する。",
+    "example_en": "Analyze the data.",
+    "example_vi": "Phân tích dữ liệu."
+  },
+  {
+    "word": "方針",
+    "furigana": "ほうしん",
+    "english": "policy; direction",
+    "vietnamese": "phương châm; chính sách",
+    "example_jp": "会社の方針を決める。",
+    "example_en": "Decide the company’s policy.",
+    "example_vi": "Xác định phương châm của công ty."
+  },
+  {
+    "word": "補足",
+    "furigana": "ほそく",
+    "english": "supplement; addition",
+    "vietnamese": "bổ sung",
+    "example_jp": "説明を補足する。",
+    "example_en": "Supplement the explanation.",
+    "example_vi": "Bổ sung phần giải thích."
+  },
+  {
+    "word": "模索",
+    "furigana": "もさく",
+    "english": "search; exploration",
+    "vietnamese": "tìm kiếm; mò mẫm",
+    "example_jp": "解決策を模索する。",
+    "example_en": "Search for a solution.",
+    "example_vi": "Tìm kiếm giải pháp."
+  },
+  {
+    "word": "目安",
+    "furigana": "めやす",
+    "english": "standard; guideline",
+    "vietnamese": "tiêu chuẩn; ước chừng",
+    "example_jp": "時間の目安は1時間です。",
+    "example_en": "The time guideline is one hour.",
+    "example_vi": "Thời gian ước lượng là một tiếng."
+  },
+  {
+    "word": "余裕",
+    "furigana": "よゆう",
+    "english": "margin; room; time",
+    "vietnamese": "dư dả; thoải mái",
+    "example_jp": "時間に余裕がある。",
+    "example_en": "There’s extra time.",
+    "example_vi": "Có dư thời gian."
+  },
+  {
+    "word": "略す",
+    "furigana": "りゃくす",
+    "english": "abbreviate; omit",
+    "vietnamese": "viết tắt; lược bỏ",
+    "example_jp": "名前を略して呼ぶ。",
+    "example_en": "Call them by an abbreviated name.",
+    "example_vi": "Gọi tên viết tắt."
+  },
+  {
+    "word": "要旨",
+    "furigana": "ようし",
+    "english": "summary; gist",
+    "vietnamese": "tóm tắt; cốt lõi",
+    "example_jp": "報告の要旨を述べる。",
+    "example_en": "State the summary of the report.",
+    "example_vi": "Trình bày phần tóm tắt của báo cáo."
+  },
+  {
+    "word": "了承",
+    "furigana": "りょうしょう",
+    "english": "acknowledgment; consent",
+    "vietnamese": "chấp thuận",
+    "example_jp": "了承を得る。",
+    "example_en": "Obtain consent.",
+    "example_vi": "Nhận được sự đồng thuận."
+  },
+  {
+    "word": "臨時",
+    "furigana": "りんじ",
+    "english": "temporary; special",
+    "vietnamese": "tạm thời; bất thường",
+    "example_jp": "臨時の対応が必要だ。",
+    "example_en": "Temporary measures are needed.",
+    "example_vi": "Cần có biện pháp tạm thời."
+  },
+  {
+    "word": "割り当て",
+    "furigana": "わりあて",
+    "english": "allocation; assignment",
+    "vietnamese": "phân bổ",
+    "example_jp": "作業を割り当てる。",
+    "example_en": "Assign the task.",
+    "example_vi": "Phân công công việc."
+  },
+  {
+    "word": "枠組み",
+    "furigana": "わくぐみ",
+    "english": "framework",
+    "vietnamese": "khuôn khổ; cơ cấu",
+    "example_jp": "新しい枠組みを作る。",
+    "example_en": "Create a new framework.",
+    "example_vi": "Tạo ra khuôn khổ mới."
+  },
+  {
+    "word": "扱う",
+    "furigana": "あつかう",
+    "english": "handle; treat",
+    "vietnamese": "xử lý; đối xử",
+    "example_jp": "彼を特別に扱う。",
+    "example_en": "Treat him specially.",
+    "example_vi": "Đối xử đặc biệt với anh ấy."
+  },
+  {
+    "word": "依頼",
+    "furigana": "いらい",
+    "english": "request; commission",
+    "vietnamese": "yêu cầu; nhờ vả",
+    "example_jp": "仕事を依頼する。",
+    "example_en": "Request a job.",
+    "example_vi": "Nhờ làm công việc."
+  },
+  {
+    "word": "維持",
+    "furigana": "いじ",
+    "english": "maintain; sustain",
+    "vietnamese": "duy trì",
+    "example_jp": "健康を維持する。",
+    "example_en": "Maintain health.",
+    "example_vi": "Duy trì sức khỏe."
+  },
+  {
+    "word": "圧力",
+    "furigana": "あつりょく",
+    "english": "pressure; stress",
+    "vietnamese": "áp lực",
+    "example_jp": "社会からの圧力がある。",
+    "example_en": "There is pressure from society.",
+    "example_vi": "Có áp lực từ xã hội."
+  }
+]

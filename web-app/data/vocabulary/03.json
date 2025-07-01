@@ -1,0 +1,218 @@
+[
+  {
+    "word": "混乱",
+    "furigana": "こんらん",
+    "english": "confusion; chaos",
+    "vietnamese": "hỗn loạn; rối loạn",
+    "example_jp": "会場が混乱している。",
+    "example_en": "The venue is in chaos.",
+    "example_vi": "Hội trường đang rất hỗn loạn."
+  },
+  {
+    "word": "再三",
+    "furigana": "さいさん",
+    "english": "repeatedly",
+    "vietnamese": "nhiều lần",
+    "example_jp": "再三注意された。",
+    "example_en": "I was warned repeatedly.",
+    "example_vi": "Tôi đã bị nhắc nhở nhiều lần."
+  },
+  {
+    "word": "削減",
+    "furigana": "さくげん",
+    "english": "reduction; cut",
+    "vietnamese": "cắt giảm",
+    "example_jp": "予算を削減する。",
+    "example_en": "Reduce the budget.",
+    "example_vi": "Cắt giảm ngân sách."
+  },
+  {
+    "word": "妥当",
+    "furigana": "だとう",
+    "english": "reasonable; appropriate",
+    "vietnamese": "hợp lý",
+    "example_jp": "妥当な判断だ。",
+    "example_en": "It’s a reasonable decision.",
+    "example_vi": "Đó là một quyết định hợp lý."
+  },
+  {
+    "word": "支持",
+    "furigana": "しじ",
+    "english": "support; backing",
+    "vietnamese": "ủng hộ; hỗ trợ",
+    "example_jp": "彼を支持する。",
+    "example_en": "Support him.",
+    "example_vi": "Ủng hộ anh ấy."
+  },
+  {
+    "word": "主体",
+    "furigana": "しゅたい",
+    "english": "main agent; core",
+    "vietnamese": "chủ thể; trung tâm",
+    "example_jp": "学生主体のイベント。",
+    "example_en": "A student-led event.",
+    "example_vi": "Sự kiện do sinh viên làm chủ."
+  },
+  {
+    "word": "縮小",
+    "furigana": "しゅくしょう",
+    "english": "reduction; shrinkage",
+    "vietnamese": "thu nhỏ",
+    "example_jp": "規模を縮小する。",
+    "example_en": "Reduce the scale.",
+    "example_vi": "Thu nhỏ quy mô."
+  },
+  {
+    "word": "進出",
+    "furigana": "しんしゅつ",
+    "english": "expansion into; advance",
+    "vietnamese": "mở rộng; tiến vào",
+    "example_jp": "海外市場に進出する。",
+    "example_en": "Expand into overseas markets.",
+    "example_vi": "Tiến vào thị trường nước ngoài."
+  },
+  {
+    "word": "請求",
+    "furigana": "せいきゅう",
+    "english": "claim; billing",
+    "vietnamese": "yêu cầu thanh toán",
+    "example_jp": "料金を請求する。",
+    "example_en": "Request payment.",
+    "example_vi": "Yêu cầu thanh toán chi phí."
+  },
+  {
+    "word": "成立",
+    "furigana": "せいりつ",
+    "english": "establishment; formation",
+    "vietnamese": "thành lập; thiết lập",
+    "example_jp": "契約が成立した。",
+    "example_en": "The contract was concluded.",
+    "example_vi": "Hợp đồng đã được ký kết."
+  },
+  {
+    "word": "接触",
+    "furigana": "せっしょく",
+    "english": "contact; touch",
+    "vietnamese": "tiếp xúc",
+    "example_jp": "感染者と接触した。",
+    "example_en": "Had contact with an infected person.",
+    "example_vi": "Đã tiếp xúc với người nhiễm bệnh."
+  },
+  {
+    "word": "宣伝",
+    "furigana": "せんでん",
+    "english": "advertisement; publicity",
+    "vietnamese": "tuyên truyền; quảng cáo",
+    "example_jp": "新商品を宣伝する。",
+    "example_en": "Advertise the new product.",
+    "example_vi": "Quảng bá sản phẩm mới."
+  },
+  {
+    "word": "措置",
+    "furigana": "そち",
+    "english": "measure; step",
+    "vietnamese": "biện pháp",
+    "example_jp": "適切な措置を取る。",
+    "example_en": "Take appropriate measures.",
+    "example_vi": "Thực hiện biện pháp phù hợp."
+  },
+  {
+    "word": "対応",
+    "furigana": "たいおう",
+    "english": "response; handling",
+    "vietnamese": "đối ứng; xử lý",
+    "example_jp": "緊急事態に対応する。",
+    "example_en": "Respond to an emergency.",
+    "example_vi": "Ứng phó với tình huống khẩn cấp."
+  },
+  {
+    "word": "対象",
+    "furigana": "たいしょう",
+    "english": "target; subject",
+    "vietnamese": "đối tượng",
+    "example_jp": "調査の対象は学生だ。",
+    "example_en": "The survey targets students.",
+    "example_vi": "Đối tượng khảo sát là sinh viên."
+  },
+  {
+    "word": "蓄積",
+    "furigana": "ちくせき",
+    "english": "accumulation",
+    "vietnamese": "tích lũy",
+    "example_jp": "疲労が蓄積する。",
+    "example_en": "Fatigue accumulates.",
+    "example_vi": "Cơ thể bị tích tụ mệt mỏi."
+  },
+  {
+    "word": "調整",
+    "furigana": "ちょうせい",
+    "english": "adjustment",
+    "vietnamese": "điều chỉnh",
+    "example_jp": "スケジュールを調整する。",
+    "example_en": "Adjust the schedule.",
+    "example_vi": "Điều chỉnh lịch trình."
+  },
+  {
+    "word": "通達",
+    "furigana": "つうたつ",
+    "english": "notification; notice",
+    "vietnamese": "thông báo",
+    "example_jp": "会社から通達があった。",
+    "example_en": "There was a notification from the company.",
+    "example_vi": "Công ty đã gửi thông báo."
+  },
+  {
+    "word": "提案",
+    "furigana": "ていあん",
+    "english": "proposal; suggestion",
+    "vietnamese": "đề xuất",
+    "example_jp": "改善案を提案する。",
+    "example_en": "Propose an improvement plan.",
+    "example_vi": "Đề xuất phương án cải tiến."
+  },
+  {
+    "word": "展開",
+    "furigana": "てんかい",
+    "english": "development; unfolding",
+    "vietnamese": "triển khai; phát triển",
+    "example_jp": "事業を展開する。",
+    "example_en": "Develop a business.",
+    "example_vi": "Triển khai kinh doanh."
+  },
+  {
+    "word": "撤回",
+    "furigana": "てっかい",
+    "english": "retraction; withdrawal",
+    "vietnamese": "rút lại; thu hồi",
+    "example_jp": "発言を撤回する。",
+    "example_en": "Withdraw the statement.",
+    "example_vi": "Rút lại phát ngôn."
+  },
+  {
+    "word": "特定",
+    "furigana": "とくてい",
+    "english": "specific; particular",
+    "vietnamese": "cụ thể; đặc thù",
+    "example_jp": "特定の条件を満たす。",
+    "example_en": "Meet specific conditions.",
+    "example_vi": "Đáp ứng điều kiện cụ thể."
+  },
+  {
+    "word": "独自",
+    "furigana": "どくじ",
+    "english": "original; unique",
+    "vietnamese": "riêng; độc đáo",
+    "example_jp": "独自の技術を持つ。",
+    "example_en": "Have unique technology.",
+    "example_vi": "Sở hữu công nghệ độc quyền."
+  },
+  {
+    "word": "認識",
+    "furigana": "にんしき",
+    "english": "recognition; awareness",
+    "vietnamese": "nhận thức",
+    "example_jp": "状況を正しく認識する。",
+    "example_en": "Accurately recognize the situation.",
+    "example_vi": "Nhận thức đúng tình hình."
+  }
+]

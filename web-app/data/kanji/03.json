@@ -1,0 +1,227 @@
+[
+  {
+    "kanji": "論",
+    "furigana": "ろん",
+    "english": "argument; theory",
+    "vietnamese": "lý luận; lý thuyết",
+    "example_jp": "論文を書く。",
+    "example_en": "Write a thesis.",
+    "example_vi": "Viết luận văn."
+  },
+  {
+    "kanji": "証",
+    "furigana": "しょう",
+    "english": "proof; evidence",
+    "vietnamese": "bằng chứng",
+    "example_jp": "証拠が見つかった。",
+    "example_en": "Evidence was found.",
+    "example_vi": "Đã tìm thấy bằng chứng."
+  },
+  {
+    "kanji": "認",
+    "furigana": "みと",
+    "english": "to recognize; admit",
+    "vietnamese": "thừa nhận; công nhận",
+    "example_jp": "事実を認める。",
+    "example_en": "Admit the facts.",
+    "example_vi": "Thừa nhận sự thật."
+  },
+  {
+    "kanji": "提",
+    "furigana": "てい",
+    "english": "present; propose",
+    "vietnamese": "đề xuất",
+    "example_jp": "提案を出す。",
+    "example_en": "Make a proposal.",
+    "example_vi": "Đưa ra đề xuất."
+  },
+  {
+    "kanji": "案",
+    "furigana": "あん",
+    "english": "idea; plan",
+    "vietnamese": "kế hoạch; phương án",
+    "example_jp": "新しい案を考える。",
+    "example_en": "Think of a new idea.",
+    "example_vi": "Nghĩ ra một phương án mới."
+  },
+  {
+    "kanji": "策",
+    "furigana": "さく",
+    "english": "policy; plan",
+    "vietnamese": "chiến lược; sách lược",
+    "example_jp": "対策を練る。",
+    "example_en": "Formulate countermeasures.",
+    "example_vi": "Lên phương án đối phó."
+  },
+  {
+    "kanji": "課",
+    "furigana": "か",
+    "english": "section; assignment",
+    "vietnamese": "bài học; bộ phận",
+    "example_jp": "宿題の課を読む。",
+    "example_en": "Read the homework section.",
+    "example_vi": "Đọc phần bài tập về nhà."
+  },
+  {
+    "kanji": "解",
+    "furigana": "かい",
+    "english": "solve; explanation",
+    "vietnamese": "giải thích; giải quyết",
+    "example_jp": "問題を解決する。",
+    "example_en": "Solve the problem.",
+    "example_vi": "Giải quyết vấn đề."
+  },
+  {
+    "kanji": "説",
+    "furigana": "せつ",
+    "english": "theory; explanation",
+    "vietnamese": "giải thích; lý thuyết",
+    "example_jp": "仮説を立てる。",
+    "example_en": "Formulate a hypothesis.",
+    "example_vi": "Đưa ra giả thuyết."
+  },
+  {
+    "kanji": "状",
+    "furigana": "じょう",
+    "english": "condition; status",
+    "vietnamese": "tình trạng",
+    "example_jp": "健康状態が悪い。",
+    "example_en": "Health condition is poor.",
+    "example_vi": "Tình trạng sức khỏe kém."
+  },
+  {
+    "kanji": "況",
+    "furigana": "きょう",
+    "english": "situation; condition",
+    "vietnamese": "tình hình",
+    "example_jp": "状況を把握する。",
+    "example_en": "Grasp the situation.",
+    "example_vi": "Nắm bắt tình hình."
+  },
+  {
+    "kanji": "報",
+    "furigana": "ほう",
+    "english": "report; news",
+    "vietnamese": "báo cáo; tin tức",
+    "example_jp": "最新情報を報告する。",
+    "example_en": "Report the latest information.",
+    "example_vi": "Báo cáo thông tin mới nhất."
+  },
+  {
+    "kanji": "告",
+    "furigana": "こく",
+    "english": "inform; announce",
+    "vietnamese": "thông báo; tuyên bố",
+    "example_jp": "結婚を報告する。",
+    "example_en": "Announce marriage.",
+    "example_vi": "Thông báo kết hôn."
+  },
+  {
+    "kanji": "設",
+    "furigana": "せつ",
+    "english": "establish; install",
+    "vietnamese": "thiết lập; cài đặt",
+    "example_jp": "新しい制度を設ける。",
+    "example_en": "Establish a new system.",
+    "example_vi": "Thiết lập hệ thống mới."
+  },
+  {
+    "kanji": "備",
+    "furigana": "そな",
+    "english": "prepare; equip",
+    "vietnamese": "chuẩn bị; trang bị",
+    "example_jp": "災害に備える。",
+    "example_en": "Prepare for disasters.",
+    "example_vi": "Chuẩn bị đối phó thiên tai."
+  },
+  {
+    "kanji": "際",
+    "furigana": "さい",
+    "english": "occasion; time",
+    "vietnamese": "dịp; lúc",
+    "example_jp": "出張の際に会いました。",
+    "example_en": "I met him during a business trip.",
+    "example_vi": "Tôi đã gặp anh ấy trong chuyến công tác."
+  },
+  {
+    "kanji": "応",
+    "furigana": "おう",
+    "english": "respond; reply",
+    "vietnamese": "ứng; phản hồi",
+    "example_jp": "要望に応える。",
+    "example_en": "Respond to the request.",
+    "example_vi": "Đáp ứng yêu cầu."
+  },
+  {
+    "kanji": "企",
+    "furigana": "き",
+    "english": "plan; enterprise",
+    "vietnamese": "kế hoạch; doanh nghiệp",
+    "example_jp": "新しい事業を企画する。",
+    "example_en": "Plan a new business.",
+    "example_vi": "Lên kế hoạch cho dự án mới."
+  },
+  {
+    "kanji": "営",
+    "furigana": "えい",
+    "english": "manage; operate",
+    "vietnamese": "kinh doanh; điều hành",
+    "example_jp": "レストランを営む。",
+    "example_en": "Run a restaurant.",
+    "example_vi": "Kinh doanh nhà hàng."
+  },
+  {
+    "kanji": "展",
+    "furigana": "てん",
+    "english": "develop; expand",
+    "vietnamese": "phát triển; mở rộng",
+    "example_jp": "海外に展開する。",
+    "example_en": "Expand overseas.",
+    "example_vi": "Mở rộng ra nước ngoài."
+  },
+  {
+    "kanji": "責",
+    "furigana": "せき",
+    "english": "blame; duty",
+    "vietnamese": "trách nhiệm",
+    "example_jp": "責任を持つ。",
+    "example_en": "Take responsibility.",
+    "example_vi": "Chịu trách nhiệm."
+  },
+  {
+    "kanji": "任",
+    "furigana": "にん",
+    "english": "duty; appoint",
+    "vietnamese": "nhiệm vụ; bổ nhiệm",
+    "example_jp": "社長に任命された。",
+    "example_en": "Appointed as president.",
+    "example_vi": "Được bổ nhiệm làm giám đốc."
+  },
+  {
+    "kanji": "権",
+    "furigana": "けん",
+    "english": "right; authority",
+    "vietnamese": "quyền hạn",
+    "example_jp": "権利を守る。",
+    "example_en": "Protect one’s rights.",
+    "example_vi": "Bảo vệ quyền lợi."
+  },
+  {
+    "kanji": "制",
+    "furigana": "せい",
+    "english": "control; system",
+    "vietnamese": "chế độ; kiểm soát",
+    "example_jp": "制度を整える。",
+    "example_en": "Improve the system.",
+    "example_vi": "Cải thiện hệ thống."
+  },
+  {
+    "kanji": "限",
+    "furigana": "かぎ",
+    "english": "limit; restrict",
+    "vietnamese": "giới hạn",
+    "example_jp": "人数を限る。",
+    "example_en": "Limit the number of people.",
+    "example_vi": "Giới hạn số người."
+  }
+]

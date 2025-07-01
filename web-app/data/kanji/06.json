@@ -1,0 +1,92 @@
+[
+  {
+    "kanji": "判",
+    "furigana": "はん",
+    "english": "judge; decision",
+    "vietnamese": "phán đoán",
+    "example_jp": "判断が速い。",
+    "example_en": "Quick judgment.",
+    "example_vi": "Phán đoán nhanh chóng."
+  },
+  {
+    "kanji": "断",
+    "furigana": "だん",
+    "english": "refuse; cut off",
+    "vietnamese": "từ chối; cắt đứt",
+    "example_jp": "関係を断つ。",
+    "example_en": "Cut off the relationship.",
+    "example_vi": "Chấm dứt mối quan hệ."
+  },
+  {
+    "kanji": "認",
+    "furigana": "にん",
+    "english": "recognize",
+    "vietnamese": "công nhận",
+    "example_jp": "認識が甘い。",
+    "example_en": "Lacking awareness.",
+    "example_vi": "Nhận thức chưa đủ."
+  },
+  {
+    "kanji": "証",
+    "furigana": "しょう",
+    "english": "evidence; proof",
+    "vietnamese": "chứng cứ",
+    "example_jp": "証拠を提出する。",
+    "example_en": "Submit evidence.",
+    "example_vi": "Nộp bằng chứng."
+  },
+  {
+    "kanji": "類",
+    "furigana": "るい",
+    "english": "type; kind",
+    "vietnamese": "loại; giống",
+    "example_jp": "同類の問題。",
+    "example_en": "Similar problems.",
+    "example_vi": "Những vấn đề tương tự."
+  },
+  {
+    "kanji": "例",
+    "furigana": "れい",
+    "english": "example",
+    "vietnamese": "ví dụ",
+    "example_jp": "例を挙げる。",
+    "example_en": "Give an example.",
+    "example_vi": "Đưa ra ví dụ."
+  },
+  {
+    "kanji": "個",
+    "furigana": "こ",
+    "english": "individual; piece",
+    "vietnamese": "cá nhân; cái",
+    "example_jp": "一個ずつ渡す。",
+    "example_en": "Hand out one by one.",
+    "example_vi": "Phát từng cái một."
+  },
+  {
+    "kanji": "件",
+    "furigana": "けん",
+    "english": "matter; case",
+    "vietnamese": "vụ việc",
+    "example_jp": "重要な件。",
+    "example_en": "Important case.",
+    "example_vi": "Vụ việc quan trọng."
+  },
+  {
+    "kanji": "状",
+    "furigana": "じょう",
+    "english": "status; shape",
+    "vietnamese": "tình trạng",
+    "example_jp": "状態が悪化した。",
+    "example_en": "The condition worsened.",
+    "example_vi": "Tình trạng xấu đi."
+  },
+  {
+    "kanji": "局",
+    "furigana": "きょく",
+    "english": "bureau; department",
+    "vietnamese": "cục; bộ phận",
+    "example_jp": "税務局で手続きする。",
+    "example_en": "Complete procedures at the tax office.",
+    "example_vi": "Làm thủ tục tại cục thuế."
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "phrase": "〜ばかりに",
+    "furigana": "〜ばかりに",
+    "english": "just because ~ (bad result)",
+    "vietnamese": "chỉ vì ~ (mà kết quả xấu)",
+    "example_jp": "嘘（うそ）をついたばかりに、信用（しんよう）を失（うしな）った。",
+    "example_en": "Just because I lied, I lost their trust.",
+    "example_vi": "Chỉ vì nói dối mà tôi đánh mất lòng tin."
+  },
+  {
+    "phrase": "〜ことから",
+    "furigana": "〜ことから",
+    "english": "because of ~; from the fact that",
+    "vietnamese": "từ việc ~ mà",
+    "example_jp": "声（こえ）が大（おお）きいことから、彼（かれ）は先生（せんせい）に選（えら）ばれた。",
+    "example_en": "Because of his loud voice, he was chosen as the presenter.",
+    "example_vi": "Vì giọng to nên anh ấy được chọn làm người thuyết trình."
+  },
+  {
+    "phrase": "〜だけに",
+    "furigana": "〜だけに",
+    "english": "because ~; being that ~",
+    "vietnamese": "chính vì ~ nên càng ~",
+    "example_jp": "彼（かれ）は努力家（どりょくか）だけに、結果（けっか）に落胆（らくたん）している。",
+    "example_en": "Since he's a hard worker, he's really disappointed with the result.",
+    "example_vi": "Chính vì anh ấy rất cố gắng nên lại càng thất vọng với kết quả."
+  },
+  {
+    "phrase": "〜にしても",
+    "furigana": "〜にしても",
+    "english": "even if ~; even supposing",
+    "vietnamese": "dù là ~ đi nữa",
+    "example_jp": "遅刻（ちこく）するにしても、連絡（れんらく）ぐらいしてほしい。",
+    "example_en": "Even if you’re going to be late, I wish you’d at least call.",
+    "example_vi": "Dù có đến muộn thì cũng nên liên lạc chứ."
+  },
+  {
+    "phrase": "〜に限って",
+    "furigana": "〜にかぎって",
+    "english": "especially when ~",
+    "vietnamese": "đúng lúc ~ thì lại ~",
+    "example_jp": "雨（あめ）が降（ふ）る日に限（かぎ）って傘（かさ）を忘（わす）れる。",
+    "example_en": "On the day it rains, I forget my umbrella.",
+    "example_vi": "Đúng ngày trời mưa thì lại quên ô."
+  },
+  {
+    "phrase": "〜というものだ",
+    "furigana": "〜というものだ",
+    "english": "is truly ~; should be called ~",
+    "vietnamese": "đúng là ~; chính là ~",
+    "example_jp": "それはずるいというものだ。",
+    "example_en": "That’s what you call cheating.",
+    "example_vi": "Cái đó đúng là gian lận đấy."
+  },
+  {
+    "phrase": "〜とばかりに",
+    "furigana": "〜とばかりに",
+    "english": "as if to say ~",
+    "vietnamese": "như thể muốn nói ~",
+    "example_jp": "彼（かれ）は「見（み）ろ」とばかりに笑（わら）った。",
+    "example_en": "He laughed as if to say, 'See?'",
+    "example_vi": "Anh ta cười như muốn nói 'Thấy chưa?'"
+  },
+  {
+    "phrase": "〜に足る",
+    "furigana": "〜にたる",
+    "english": "worthy of; enough to ~",
+    "vietnamese": "đủ để ~; xứng đáng với ~",
+    "example_jp": "信頼（しんらい）に足（た）る人物（じんぶつ）だ。",
+    "example_en": "He is a person worthy of trust.",
+    "example_vi": "Anh ấy là người đáng để tin tưởng."
+  },
+  {
+    "phrase": "〜をよそに",
+    "furigana": "〜をよそに",
+    "english": "ignoring ~; disregarding ~",
+    "vietnamese": "mặc kệ ~; bất chấp ~",
+    "example_jp": "親（おや）の心配（しんぱい）をよそに出（で）かけてしまった。",
+    "example_en": "He went out ignoring his parents’ concerns.",
+    "example_vi": "Bỏ ngoài tai sự lo lắng của bố mẹ, cậu ấy vẫn ra ngoài."
+  },
+  {
+    "phrase": "〜んがために",
+    "furigana": "〜んがために",
+    "english": "in order to ~ (formal)",
+    "vietnamese": "để mà ~ (trang trọng)",
+    "example_jp": "成功（せいこう）せんがために必死（ひっし）に努力（どりょく）した。",
+    "example_en": "He worked desperately in order to succeed.",
+    "example_vi": "Anh ta đã nỗ lực hết mình để thành công."
+  },
+  {
+    "phrase": "〜にもかかわらず",
+    "furigana": "〜にもかかわらず",
+    "english": "despite; although",
+    "vietnamese": "mặc dù ~",
+    "example_jp": "雨（あめ）が降（ふ）っているにもかかわらず、試合（しあい）は行（おこな）われた。",
+    "example_en": "Despite the rain, the match was held.",
+    "example_vi": "Mặc dù trời mưa, trận đấu vẫn diễn ra."
+  },
+  {
+    "phrase": "〜を皮切りに",
+    "furigana": "〜をかわきりに",
+    "english": "starting with ~",
+    "vietnamese": "khởi đầu là ~",
+    "example_jp": "福岡（ふくおか）を皮切（かわき）りに全国（ぜんこく）でライブが開（ひら）かれる。",
+    "example_en": "The concert tour will start in Fukuoka and go nationwide.",
+    "example_vi": "Buổi biểu diễn sẽ khởi đầu tại Fukuoka và tiếp tục trên toàn quốc."
+  },
+  {
+    "phrase": "〜を余儀なくされる",
+    "furigana": "〜をよぎなくされる",
+    "english": "be forced to ~",
+    "vietnamese": "bị buộc phải ~",
+    "example_jp": "彼（かれ）は辞職（じしょく）を余儀（よぎ）なくされた。",
+    "example_en": "He was forced to resign.",
+    "example_vi": "Anh ấy buộc phải từ chức."
+  },
+  {
+    "phrase": "〜にたえる",
+    "furigana": "〜にたえる",
+    "english": "worth ~; capable of ~",
+    "vietnamese": "đáng để ~; chịu đựng được ~",
+    "example_jp": "鑑賞（かんしょう）にたえる映画（えいが）だ。",
+    "example_en": "It’s a movie worth watching.",
+    "example_vi": "Đây là một bộ phim đáng xem."
+  },
+  {
+    "phrase": "〜を禁じ得ない",
+    "furigana": "〜をきんじえない",
+    "english": "cannot hold back (emotion)",
+    "vietnamese": "không thể kìm nén được",
+    "example_jp": "感動（かんどう）を禁（きん）じ得（え）なかった。",
+    "example_en": "I couldn’t hold back my emotions.",
+    "example_vi": "Tôi không thể kìm được xúc động."
+  },
+  {
+    "phrase": "〜たりとも",
+    "furigana": "〜たりとも",
+    "english": "not even (a single...)",
+    "vietnamese": "dù chỉ một ~ cũng không",
+    "example_jp": "一日（いちにち）たりとも忘（わす）れたことはない。",
+    "example_en": "Not even for a single day have I forgotten.",
+    "example_vi": "Dù chỉ một ngày tôi cũng không quên."
+  },
+  {
+    "phrase": "〜に至るまで",
+    "furigana": "〜にいたるまで",
+    "english": "up to; until (formal)",
+    "vietnamese": "cho đến cả ~",
+    "example_jp": "髪型（かみがた）に至（いた）るまで彼女（かのじょ）を真似（まね）している。",
+    "example_en": "He imitates her even down to her hairstyle.",
+    "example_vi": "Anh ấy bắt chước cô ấy đến cả kiểu tóc."
+  },
+  {
+    "phrase": "〜をもって",
+    "furigana": "〜をもって",
+    "english": "as of; by means of",
+    "vietnamese": "kể từ ~; bằng ~",
+    "example_jp": "本日（ほんじつ）をもって閉店（へいてん）します。",
+    "example_en": "We will close the store as of today.",
+    "example_vi": "Cửa hàng sẽ đóng cửa kể từ hôm nay."
+  },
+  {
+    "phrase": "〜を限りに",
+    "furigana": "〜をかぎりに",
+    "english": "starting from; as of (last)",
+    "vietnamese": "từ ~; đến ~ là hết",
+    "example_jp": "今日（きょう）を限（かぎ）りに禁煙（きんえん）します。",
+    "example_en": "I will quit smoking starting today.",
+    "example_vi": "Từ hôm nay tôi sẽ bỏ thuốc."
+  },
+  {
+    "phrase": "〜が最後",
+    "furigana": "〜がさいご",
+    "english": "once ~ happens, then (no turning back)",
+    "vietnamese": "một khi đã ~ thì",
+    "example_jp": "やり始（はじ）めたが最後（さいご）、止（と）められない。",
+    "example_en": "Once I start, I can’t stop.",
+    "example_vi": "Một khi đã bắt đầu là không thể dừng lại."
+  },
+  {
+    "phrase": "〜ことだし",
+    "furigana": "〜ことだし",
+    "english": "since; considering that",
+    "vietnamese": "vì ~ nên",
+    "example_jp": "雨（あめ）も降（ふ）っていることだし、今日は家（いえ）にいよう。",
+    "example_en": "Since it’s raining, let’s stay home.",
+    "example_vi": "Vì trời mưa nên ở nhà thôi."
+  },
+  {
+    "phrase": "〜ないまでも",
+    "furigana": "〜ないまでも",
+    "english": "even if not ~; at least ~",
+    "vietnamese": "dù không đến mức ~ thì cũng ~",
+    "example_jp": "毎日（まいにち）でないまでも、週（しゅう）に一回（いっかい）は運動（うんどう）しよう。",
+    "example_en": "Even if not every day, let’s work out once a week.",
+    "example_vi": "Dù không mỗi ngày thì cũng nên tập thể dục mỗi tuần một lần."
+  }
+]

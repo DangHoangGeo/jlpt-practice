@@ -1,0 +1,227 @@
+[
+  {
+    "word": "曖昧",
+    "furigana": "あいまい",
+    "english": "vague; ambiguous",
+    "vietnamese": "mơ hồ; không rõ ràng",
+    "example_jp": "彼の返事は曖昧だった。",
+    "example_en": "His response was vague.",
+    "example_vi": "Câu trả lời của anh ấy rất mơ hồ."
+  },
+  {
+    "word": "相応しい",
+    "furigana": "ふさわしい",
+    "english": "appropriate; suitable",
+    "vietnamese": "phù hợp; xứng đáng",
+    "example_jp": "彼はリーダーに相応しい人物だ。",
+    "example_en": "He is a person suitable to be a leader.",
+    "example_vi": "Anh ấy là người xứng đáng làm lãnh đạo."
+  },
+  {
+    "word": "煽てる",
+    "furigana": "おだてる",
+    "english": "to flatter; to sweet-talk",
+    "vietnamese": "nịnh hót; tâng bốc",
+    "example_jp": "子供を煽てて勉強させる。",
+    "example_en": "Flatter the child to make them study.",
+    "example_vi": "Nịnh trẻ để khiến nó học."
+  },
+  {
+    "word": "圧倒",
+    "furigana": "あっとう",
+    "english": "overwhelm; overpower",
+    "vietnamese": "áp đảo",
+    "example_jp": "観客はその演技に圧倒された。",
+    "example_en": "The audience was overwhelmed by the performance.",
+    "example_vi": "Khán giả bị choáng ngợp bởi màn biểu diễn."
+  },
+  {
+    "word": "逸れる",
+    "furigana": "それる",
+    "english": "to stray; to deviate",
+    "vietnamese": "lệch hướng; chệch",
+    "example_jp": "話が本題から逸れた。",
+    "example_en": "The conversation strayed from the main topic.",
+    "example_vi": "Câu chuyện đã lệch khỏi chủ đề chính."
+  },
+  {
+    "word": "意図",
+    "furigana": "いと",
+    "english": "intention; aim",
+    "vietnamese": "ý định; mục đích",
+    "example_jp": "その発言の意図が分からない。",
+    "example_en": "I don't understand the intention behind that statement.",
+    "example_vi": "Tôi không hiểu ý đồ đằng sau phát ngôn đó."
+  },
+  {
+    "word": "一概に",
+    "furigana": "いちがいに",
+    "english": "categorically; universally",
+    "vietnamese": "một cách chung chung",
+    "example_jp": "一概にそうとは言えない。",
+    "example_en": "You can’t say that universally.",
+    "example_vi": "Không thể nói một cách chung chung như vậy."
+  },
+  {
+    "word": "違和感",
+    "furigana": "いわかん",
+    "english": "sense of discomfort",
+    "vietnamese": "cảm giác không ổn",
+    "example_jp": "この文章には違和感がある。",
+    "example_en": "There’s something odd about this sentence.",
+    "example_vi": "Có cảm giác kỳ lạ với câu văn này."
+  },
+  {
+    "word": "意義",
+    "furigana": "いぎ",
+    "english": "meaning; significance",
+    "vietnamese": "ý nghĩa",
+    "example_jp": "この活動には大きな意義がある。",
+    "example_en": "This activity has great significance.",
+    "example_vi": "Hoạt động này có ý nghĩa lớn."
+  },
+  {
+    "word": "異なる",
+    "furigana": "ことなる",
+    "english": "to differ; to vary",
+    "vietnamese": "khác nhau",
+    "example_jp": "彼の考えは私と異なる。",
+    "example_en": "His opinion differs from mine.",
+    "example_vi": "Suy nghĩ của anh ấy khác tôi."
+  },
+  {
+    "word": "維持",
+    "furigana": "いじ",
+    "english": "maintenance; preservation",
+    "vietnamese": "duy trì",
+    "example_jp": "体型を維持するのは難しい。",
+    "example_en": "It's hard to maintain one's figure.",
+    "example_vi": "Việc duy trì vóc dáng rất khó."
+  },
+  {
+    "word": "印象",
+    "furigana": "いんしょう",
+    "english": "impression",
+    "vietnamese": "ấn tượng",
+    "example_jp": "良い印象を与えたい。",
+    "example_en": "I want to leave a good impression.",
+    "example_vi": "Tôi muốn tạo ấn tượng tốt."
+  },
+  {
+    "word": "依存",
+    "furigana": "いぞん",
+    "english": "dependence; reliance",
+    "vietnamese": "phụ thuộc",
+    "example_jp": "スマホに依存している若者が多い。",
+    "example_en": "Many young people are dependent on smartphones.",
+    "example_vi": "Nhiều người trẻ phụ thuộc vào điện thoại thông minh."
+  },
+  {
+    "word": "促す",
+    "furigana": "うながす",
+    "english": "to urge; to prompt",
+    "vietnamese": "thúc đẩy; nhắc nhở",
+    "example_jp": "彼に行動を促した。",
+    "example_en": "I urged him to take action.",
+    "example_vi": "Tôi đã thúc giục anh ấy hành động."
+  },
+  {
+    "word": "裏付ける",
+    "furigana": "うらづける",
+    "english": "to support; to back up",
+    "vietnamese": "chứng minh; xác thực",
+    "example_jp": "証拠で主張を裏付ける。",
+    "example_en": "Support the claim with evidence.",
+    "example_vi": "Chứng minh lập luận bằng bằng chứng."
+  },
+  {
+    "word": "疑う",
+    "furigana": "うたがう",
+    "english": "to doubt; to suspect",
+    "vietnamese": "nghi ngờ",
+    "example_jp": "彼の話を疑っている。",
+    "example_en": "I doubt his story.",
+    "example_vi": "Tôi nghi ngờ câu chuyện của anh ta."
+  },
+  {
+    "word": "映る",
+    "furigana": "うつる",
+    "english": "to be reflected",
+    "vietnamese": "phản chiếu; hiện lên",
+    "example_jp": "鏡に顔が映る。",
+    "example_en": "My face is reflected in the mirror.",
+    "example_vi": "Khuôn mặt tôi hiện lên trong gương."
+  },
+  {
+    "word": "受け入れる",
+    "furigana": "うけいれる",
+    "english": "to accept; to receive",
+    "vietnamese": "chấp nhận; tiếp nhận",
+    "example_jp": "結果を受け入れる。",
+    "example_en": "Accept the result.",
+    "example_vi": "Chấp nhận kết quả."
+  },
+  {
+    "word": "疑問",
+    "furigana": "ぎもん",
+    "english": "doubt; question",
+    "vietnamese": "nghi vấn",
+    "example_jp": "疑問に思う。",
+    "example_en": "I find it questionable.",
+    "example_vi": "Tôi thấy điều đó đáng nghi."
+  },
+  {
+    "word": "円滑",
+    "furigana": "えんかつ",
+    "english": "smooth; harmonious",
+    "vietnamese": "thuận lợi; suôn sẻ",
+    "example_jp": "会議が円滑に進んだ。",
+    "example_en": "The meeting went smoothly.",
+    "example_vi": "Cuộc họp diễn ra suôn sẻ."
+  },
+  {
+    "word": "延ばす",
+    "furigana": "のばす",
+    "english": "to postpone; to extend",
+    "vietnamese": "trì hoãn; kéo dài",
+    "example_jp": "締切を延ばす。",
+    "example_en": "Extend the deadline.",
+    "example_vi": "Gia hạn thời hạn nộp bài."
+  },
+  {
+    "word": "応じる",
+    "furigana": "おうじる",
+    "english": "to respond; comply",
+    "vietnamese": "ứng theo; đáp ứng",
+    "example_jp": "要求に応じる。",
+    "example_en": "Comply with the request.",
+    "example_vi": "Đáp ứng yêu cầu."
+  },
+  {
+    "word": "恩恵",
+    "furigana": "おんけい",
+    "english": "benefit; blessing",
+    "vietnamese": "ân huệ; lợi ích",
+    "example_jp": "自然の恩恵を受ける。",
+    "example_en": "Receive blessings from nature.",
+    "example_vi": "Hưởng ân huệ từ thiên nhiên."
+  },
+  {
+    "word": "概念",
+    "furigana": "がいねん",
+    "english": "concept; idea",
+    "vietnamese": "khái niệm",
+    "example_jp": "自由の概念を説明する。",
+    "example_en": "Explain the concept of freedom.",
+    "example_vi": "Giải thích khái niệm tự do."
+  },
+  {
+    "word": "快適",
+    "furigana": "かいてき",
+    "english": "comfortable; pleasant",
+    "vietnamese": "thoải mái; dễ chịu",
+    "example_jp": "快適な空間で働く。",
+    "example_en": "Work in a comfortable space.",
+    "example_vi": "Làm việc trong không gian thoải mái."
+  }
+]

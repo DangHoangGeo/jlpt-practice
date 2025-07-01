@@ -1,0 +1,227 @@
+[
+  {
+    "kanji": "演",
+    "furigana": "えん",
+    "english": "perform; play",
+    "vietnamese": "biểu diễn; trình diễn",
+    "example_jp": "舞台で演じる。",
+    "example_en": "Perform on stage.",
+    "example_vi": "Biểu diễn trên sân khấu."
+  },
+  {
+    "kanji": "劇",
+    "furigana": "げき",
+    "english": "drama; play",
+    "vietnamese": "vở kịch; kịch",
+    "example_jp": "演劇を見る。",
+    "example_en": "Watch a play.",
+    "example_vi": "Xem kịch."
+  },
+  {
+    "kanji": "優",
+    "furigana": "ゆう",
+    "english": "excellent; gentle",
+    "vietnamese": "xuất sắc; dịu dàng",
+    "example_jp": "彼はとても優しい人だ。",
+    "example_en": "He is a very kind person.",
+    "example_vi": "Anh ấy là người rất hiền lành."
+  },
+  {
+    "kanji": "賞",
+    "furigana": "しょう",
+    "english": "prize; reward",
+    "vietnamese": "giải thưởng",
+    "example_jp": "賞を受ける。",
+    "example_en": "Receive an award.",
+    "example_vi": "Nhận giải thưởng."
+  },
+  {
+    "kanji": "態",
+    "furigana": "たい",
+    "english": "attitude; state",
+    "vietnamese": "thái độ; trạng thái",
+    "example_jp": "態度が悪い。",
+    "example_en": "The attitude is bad.",
+    "example_vi": "Thái độ không tốt."
+  },
+  {
+    "kanji": "状",
+    "furigana": "じょう",
+    "english": "condition; situation",
+    "vietnamese": "tình trạng; hoàn cảnh",
+    "example_jp": "状況が変わった。",
+    "example_en": "The situation has changed.",
+    "example_vi": "Tình hình đã thay đổi."
+  },
+  {
+    "kanji": "況",
+    "furigana": "きょう",
+    "english": "situation; state",
+    "vietnamese": "tình trạng",
+    "example_jp": "不況が続いている。",
+    "example_en": "The recession continues.",
+    "example_vi": "Suy thoái kinh tế vẫn tiếp diễn."
+  },
+  {
+    "kanji": "報",
+    "furigana": "ほう",
+    "english": "report; inform",
+    "vietnamese": "báo cáo; thông báo",
+    "example_jp": "事件を報道する。",
+    "example_en": "Report the incident.",
+    "example_vi": "Đưa tin vụ việc."
+  },
+  {
+    "kanji": "喜",
+    "furigana": "よろこ",
+    "english": "joy; delight",
+    "vietnamese": "vui mừng",
+    "example_jp": "喜びの声が上がる。",
+    "example_en": "Voices of joy are heard.",
+    "example_vi": "Tiếng reo vui vang lên."
+  },
+  {
+    "kanji": "怒",
+    "furigana": "いか",
+    "english": "anger",
+    "vietnamese": "tức giận",
+    "example_jp": "彼は怒っている。",
+    "example_en": "He is angry.",
+    "example_vi": "Anh ấy đang tức giận."
+  },
+  {
+    "kanji": "悲",
+    "furigana": "かな",
+    "english": "sadness",
+    "vietnamese": "buồn",
+    "example_jp": "悲しい話を聞いた。",
+    "example_en": "I heard a sad story.",
+    "example_vi": "Tôi đã nghe một câu chuyện buồn."
+  },
+  {
+    "kanji": "笑",
+    "furigana": "わら",
+    "english": "laugh; smile",
+    "vietnamese": "cười",
+    "example_jp": "彼女はよく笑う。",
+    "example_en": "She laughs a lot.",
+    "example_vi": "Cô ấy hay cười."
+  },
+  {
+    "kanji": "欲",
+    "furigana": "よく",
+    "english": "desire; greed",
+    "vietnamese": "ham muốn; tham vọng",
+    "example_jp": "欲が深い人。",
+    "example_en": "A greedy person.",
+    "example_vi": "Người tham lam."
+  },
+  {
+    "kanji": "信",
+    "furigana": "しん",
+    "english": "trust; belief",
+    "vietnamese": "niềm tin",
+    "example_jp": "自分を信じる。",
+    "example_en": "Believe in yourself.",
+    "example_vi": "Tin vào chính mình."
+  },
+  {
+    "kanji": "疑",
+    "furigana": "うたが",
+    "english": "doubt; suspect",
+    "vietnamese": "nghi ngờ",
+    "example_jp": "真実を疑う。",
+    "example_en": "Doubt the truth.",
+    "example_vi": "Nghi ngờ sự thật."
+  },
+  {
+    "kanji": "確",
+    "furigana": "たし",
+    "english": "certain; confirm",
+    "vietnamese": "xác nhận; chắc chắn",
+    "example_jp": "事実を確かめる。",
+    "example_en": "Confirm the facts.",
+    "example_vi": "Xác minh sự thật."
+  },
+  {
+    "kanji": "認",
+    "furigana": "みと",
+    "english": "acknowledge; admit",
+    "vietnamese": "công nhận; thừa nhận",
+    "example_jp": "過ちを認める。",
+    "example_en": "Admit one’s mistake.",
+    "example_vi": "Thừa nhận lỗi lầm."
+  },
+  {
+    "kanji": "断",
+    "furigana": "ことわ",
+    "english": "refuse; reject",
+    "vietnamese": "từ chối",
+    "example_jp": "申し出を断る。",
+    "example_en": "Refuse an offer.",
+    "example_vi": "Từ chối đề nghị."
+  },
+  {
+    "kanji": "承",
+    "furigana": "しょう",
+    "english": "accept; agree",
+    "vietnamese": "chấp nhận; thừa nhận",
+    "example_jp": "依頼を承る。",
+    "example_en": "Accept a request.",
+    "example_vi": "Chấp nhận yêu cầu."
+  },
+  {
+    "kanji": "解",
+    "furigana": "かい",
+    "english": "solve; untie",
+    "vietnamese": "giải quyết; tháo gỡ",
+    "example_jp": "問題を解く。",
+    "example_en": "Solve the problem.",
+    "example_vi": "Giải quyết vấn đề."
+  },
+  {
+    "kanji": "疑",
+    "furigana": "ぎ",
+    "english": "suspicion; doubt",
+    "vietnamese": "sự nghi ngờ",
+    "example_jp": "疑問を抱く。",
+    "example_en": "Have a doubt.",
+    "example_vi": "Nảy sinh nghi vấn."
+  },
+  {
+    "kanji": "難",
+    "furigana": "むずか",
+    "english": "difficult",
+    "vietnamese": "khó",
+    "example_jp": "難しい問題だ。",
+    "example_en": "It’s a difficult problem.",
+    "example_vi": "Đó là một vấn đề khó."
+  },
+  {
+    "kanji": "易",
+    "furigana": "やさ",
+    "english": "easy; simple",
+    "vietnamese": "dễ",
+    "example_jp": "簡単で易しい。",
+    "example_en": "Simple and easy.",
+    "example_vi": "Đơn giản và dễ dàng."
+  },
+  {
+    "kanji": "単",
+    "furigana": "たん",
+    "english": "single; simple",
+    "vietnamese": "đơn; đơn giản",
+    "example_jp": "単語を覚える。",
+    "example_en": "Memorize a word.",
+    "example_vi": "Ghi nhớ từ vựng."
+  },
+  {
+    "kanji": "複",
+    "furigana": "ふく",
+    "english": "multiple; complex",
+    "vietnamese": "phức; phức tạp",
+    "example_jp": "複雑な状況。",
+    "example_en": "A complicated situation.",
+    "example_vi": "Tình huống phức tạp."
+  }
+]

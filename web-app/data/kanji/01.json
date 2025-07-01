@@ -1,0 +1,209 @@
+[
+  {
+    "kanji": "読",
+    "furigana": "よ",
+    "english": "to read",
+    "vietnamese": "đọc",
+    "example_jp": "本を読む。",
+    "example_en": "Read a book.",
+    "example_vi": "Đọc sách."
+  },
+  {
+    "kanji": "書",
+    "furigana": "か",
+    "english": "to write",
+    "vietnamese": "viết",
+    "example_jp": "手紙を書く。",
+    "example_en": "Write a letter.",
+    "example_vi": "Viết thư."
+  },
+  {
+    "kanji": "立",
+    "furigana": "た",
+    "english": "to stand",
+    "vietnamese": "đứng",
+    "example_jp": "立ってください。",
+    "example_en": "Please stand.",
+    "example_vi": "Hãy đứng lên."
+  },
+  {
+    "kanji": "歩",
+    "furigana": "ある",
+    "english": "to walk",
+    "vietnamese": "đi bộ",
+    "example_jp": "道を歩く。",
+    "example_en": "Walk on the road.",
+    "example_vi": "Đi bộ trên đường."
+  },
+  {
+    "kanji": "走",
+    "furigana": "はし",
+    "english": "to run",
+    "vietnamese": "chạy",
+    "example_jp": "公園で走る。",
+    "example_en": "Run in the park.",
+    "example_vi": "Chạy trong công viên."
+  },
+  {
+    "kanji": "車",
+    "furigana": "くるま",
+    "english": "car",
+    "vietnamese": "xe",
+    "example_jp": "車を運転する。",
+    "example_en": "Drive a car.",
+    "example_vi": "Lái xe."
+  },
+  {
+    "kanji": "電",
+    "furigana": "でん",
+    "english": "electric",
+    "vietnamese": "điện",
+    "example_jp": "電気をつける。",
+    "example_en": "Turn on the electricity.",
+    "example_vi": "Bật điện lên."
+  },
+  {
+    "kanji": "話",
+    "furigana": "はなし",
+    "english": "story; talk",
+    "vietnamese": "câu chuyện; nói chuyện",
+    "example_jp": "楽しい話を聞いた。",
+    "example_en": "I heard an interesting story.",
+    "example_vi": "Tôi đã nghe một câu chuyện thú vị."
+  },
+  {
+    "kanji": "聞",
+    "furigana": "き",
+    "english": "to hear",
+    "vietnamese": "nghe",
+    "example_jp": "音楽を聞く。",
+    "example_en": "Listen to music.",
+    "example_vi": "Nghe nhạc."
+  },
+  {
+    "kanji": "買",
+    "furigana": "か",
+    "english": "to buy",
+    "vietnamese": "mua",
+    "example_jp": "本を買う。",
+    "example_en": "Buy a book.",
+    "example_vi": "Mua sách."
+  },
+  {
+    "kanji": "売",
+    "furigana": "う",
+    "english": "to sell",
+    "vietnamese": "bán",
+    "example_jp": "商品を売る。",
+    "example_en": "Sell products.",
+    "example_vi": "Bán hàng hóa."
+  },
+  {
+    "kanji": "店",
+    "furigana": "みせ",
+    "english": "shop; store",
+    "vietnamese": "cửa hàng",
+    "example_jp": "店に行く。",
+    "example_en": "Go to the store.",
+    "example_vi": "Đi đến cửa hàng."
+  },
+  {
+    "kanji": "食",
+    "furigana": "た",
+    "english": "to eat",
+    "vietnamese": "ăn",
+    "example_jp": "ご飯を食べる。",
+    "example_en": "Eat rice.",
+    "example_vi": "Ăn cơm."
+  },
+  {
+    "kanji": "飲",
+    "furigana": "の",
+    "english": "to drink",
+    "vietnamese": "uống",
+    "example_jp": "水を飲む。",
+    "example_en": "Drink water.",
+    "example_vi": "Uống nước."
+  },
+  {
+    "kanji": "会",
+    "furigana": "あ",
+    "english": "to meet",
+    "vietnamese": "gặp",
+    "example_jp": "友達に会う。",
+    "example_en": "Meet a friend.",
+    "example_vi": "Gặp bạn."
+  },
+  {
+    "kanji": "住",
+    "furigana": "す",
+    "english": "to live",
+    "vietnamese": "sống",
+    "example_jp": "東京に住んでいる。",
+    "example_en": "I live in Tokyo.",
+    "example_vi": "Tôi sống ở Tokyo."
+  },
+  {
+    "kanji": "行",
+    "furigana": "い",
+    "english": "to go",
+    "vietnamese": "đi",
+    "example_jp": "学校へ行く。",
+    "example_en": "Go to school.",
+    "example_vi": "Đi học."
+  },
+  {
+    "kanji": "来",
+    "furigana": "く",
+    "english": "to come",
+    "vietnamese": "đến",
+    "example_jp": "明日来ます。",
+    "example_en": "I will come tomorrow.",
+    "example_vi": "Tôi sẽ đến vào ngày mai."
+  },
+  {
+    "kanji": "帰",
+    "furigana": "かえ",
+    "english": "to return",
+    "vietnamese": "trở về",
+    "example_jp": "家に帰る。",
+    "example_en": "Return home.",
+    "example_vi": "Về nhà."
+  },
+  {
+    "kanji": "年",
+    "furigana": "とし",
+    "english": "year",
+    "vietnamese": "năm",
+    "example_jp": "今年は忙しい。",
+    "example_en": "This year is busy.",
+    "example_vi": "Năm nay bận rộn."
+  },
+  {
+    "kanji": "時",
+    "furigana": "とき",
+    "english": "time",
+    "vietnamese": "thời gian",
+    "example_jp": "いい時を過ごした。",
+    "example_en": "Had a good time.",
+    "example_vi": "Đã có thời gian vui vẻ."
+  },
+  {
+    "kanji": "間",
+    "furigana": "あいだ",
+    "english": "interval; between",
+    "vietnamese": "khoảng cách; giữa",
+    "example_jp": "授業の間に休憩する。",
+    "example_en": "Take a break between classes.",
+    "example_vi": "Nghỉ giữa giờ học."
+  },
+  {
+    "kanji": "名",
+    "furigana": "な",
+    "english": "name",
+    "vietnamese": "tên",
+    "example_jp": "名前を書く。",
+    "example_en": "Write your name.",
+    "example_vi": "Viết tên bạn."
+  }
+]

@@ -1,0 +1,227 @@
+[
+  {
+    "kanji": "感",
+    "furigana": "かん",
+    "english": "feeling; emotion",
+    "vietnamese": "cảm giác; cảm xúc",
+    "example_jp": "感謝の気持ちを伝える。",
+    "example_en": "Express feelings of gratitude.",
+    "example_vi": "Thể hiện lòng biết ơn."
+  },
+  {
+    "kanji": "覚",
+    "furigana": "おぼ",
+    "english": "to remember",
+    "vietnamese": "ghi nhớ",
+    "example_jp": "単語を覚える。",
+    "example_en": "Memorize vocabulary.",
+    "example_vi": "Ghi nhớ từ vựng."
+  },
+  {
+    "kanji": "想",
+    "furigana": "そう",
+    "english": "thought; idea",
+    "vietnamese": "ý tưởng; suy nghĩ",
+    "example_jp": "彼は想像力が豊かだ。",
+    "example_en": "He has a rich imagination.",
+    "example_vi": "Anh ấy có trí tưởng tượng phong phú."
+  },
+  {
+    "kanji": "情",
+    "furigana": "じょう",
+    "english": "emotion; condition",
+    "vietnamese": "tình cảm; tình hình",
+    "example_jp": "彼は感情を表に出さない。",
+    "example_en": "He doesn’t show his emotions.",
+    "example_vi": "Anh ấy không để lộ cảm xúc."
+  },
+  {
+    "kanji": "愛",
+    "furigana": "あい",
+    "english": "love",
+    "vietnamese": "tình yêu",
+    "example_jp": "親の愛を感じる。",
+    "example_en": "Feel the love of parents.",
+    "example_vi": "Cảm nhận tình yêu của cha mẹ."
+  },
+  {
+    "kanji": "恵",
+    "furigana": "めぐ",
+    "english": "blessing; grace",
+    "vietnamese": "ân huệ; ban tặng",
+    "example_jp": "自然の恵みを受ける。",
+    "example_en": "Receive nature’s blessings.",
+    "example_vi": "Nhận được ân huệ từ thiên nhiên."
+  },
+  {
+    "kanji": "務",
+    "furigana": "つと",
+    "english": "duty; work",
+    "vietnamese": "nhiệm vụ; công việc",
+    "example_jp": "責任を務める。",
+    "example_en": "Fulfill responsibilities.",
+    "example_vi": "Thực hiện trách nhiệm."
+  },
+  {
+    "kanji": "務",
+    "furigana": "む",
+    "english": "task; service",
+    "vietnamese": "nhiệm vụ; chức vụ",
+    "example_jp": "事務作業をする。",
+    "example_en": "Do office work.",
+    "example_vi": "Làm công việc văn phòng."
+  },
+  {
+    "kanji": "務",
+    "furigana": "む",
+    "english": "duty; obligation",
+    "vietnamese": "nghĩa vụ",
+    "example_jp": "義務を果たす。",
+    "example_en": "Fulfill a duty.",
+    "example_vi": "Hoàn thành nghĩa vụ."
+  },
+  {
+    "kanji": "職",
+    "furigana": "しょく",
+    "english": "job; employment",
+    "vietnamese": "nghề nghiệp; công việc",
+    "example_jp": "職を探している。",
+    "example_en": "I'm looking for a job.",
+    "example_vi": "Tôi đang tìm việc làm."
+  },
+  {
+    "kanji": "業",
+    "furigana": "ぎょう",
+    "english": "work; business",
+    "vietnamese": "nghiệp vụ; công việc",
+    "example_jp": "農業に従事する。",
+    "example_en": "Engage in agriculture.",
+    "example_vi": "Làm nông nghiệp."
+  },
+  {
+    "kanji": "能",
+    "furigana": "のう",
+    "english": "ability; capacity",
+    "vietnamese": "năng lực",
+    "example_jp": "彼は能力が高い。",
+    "example_en": "He has high ability.",
+    "example_vi": "Anh ấy có năng lực cao."
+  },
+  {
+    "kanji": "達",
+    "furigana": "たつ",
+    "english": "accomplish; reach",
+    "vietnamese": "đạt được",
+    "example_jp": "目的を達成する。",
+    "example_en": "Achieve a goal.",
+    "example_vi": "Đạt được mục tiêu."
+  },
+  {
+    "kanji": "続",
+    "furigana": "つづ",
+    "english": "to continue",
+    "vietnamese": "tiếp tục",
+    "example_jp": "仕事を続ける。",
+    "example_en": "Continue working.",
+    "example_vi": "Tiếp tục công việc."
+  },
+  {
+    "kanji": "終",
+    "furigana": "お",
+    "english": "to end; finish",
+    "vietnamese": "kết thúc",
+    "example_jp": "会議が終わった。",
+    "example_en": "The meeting has ended.",
+    "example_vi": "Cuộc họp đã kết thúc."
+  },
+  {
+    "kanji": "始",
+    "furigana": "はじ",
+    "english": "to begin",
+    "vietnamese": "bắt đầu",
+    "example_jp": "授業が始まった。",
+    "example_en": "Class has started.",
+    "example_vi": "Buổi học đã bắt đầu."
+  },
+  {
+    "kanji": "変",
+    "furigana": "へん",
+    "english": "strange; change",
+    "vietnamese": "kỳ lạ; thay đổi",
+    "example_jp": "彼はちょっと変だ。",
+    "example_en": "He’s a bit strange.",
+    "example_vi": "Anh ta hơi kỳ lạ."
+  },
+  {
+    "kanji": "化",
+    "furigana": "か",
+    "english": "transform; change",
+    "vietnamese": "biến hóa; thay đổi",
+    "example_jp": "文化を学ぶ。",
+    "example_en": "Study culture.",
+    "example_vi": "Học về văn hóa."
+  },
+  {
+    "kanji": "比",
+    "furigana": "くら",
+    "english": "to compare",
+    "vietnamese": "so sánh",
+    "example_jp": "値段を比べる。",
+    "example_en": "Compare prices.",
+    "example_vi": "So sánh giá cả."
+  },
+  {
+    "kanji": "最",
+    "furigana": "さい",
+    "english": "most; -est",
+    "vietnamese": "nhất",
+    "example_jp": "最も重要なこと。",
+    "example_en": "The most important thing.",
+    "example_vi": "Điều quan trọng nhất."
+  },
+  {
+    "kanji": "無",
+    "furigana": "む",
+    "english": "nothing; without",
+    "vietnamese": "không có",
+    "example_jp": "無理をしないでください。",
+    "example_en": "Don’t overdo it.",
+    "example_vi": "Đừng gắng sức quá."
+  },
+  {
+    "kanji": "非",
+    "furigana": "ひ",
+    "english": "non-; anti-",
+    "vietnamese": "phi, không",
+    "example_jp": "非常口を確認する。",
+    "example_en": "Check the emergency exit.",
+    "example_vi": "Kiểm tra lối thoát hiểm."
+  },
+  {
+    "kanji": "的",
+    "furigana": "てき",
+    "english": "-al; -ic (adjective suffix)",
+    "vietnamese": "mang tính",
+    "example_jp": "基本的な考え。",
+    "example_en": "A fundamental idea.",
+    "example_vi": "Ý tưởng cơ bản."
+  },
+  {
+    "kanji": "感",
+    "furigana": "かん",
+    "english": "feeling; sense",
+    "vietnamese": "cảm giác",
+    "example_jp": "感動した。",
+    "example_en": "I was moved.",
+    "example_vi": "Tôi đã cảm động."
+  },
+  {
+    "kanji": "理",
+    "furigana": "り",
+    "english": "reason; logic",
+    "vietnamese": "lý do; logic",
+    "example_jp": "理由を説明する。",
+    "example_en": "Explain the reason.",
+    "example_vi": "Giải thích lý do."
+  }
+]

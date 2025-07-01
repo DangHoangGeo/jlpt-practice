@@ -1,0 +1,218 @@
+[
+  {
+    "phrase": "一概に〜とは言えない",
+    "furigana": "いちがいに〜とはいえない",
+    "english": "can't say ~ universally",
+    "vietnamese": "không thể nói chung là ~",
+    "example_jp": "貧乏（びんぼう）だから不幸（ふこう）だとは一概に言えない。",
+    "example_en": "You can’t universally say that being poor means being unhappy.",
+    "example_vi": "Không thể nói nghèo là bất hạnh một cách chung chung."
+  },
+  {
+    "phrase": "〜に越したことはない",
+    "furigana": "〜にこしたことはない",
+    "english": "~ is best; nothing better than ~",
+    "vietnamese": "~ vẫn là tốt nhất",
+    "example_jp": "用心（ようじん）に越したことはない。",
+    "example_en": "It’s best to be cautious.",
+    "example_vi": "Cẩn thận vẫn là tốt nhất."
+  },
+  {
+    "phrase": "〜はさておき",
+    "furigana": "〜はさておき",
+    "english": "setting aside ~; leaving ~ aside",
+    "vietnamese": "tạm gác ~ lại",
+    "example_jp": "冗談（じょうだん）はさておき、本題（ほんだい）に入りましょう。",
+    "example_en": "Jokes aside, let’s get to the main topic.",
+    "example_vi": "Tạm gác chuyện đùa lại, vào vấn đề chính đi."
+  },
+  {
+    "phrase": "〜にもほどがある",
+    "furigana": "〜にもほどがある",
+    "english": "too much; excessive",
+    "vietnamese": "quá mức; không thể chấp nhận",
+    "example_jp": "冗談（じょうだん）にもほどがあるよ！",
+    "example_en": "That's going too far as a joke!",
+    "example_vi": "Đùa gì mà quá đáng vậy chứ!"
+  },
+  {
+    "phrase": "〜てやまない",
+    "furigana": "〜てやまない",
+    "english": "always sincerely ~",
+    "vietnamese": "luôn chân thành ~",
+    "example_jp": "皆様（みなさま）のご健康（けんこう）を願（ねが）ってやみません。",
+    "example_en": "I always sincerely wish for your good health.",
+    "example_vi": "Tôi luôn cầu chúc quý vị sức khỏe."
+  },
+  {
+    "phrase": "〜にしては",
+    "furigana": "〜にしては",
+    "english": "considering ~; for ~",
+    "vietnamese": "dù là ~ mà lại",
+    "example_jp": "彼（かれ）は初心者（しょしんしゃ）にしては上手（じょうず）だ。",
+    "example_en": "He’s good for a beginner.",
+    "example_vi": "Dù là người mới nhưng anh ấy rất giỏi."
+  },
+  {
+    "phrase": "〜かねない",
+    "furigana": "〜かねない",
+    "english": "might; could possibly",
+    "vietnamese": "có khả năng; có thể",
+    "example_jp": "その発言（はつげん）は誤解（ごかい）を招（まね）きかねない。",
+    "example_en": "That statement could lead to misunderstanding.",
+    "example_vi": "Phát ngôn đó có thể gây hiểu lầm."
+  },
+  {
+    "phrase": "〜というものではない",
+    "furigana": "〜というものではない",
+    "english": "it's not necessarily that ~",
+    "vietnamese": "không hẳn là ~",
+    "example_jp": "金（かね）があれば幸（しあわ）せというものではない。",
+    "example_en": "Money doesn’t necessarily mean happiness.",
+    "example_vi": "Không phải cứ có tiền là hạnh phúc."
+  },
+  {
+    "phrase": "〜をめぐって",
+    "furigana": "〜をめぐって",
+    "english": "concerning; regarding",
+    "vietnamese": "xoay quanh vấn đề ~",
+    "example_jp": "教育改革（きょういくかいかく）をめぐって議論（ぎろん）が行（おこな）われた。",
+    "example_en": "There was a debate concerning education reform.",
+    "example_vi": "Cuộc tranh luận đã diễn ra xoay quanh cải cách giáo dục."
+  },
+  {
+    "phrase": "〜に際して",
+    "furigana": "〜にさいして",
+    "english": "on the occasion of",
+    "vietnamese": "nhân dịp; vào lúc",
+    "example_jp": "契約（けいやく）に際（さい）して、注意事項（ちゅういじこう）を確認（かくにん）してください。",
+    "example_en": "Please check the cautions when signing the contract.",
+    "example_vi": "Khi ký hợp đồng, hãy xác nhận các điều khoản cần lưu ý."
+  },
+  {
+    "phrase": "〜ないではいられない",
+    "furigana": "〜ないではいられない",
+    "english": "can't help but ~",
+    "vietnamese": "không thể không ~",
+    "example_jp": "彼（かれ）の話（はなし）を聞（き）いて笑（わら）わないではいられなかった。",
+    "example_en": "I couldn’t help but laugh at his story.",
+    "example_vi": "Nghe chuyện của anh ấy tôi không nhịn được cười."
+  },
+  {
+    "phrase": "〜にほかならない",
+    "furigana": "〜にほかならない",
+    "english": "nothing but; none other than",
+    "vietnamese": "không gì khác ngoài ~",
+    "example_jp": "成功（せいこう）は努力（どりょく）の結果（けっか）にほかならない。",
+    "example_en": "Success is nothing but the result of hard work.",
+    "example_vi": "Thành công chính là kết quả của nỗ lực."
+  },
+  {
+    "phrase": "〜に限らず",
+    "furigana": "〜にかぎらず",
+    "english": "not only ~ but also",
+    "vietnamese": "không chỉ ~ mà còn",
+    "example_jp": "学生（がくせい）に限（かぎ）らず、社会人（しゃかいじん）も参加（さんか）できる。",
+    "example_en": "Not only students but also workers can join.",
+    "example_vi": "Không chỉ sinh viên mà người đi làm cũng có thể tham gia."
+  },
+  {
+    "phrase": "〜を問わず",
+    "furigana": "〜をとわず",
+    "english": "regardless of",
+    "vietnamese": "bất kể; không kể",
+    "example_jp": "年齢（ねんれい）を問（と）わず応募（おうぼ）できます。",
+    "example_en": "Anyone can apply regardless of age.",
+    "example_vi": "Bất kể tuổi tác đều có thể ứng tuyển."
+  },
+  {
+    "phrase": "〜ずにはすまない",
+    "furigana": "〜ずにはすまない",
+    "english": "must; can't avoid ~",
+    "vietnamese": "phải ~; không thể không ~",
+    "example_jp": "謝（あやま）らずにはすまない状況（じょうきょう）だ。",
+    "example_en": "It’s a situation where I must apologize.",
+    "example_vi": "Đây là tình huống không thể không xin lỗi."
+  },
+  {
+    "phrase": "〜といったらない",
+    "furigana": "〜といったらない",
+    "english": "extremely ~",
+    "vietnamese": "cực kỳ; không thể diễn tả",
+    "example_jp": "彼（かれ）の無礼（ぶれい）さといったらない。",
+    "example_en": "His rudeness is beyond words.",
+    "example_vi": "Sự vô lễ của anh ta thật không thể diễn tả."
+  },
+  {
+    "phrase": "〜にすぎない",
+    "furigana": "〜にすぎない",
+    "english": "nothing more than",
+    "vietnamese": "chỉ là ~ mà thôi",
+    "example_jp": "それはうわさにすぎない。",
+    "example_en": "That’s nothing more than a rumor.",
+    "example_vi": "Đó chỉ là lời đồn đại mà thôi."
+  },
+  {
+    "phrase": "〜をこめて",
+    "furigana": "〜をこめて",
+    "english": "with (feeling); filled with",
+    "vietnamese": "với tất cả (tấm lòng, tình cảm)",
+    "example_jp": "感謝（かんしゃ）をこめて花束（はなたば）を贈（おく）る。",
+    "example_en": "Give flowers filled with gratitude.",
+    "example_vi": "Tặng bó hoa với tất cả lòng biết ơn."
+  },
+  {
+    "phrase": "〜とはいえ",
+    "furigana": "〜とはいえ",
+    "english": "having said that; nonetheless",
+    "vietnamese": "dù nói là vậy nhưng ~",
+    "example_jp": "冬（ふゆ）とはいえ、暖（あたた）かい日（ひ）もある。",
+    "example_en": "Though it’s winter, there are warm days.",
+    "example_vi": "Dù là mùa đông, nhưng cũng có ngày ấm áp."
+  },
+  {
+    "phrase": "〜にしても",
+    "furigana": "〜にしても",
+    "english": "even if; even though",
+    "vietnamese": "dù là ~",
+    "example_jp": "冗談（じょうだん）にしても言（い）いすぎだ。",
+    "example_en": "Even if it’s a joke, that’s too much.",
+    "example_vi": "Dù là nói đùa, nhưng cũng quá đáng rồi."
+  },
+  {
+    "phrase": "〜ところだった",
+    "furigana": "〜ところだった",
+    "english": "almost (happened)",
+    "vietnamese": "suýt nữa thì ~",
+    "example_jp": "寝坊（ねぼう）して遅刻（ちこく）するところだった。",
+    "example_en": "I almost overslept and was late.",
+    "example_vi": "Suýt nữa ngủ quên rồi đi trễ."
+  },
+  {
+    "phrase": "〜たとたん",
+    "furigana": "〜たとたん",
+    "english": "as soon as ~",
+    "vietnamese": "ngay khi ~",
+    "example_jp": "外（そと）に出（で）たとたん、雨（あめ）が降（ふ）り出（だ）した。",
+    "example_en": "As soon as I went outside, it started to rain.",
+    "example_vi": "Vừa bước ra ngoài thì trời đổ mưa."
+  },
+  {
+    "phrase": "〜というより",
+    "furigana": "〜というより",
+    "english": "rather than ~",
+    "vietnamese": "nói đúng hơn là ~",
+    "example_jp": "彼（かれ）は天才（てんさい）というより努力家（どりょくか）だ。",
+    "example_en": "He’s more of a hard worker than a genius.",
+    "example_vi": "Anh ấy là người chăm chỉ hơn là thiên tài."
+  },
+  {
+    "phrase": "〜たあげく",
+    "furigana": "〜たあげく",
+    "english": "after ~ (resulting in)",
+    "vietnamese": "sau khi ~ thì (kết quả xấu)",
+    "example_jp": "長時間（ちょうじかん）話（はな）したあげく、何（なに）も決（き）まらなかった。",
+    "example_en": "After a long discussion, nothing was decided.",
+    "example_vi": "Sau khi nói chuyện lâu, cuối cùng cũng không quyết được gì."
+  }
+]

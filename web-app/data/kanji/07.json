@@ -1,0 +1,227 @@
+[
+  {
+    "kanji": "機",
+    "furigana": "き",
+    "english": "machine; opportunity",
+    "vietnamese": "máy móc; cơ hội",
+    "example_jp": "機会を逃すな。",
+    "example_en": "Don’t miss the opportunity.",
+    "example_vi": "Đừng bỏ lỡ cơ hội."
+  },
+  {
+    "kanji": "械",
+    "furigana": "かい",
+    "english": "machine; device",
+    "vietnamese": "máy móc; thiết bị",
+    "example_jp": "精密機械を扱う。",
+    "example_en": "Handle precision machinery.",
+    "example_vi": "Xử lý thiết bị chính xác."
+  },
+  {
+    "kanji": "構",
+    "furigana": "こう",
+    "english": "structure; construct",
+    "vietnamese": "cấu trúc; xây dựng",
+    "example_jp": "家を構える。",
+    "example_en": "Establish a home.",
+    "example_vi": "Dựng nhà."
+  },
+  {
+    "kanji": "造",
+    "furigana": "ぞう",
+    "english": "build; create",
+    "vietnamese": "tạo ra; chế tạo",
+    "example_jp": "橋を造る。",
+    "example_en": "Build a bridge.",
+    "example_vi": "Xây cầu."
+  },
+  {
+    "kanji": "築",
+    "furigana": "ちく",
+    "english": "construct",
+    "vietnamese": "xây dựng",
+    "example_jp": "信頼関係を築く。",
+    "example_en": "Build a trusting relationship.",
+    "example_vi": "Xây dựng mối quan hệ tin cậy."
+  },
+  {
+    "kanji": "製",
+    "furigana": "せい",
+    "english": "manufacture",
+    "vietnamese": "chế tạo; sản xuất",
+    "example_jp": "日本製の車。",
+    "example_en": "A car made in Japan.",
+    "example_vi": "Xe sản xuất tại Nhật."
+  },
+  {
+    "kanji": "造",
+    "furigana": "つく",
+    "english": "to make; produce",
+    "vietnamese": "làm ra; tạo ra",
+    "example_jp": "家具を造る。",
+    "example_en": "Make furniture.",
+    "example_vi": "Làm đồ nội thất."
+  },
+  {
+    "kanji": "築",
+    "furigana": "きず",
+    "english": "build; establish",
+    "vietnamese": "xây dựng",
+    "example_jp": "友情を築く。",
+    "example_en": "Build friendship.",
+    "example_vi": "Xây dựng tình bạn."
+  },
+  {
+    "kanji": "備",
+    "furigana": "そな",
+    "english": "prepare; equip",
+    "vietnamese": "chuẩn bị; trang bị",
+    "example_jp": "地震に備える。",
+    "example_en": "Prepare for earthquakes.",
+    "example_vi": "Chuẩn bị cho động đất."
+  },
+  {
+    "kanji": "設",
+    "furigana": "せつ",
+    "english": "establish; set up",
+    "vietnamese": "thiết lập",
+    "example_jp": "会社を設立する。",
+    "example_en": "Establish a company.",
+    "example_vi": "Thành lập công ty."
+  },
+  {
+    "kanji": "改",
+    "furigana": "あらた",
+    "english": "revise; renew",
+    "vietnamese": "cải cách; đổi mới",
+    "example_jp": "制度を改める。",
+    "example_en": "Reform the system.",
+    "example_vi": "Cải cách chế độ."
+  },
+  {
+    "kanji": "善",
+    "furigana": "ぜん",
+    "english": "goodness; virtue",
+    "vietnamese": "thiện; tốt",
+    "example_jp": "善と悪。",
+    "example_en": "Good and evil.",
+    "example_vi": "Thiện và ác."
+  },
+  {
+    "kanji": "悪",
+    "furigana": "あく",
+    "english": "bad; evil",
+    "vietnamese": "xấu; ác",
+    "example_jp": "悪い習慣。",
+    "example_en": "Bad habit.",
+    "example_vi": "Thói quen xấu."
+  },
+  {
+    "kanji": "欲",
+    "furigana": "よく",
+    "english": "desire; greed",
+    "vietnamese": "ham muốn",
+    "example_jp": "欲を抑える。",
+    "example_en": "Suppress desire.",
+    "example_vi": "Kiềm chế ham muốn."
+  },
+  {
+    "kanji": "志",
+    "furigana": "こころざし",
+    "english": "will; ambition",
+    "vietnamese": "ý chí; hoài bão",
+    "example_jp": "志を持つ。",
+    "example_en": "Have ambition.",
+    "example_vi": "Có hoài bão."
+  },
+  {
+    "kanji": "夢",
+    "furigana": "ゆめ",
+    "english": "dream",
+    "vietnamese": "giấc mơ",
+    "example_jp": "夢がかなう。",
+    "example_en": "The dream comes true.",
+    "example_vi": "Giấc mơ thành hiện thực."
+  },
+  {
+    "kanji": "望",
+    "furigana": "のぞ",
+    "english": "hope; desire",
+    "vietnamese": "mong muốn",
+    "example_jp": "成功を望む。",
+    "example_en": "Hope for success.",
+    "example_vi": "Mong thành công."
+  },
+  {
+    "kanji": "念",
+    "furigana": "ねん",
+    "english": "thought; attention",
+    "vietnamese": "ý niệm; chú ý",
+    "example_jp": "念のため確認する。",
+    "example_en": "Just to be sure, confirm it.",
+    "example_vi": "Xác nhận để cho chắc chắn."
+  },
+  {
+    "kanji": "忘",
+    "furigana": "わす",
+    "english": "forget",
+    "vietnamese": "quên",
+    "example_jp": "名前を忘れた。",
+    "example_en": "I forgot the name.",
+    "example_vi": "Tôi quên tên rồi."
+  },
+  {
+    "kanji": "記",
+    "furigana": "き",
+    "english": "record; write down",
+    "vietnamese": "ghi chép",
+    "example_jp": "日記をつける。",
+    "example_en": "Keep a diary.",
+    "example_vi": "Viết nhật ký."
+  },
+  {
+    "kanji": "録",
+    "furigana": "ろく",
+    "english": "record",
+    "vietnamese": "ghi âm; ghi lại",
+    "example_jp": "会話を録音する。",
+    "example_en": "Record the conversation.",
+    "example_vi": "Ghi âm cuộc trò chuyện."
+  },
+  {
+    "kanji": "誌",
+    "furigana": "し",
+    "english": "magazine; journal",
+    "vietnamese": "tạp chí",
+    "example_jp": "雑誌を読む。",
+    "example_en": "Read a magazine.",
+    "example_vi": "Đọc tạp chí."
+  },
+  {
+    "kanji": "調",
+    "furigana": "しら",
+    "english": "investigate; tune",
+    "vietnamese": "điều tra; điều chỉnh",
+    "example_jp": "原因を調べる。",
+    "example_en": "Investigate the cause.",
+    "example_vi": "Điều tra nguyên nhân."
+  },
+  {
+    "kanji": "査",
+    "furigana": "さ",
+    "english": "inspect; investigate",
+    "vietnamese": "kiểm tra; điều tra",
+    "example_jp": "調査を行う。",
+    "example_en": "Conduct an investigation.",
+    "example_vi": "Tiến hành điều tra."
+  },
+  {
+    "kanji": "検",
+    "furigana": "けん",
+    "english": "examine; test",
+    "vietnamese": "kiểm tra",
+    "example_jp": "検査を受ける。",
+    "example_en": "Take an examination.",
+    "example_vi": "Tham gia kiểm tra."
+  }
+]

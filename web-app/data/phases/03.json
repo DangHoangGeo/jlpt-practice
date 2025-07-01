@@ -1,0 +1,200 @@
+[
+  {
+    "phrase": "〜際に",
+    "furigana": "〜さいに",
+    "english": "on the occasion of; when",
+    "vietnamese": "vào lúc; khi",
+    "example_jp": "出発（しゅっぱつ）の際（さい）にパスポートを忘（わす）れないでください。",
+    "example_en": "Please don’t forget your passport when departing.",
+    "example_vi": "Khi khởi hành xin đừng quên hộ chiếu."
+  },
+  {
+    "phrase": "〜にあたって",
+    "furigana": "〜にあたって",
+    "english": "at the time of; on the occasion of",
+    "vietnamese": "nhân dịp; vào lúc",
+    "example_jp": "入社（にゅうしゃ）にあたって、必要（ひつよう）な書類（しょるい）を準備（じゅんび）してください。",
+    "example_en": "Please prepare the necessary documents for joining the company.",
+    "example_vi": "Khi vào công ty, hãy chuẩn bị đầy đủ giấy tờ cần thiết."
+  },
+  {
+    "phrase": "〜において",
+    "furigana": "〜において",
+    "english": "in; at; on (formal)",
+    "vietnamese": "tại; trong (trang trọng)",
+    "example_jp": "会議（かいぎ）は東京（とうきょう）において行（おこな）われる。",
+    "example_en": "The meeting will be held in Tokyo.",
+    "example_vi": "Cuộc họp sẽ được tổ chức tại Tokyo."
+  },
+  {
+    "phrase": "〜を契機に",
+    "furigana": "〜をけいきに",
+    "english": "as an opportunity to ~",
+    "vietnamese": "nhân cơ hội ~",
+    "example_jp": "結婚（けっこん）を契機（けいき）に転職（てんしょく）した。",
+    "example_en": "I changed jobs upon getting married.",
+    "example_vi": "Tôi đã chuyển việc nhân dịp kết hôn."
+  },
+  {
+    "phrase": "〜に先立って",
+    "furigana": "〜にさきだって",
+    "english": "prior to; before",
+    "vietnamese": "trước khi ~",
+    "example_jp": "開会（かいかい）に先立（さきだ）って、挨拶（あいさつ）があります。",
+    "example_en": "There will be a greeting before the opening ceremony.",
+    "example_vi": "Sẽ có phần chào hỏi trước khi buổi lễ bắt đầu."
+  },
+  {
+    "phrase": "〜にわたって",
+    "furigana": "〜にわたって",
+    "english": "throughout; over a span of",
+    "vietnamese": "trải suốt; kéo dài",
+    "example_jp": "5日間（いつかかん）にわたって試験（しけん）が行（おこな）われた。",
+    "example_en": "The exams were held over five days.",
+    "example_vi": "Các kỳ thi được tổ chức trong suốt 5 ngày."
+  },
+  {
+    "phrase": "〜を問わず",
+    "furigana": "〜をとわず",
+    "english": "regardless of",
+    "vietnamese": "bất kể; không phân biệt",
+    "example_jp": "国籍（こくせき）を問（と）わず応募（おうぼ）できます。",
+    "example_en": "Anyone can apply regardless of nationality.",
+    "example_vi": "Bất kể quốc tịch đều có thể ứng tuyển."
+  },
+  {
+    "phrase": "〜に応じて",
+    "furigana": "〜におうじて",
+    "english": "according to; in response to",
+    "vietnamese": "tùy theo; ứng với",
+    "example_jp": "状況（じょうきょう）に応（おう）じて対応（たいおう）する。",
+    "example_en": "Respond according to the situation.",
+    "example_vi": "Ứng phó tùy theo tình huống."
+  },
+  {
+    "phrase": "〜に沿って",
+    "furigana": "〜にそって",
+    "english": "along with; in line with",
+    "vietnamese": "theo sát; dựa theo",
+    "example_jp": "マニュアルに沿（そ）って操作（そうさ）してください。",
+    "example_en": "Please operate according to the manual.",
+    "example_vi": "Hãy vận hành theo hướng dẫn sử dụng."
+  },
+  {
+    "phrase": "〜にしても〜にしても",
+    "furigana": "〜にしても〜にしても",
+    "english": "whether A or B",
+    "vietnamese": "dù là A hay B",
+    "example_jp": "行（い）くにしても行（い）かないにしても、連絡（れんらく）してください。",
+    "example_en": "Whether you go or not, please contact me.",
+    "example_vi": "Dù đi hay không thì cũng hãy liên lạc nhé."
+  },
+  {
+    "phrase": "〜ものの",
+    "furigana": "〜ものの",
+    "english": "although; but",
+    "vietnamese": "tuy ~ nhưng",
+    "example_jp": "合格（ごうかく）したものの、不安（ふあん）が残（のこ）る。",
+    "example_en": "Although I passed, I still feel uneasy.",
+    "example_vi": "Dù đã đậu nhưng tôi vẫn thấy lo lắng."
+  },
+  {
+    "phrase": "〜わけではない",
+    "furigana": "〜わけではない",
+    "english": "it doesn’t mean that ~",
+    "vietnamese": "không có nghĩa là ~",
+    "example_jp": "嫌（きら）いなわけではないが、食（た）べたくない。",
+    "example_en": "It’s not that I hate it, I just don’t want to eat.",
+    "example_vi": "Không phải là tôi ghét, chỉ là không muốn ăn."
+  },
+  {
+    "phrase": "〜とは限らない",
+    "furigana": "〜とはかぎらない",
+    "english": "not necessarily ~",
+    "vietnamese": "không hẳn là ~",
+    "example_jp": "高（たか）いものが必（かなら）ずしも良（よ）いとは限（かぎ）らない。",
+    "example_en": "Expensive things aren’t always good.",
+    "example_vi": "Không phải đồ đắt là tốt."
+  },
+  {
+    "phrase": "〜というより",
+    "furigana": "〜というより",
+    "english": "rather than ~",
+    "vietnamese": "nói đúng hơn là ~",
+    "example_jp": "彼（かれ）は学生（がくせい）というより先生（せんせい）みたいだ。",
+    "example_en": "He looks more like a teacher than a student.",
+    "example_vi": "Anh ấy giống thầy giáo hơn là học sinh."
+  },
+  {
+    "phrase": "〜上で",
+    "furigana": "〜うえで",
+    "english": "after; upon",
+    "vietnamese": "sau khi ~",
+    "example_jp": "十分（じゅうぶん）に検討（けんとう）した上（うえ）で決定（けってい）します。",
+    "example_en": "We’ll decide after careful consideration.",
+    "example_vi": "Sau khi xem xét kỹ lưỡng, chúng tôi sẽ quyết định."
+  },
+  {
+    "phrase": "〜次第で",
+    "furigana": "〜しだいで",
+    "english": "depending on ~",
+    "vietnamese": "tùy vào ~",
+    "example_jp": "成功（せいこう）は努力（どりょく）次第（しだい）だ。",
+    "example_en": "Success depends on effort.",
+    "example_vi": "Thành công phụ thuộc vào nỗ lực."
+  },
+  {
+    "phrase": "〜限り",
+    "furigana": "〜かぎり",
+    "english": "as long as; to the extent that",
+    "vietnamese": "chừng nào còn ~; trong phạm vi ~",
+    "example_jp": "私（わたし）が知（し）る限（かぎ）り、彼（かれ）は無実（むじつ）だ。",
+    "example_en": "As far as I know, he is innocent.",
+    "example_vi": "Theo như tôi biết, anh ấy vô tội."
+  },
+  {
+    "phrase": "〜に限って",
+    "furigana": "〜にかぎって",
+    "english": "especially when; particularly ~",
+    "vietnamese": "đúng lúc ~ thì lại ~",
+    "example_jp": "急（いそ）いでいる時（とき）に限（かぎ）って渋滞（じゅうたい）する。",
+    "example_en": "It always gets jammed exactly when I’m in a hurry.",
+    "example_vi": "Đúng lúc vội thì lại tắc đường."
+  },
+  {
+    "phrase": "〜にしては",
+    "furigana": "〜にしては",
+    "english": "considering; for ~",
+    "vietnamese": "dù là ~ mà lại ~",
+    "example_jp": "初（はじ）めてにしては上手（じょうず）ですね。",
+    "example_en": "You’re good for a first-timer.",
+    "example_vi": "Dù là lần đầu nhưng làm tốt đấy."
+  },
+  {
+    "phrase": "〜たとたんに",
+    "furigana": "〜たとたんに",
+    "english": "just as; the moment ~",
+    "vietnamese": "ngay khi ~",
+    "example_jp": "家（いえ）を出（で）たとたんに雨（あめ）が降（ふ）り出（だ）した。",
+    "example_en": "The moment I left the house, it started raining.",
+    "example_vi": "Vừa bước ra khỏi nhà thì trời đổ mưa."
+  },
+  {
+    "phrase": "〜かのように",
+    "furigana": "〜かのように",
+    "english": "as if ~",
+    "vietnamese": "như thể là ~",
+    "example_jp": "彼（かれ）は何（なに）も知（し）らないかのようにふるまった。",
+    "example_en": "He acted as if he didn’t know anything.",
+    "example_vi": "Anh ta cư xử như thể không biết gì."
+  },
+  {
+    "phrase": "〜ずにすむ",
+    "furigana": "〜ずにすむ",
+    "english": "get by without ~",
+    "vietnamese": "không cần phải ~ cũng được",
+    "example_jp": "謝（あやま）らずにすんでよかった。",
+    "example_en": "Glad I didn’t have to apologize.",
+    "example_vi": "Thật tốt vì không phải xin lỗi."
+  }
+]
