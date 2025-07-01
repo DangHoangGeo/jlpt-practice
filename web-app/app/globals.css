@@ -66,3 +66,48 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Mobile-specific improvements */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mobile-card {
+    @apply rounded-lg border shadow-sm;
+  }
+  
+  .mobile-button {
+    @apply px-4 py-3 rounded-lg font-medium transition-colors;
+  }
+  
+  .mobile-nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-colors;
+  }
+  
+  /* Improved scroll behavior for mobile */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better focus styles for mobile */
+  .focus-visible:focus-visible {
+    @apply ring-2 ring-primary ring-offset-2 outline-none;
+  }
+}
+
+/* Japanese text rendering improvements */
+@layer base {
+  .japanese-text {
+    font-family: 'Hiragino Sans', 'Yu Gothic UI', 'Meiryo UI', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .furigana {
+    font-size: 0.7em;
+    line-height: 1;
+    margin-bottom: -0.2em;
+  }
+}

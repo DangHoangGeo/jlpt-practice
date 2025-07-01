@@ -2,6 +2,8 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { EnhancedQuizCard } from "@/components/enhanced-quiz-card";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default async function GrammarQuiz() {
   const supabase = await createClient();
@@ -15,23 +17,24 @@ export default async function GrammarQuiz() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-8">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-6">
+        {/* Mobile-optimized header */}
+        <div className="flex items-center gap-4 mb-6">
+          <Link href="/">
+            <Button variant="outline" size="sm">
+              <ArrowLeft className="h-4 w-4 mr-1" />
+              Back
+            </Button>
+          </Link>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
               Grammar Quiz
             </h1>
-            <p className="text-lg text-gray-600">
-              Practice grammar patterns
+            <p className="text-sm sm:text-base text-muted-foreground">
+              Practice JLPT N1 grammar patterns
             </p>
           </div>
-          <Link
-            href="/"
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors"
-          >
-            Back to Dashboard
-          </Link>
         </div>
 
         <EnhancedQuizCard section="grammar" />

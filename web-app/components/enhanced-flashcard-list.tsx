@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
-import { RotateCcw, Check, X, BookOpen, Target, Search, Brain, Zap, Sparkles, TrendingUp } from "lucide-react";
+import { RotateCcw, Check, X, BookOpen, Target, Search, Brain, Zap, Sparkles, TrendingUp, SkipForward, ArrowRight } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
 
 interface FlashcardItem {
@@ -33,9 +33,11 @@ interface FlashcardProps {
   item: FlashcardItem;
   itemType: "vocab" | "grammar";
   onReview: (known: boolean, type: "vocab" | "grammar") => void;
+  onSkip: () => void;
+  onNext: () => void;
 }
 
-function EnhancedFlashcard({ item, itemType, onReview }: FlashcardProps) {
+function EnhancedFlashcard({ item, itemType, onReview, onSkip, onNext }: FlashcardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showAIHint, setShowAIHint] = useState(false);
   const [aiHint, setAIHint] = useState<string | null>(null);
@@ -47,6 +49,20 @@ function EnhancedFlashcard({ item, itemType, onReview }: FlashcardProps) {
 
   const handleReview = (known: boolean) => {
     onReview(known, itemType);
+    setIsFlipped(false);
+    setShowAIHint(false);
+    setAIHint(null);
+  };
+
+  const handleSkip = () => {
+    onSkip();
+    setIsFlipped(false);
+    setShowAIHint(false);
+    setAIHint(null);
+  };
+
+  const handleNext = () => {
+    onNext();
     setIsFlipped(false);
     setShowAIHint(false);
     setAIHint(null);
@@ -215,30 +231,79 @@ function EnhancedFlashcard({ item, itemType, onReview }: FlashcardProps) {
         )}
 
         {isFlipped && (
-          <div className="flex gap-4 mt-6">
-            <Button
-              onClick={() => handleReview(false)}
-              variant="outline"
-              className="flex-1 text-red-600 border-red-600 hover:bg-red-50"
-            >
-              <X className="h-4 w-4 mr-2" />
-              Again
-            </Button>
-            <Button
-              onClick={() => handleReview(true)}
-              className="flex-1 bg-green-600 hover:bg-green-700"
-            >
-              <Check className="h-4 w-4 mr-2" />
-              Know
-            </Button>
+          <div className="space-y-3 mt-6">
+            {/* Review buttons */}
+            <div className="flex gap-3">
+              <Button
+                onClick={() => handleReview(false)}
+                variant="outline"
+                className="flex-1 text-red-600 border-red-600 hover:bg-red-50"
+              >
+                <X className="h-4 w-4 mr-2" />
+                Again
+              </Button>
+              <Button
+                onClick={() => handleReview(true)}
+                className="flex-1 bg-green-600 hover:bg-green-700"
+              >
+                <Check className="h-4 w-4 mr-2" />
+                Know
+              </Button>
+            </div>
+            
+            {/* Navigation buttons */}
+            <div className="flex gap-3">
+              <Button
+                onClick={handleSkip}
+                variant="ghost"
+                size="sm"
+                className="flex-1 text-gray-600 hover:text-gray-800"
+              >
+                <SkipForward className="h-4 w-4 mr-2" />
+                Skip
+              </Button>
+              <Button
+                onClick={handleNext}
+                variant="ghost"
+                size="sm"
+                className="flex-1 text-blue-600 hover:text-blue-800"
+              >
+                <ArrowRight className="h-4 w-4 mr-2" />
+                Next
+              </Button>
+            </div>
           </div>
         )}
         
         {!isFlipped && (
-          <Button onClick={handleFlip} variant="outline" className="mt-6">
-            <RotateCcw className="h-4 w-4 mr-2" />
-            Flip Card
-          </Button>
+          <div className="space-y-3 mt-6">
+            <Button onClick={handleFlip} variant="outline" className="w-full">
+              <RotateCcw className="h-4 w-4 mr-2" />
+              Flip Card
+            </Button>
+            
+            {/* Quick actions when not flipped */}
+            <div className="flex gap-3">
+              <Button
+                onClick={handleSkip}
+                variant="ghost"
+                size="sm"
+                className="flex-1 text-gray-600 hover:text-gray-800"
+              >
+                <SkipForward className="h-4 w-4 mr-2" />
+                Skip
+              </Button>
+              <Button
+                onClick={handleNext}
+                variant="ghost"
+                size="sm"
+                className="flex-1 text-blue-600 hover:text-blue-800"
+              >
+                <ArrowRight className="h-4 w-4 mr-2" />
+                Next
+              </Button>
+            </div>
+          </div>
         )}
 
         {/* Progress Indicator */}
@@ -439,6 +504,38 @@ export function EnhancedFlashcardList() {
     }
   };
 
+  const handleVocabSkip = () => {
+    if (currentVocabIndex < vocabCards.length - 1) {
+      setCurrentVocabIndex(prev => prev + 1);
+    } else {
+      setCurrentVocabIndex(0); // Loop back to first card
+    }
+  };
+
+  const handleVocabNext = () => {
+    if (currentVocabIndex < vocabCards.length - 1) {
+      setCurrentVocabIndex(prev => prev + 1);
+    } else {
+      fetchFlashcards(); // Refresh with new cards
+    }
+  };
+
+  const handleGrammarSkip = () => {
+    if (currentGrammarIndex < grammarCards.length - 1) {
+      setCurrentGrammarIndex(prev => prev + 1);
+    } else {
+      setCurrentGrammarIndex(0); // Loop back to first card
+    }
+  };
+
+  const handleGrammarNext = () => {
+    if (currentGrammarIndex < grammarCards.length - 1) {
+      setCurrentGrammarIndex(prev => prev + 1);
+    } else {
+      fetchFlashcards(); // Refresh with new cards
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -605,6 +702,8 @@ export function EnhancedFlashcardList() {
                 item={vocabCards[currentVocabIndex]}
                 itemType="vocab"
                 onReview={handleVocabReview}
+                onSkip={handleVocabSkip}
+                onNext={handleVocabNext}
               />
             </div>
           ) : (
@@ -642,6 +741,8 @@ export function EnhancedFlashcardList() {
                 item={grammarCards[currentGrammarIndex]}
                 itemType="grammar"
                 onReview={handleGrammarReview}
+                onSkip={handleGrammarSkip}
+                onNext={handleGrammarNext}
               />
             </div>
           ) : (
