@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
-import { RotateCcw, Check, X, BookOpen, Target, Search, Brain, Zap, Sparkles, TrendingUp, SkipForward, ArrowRight } from "lucide-react";
+import { RotateCcw, Check, X, BookOpen, Target, Search, Brain, Zap, Sparkles, TrendingUp, ArrowRight } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
 
 interface FlashcardItem {
@@ -33,11 +33,11 @@ interface FlashcardProps {
   item: FlashcardItem;
   itemType: "vocab" | "grammar";
   onReview: (known: boolean, type: "vocab" | "grammar") => void;
-  onSkip: () => void;
+  onMaster: (known: boolean, type: "vocab" | "grammar") => void;
   onNext: () => void;
 }
 
-function EnhancedFlashcard({ item, itemType, onReview, onSkip, onNext }: FlashcardProps) {
+function EnhancedFlashcard({ item, itemType, onReview, onMaster, onNext }: FlashcardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showAIHint, setShowAIHint] = useState(false);
   const [aiHint, setAIHint] = useState<string | null>(null);
@@ -54,8 +54,8 @@ function EnhancedFlashcard({ item, itemType, onReview, onSkip, onNext }: Flashca
     setAIHint(null);
   };
 
-  const handleSkip = () => {
-    onSkip();
+  const handleMaster = (known: boolean) => {
+    onMaster(known, itemType);
     setIsFlipped(false);
     setShowAIHint(false);
     setAIHint(null);
@@ -254,13 +254,13 @@ function EnhancedFlashcard({ item, itemType, onReview, onSkip, onNext }: Flashca
             {/* Navigation buttons */}
             <div className="flex gap-3">
               <Button
-                onClick={handleSkip}
+                onClick={() => handleMaster(true)}
                 variant="ghost"
                 size="sm"
                 className="flex-1 text-gray-600 hover:text-gray-800"
               >
-                <SkipForward className="h-4 w-4 mr-2" />
-                Skip
+                 <Zap className="h-4 w-4 mr-2" />
+                Master
               </Button>
               <Button
                 onClick={handleNext}
@@ -285,13 +285,13 @@ function EnhancedFlashcard({ item, itemType, onReview, onSkip, onNext }: Flashca
             {/* Quick actions when not flipped */}
             <div className="flex gap-3">
               <Button
-                onClick={handleSkip}
+                onClick={() => handleMaster(true)}
                 variant="ghost"
                 size="sm"
                 className="flex-1 text-gray-600 hover:text-gray-800"
               >
-                <SkipForward className="h-4 w-4 mr-2" />
-                Skip
+                <Zap className="h-4 w-4 mr-2" />
+                Master
               </Button>
               <Button
                 onClick={handleNext}
@@ -504,13 +504,44 @@ export function EnhancedFlashcardList() {
     }
   };
 
-  const handleVocabSkip = () => {
-    if (currentVocabIndex < vocabCards.length - 1) {
-      setCurrentVocabIndex(prev => prev + 1);
-    } else {
-      setCurrentVocabIndex(0); // Loop back to first card
+  const handleVocabMaster = async (master: boolean, type: 'vocab' | 'grammar') => {
+    const currentCard = vocabCards[currentVocabIndex];
+    if (!currentCard) return;
+
+    try {
+      const response = await fetch("/api/flashcards", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          item_id: currentCard.id,
+          item_type: type,
+          known: master,
+          mark_as_mastered: master, // Skip does not count as mastery
+        }),
+      });
+
+      if (response.ok) {
+        // Update session stats
+        setSessionStats(prev => ({
+          reviewed: prev.reviewed + 1,
+          correct: master ? prev.correct + 1 : prev.correct,
+          streakCount: master ? prev.streakCount + 1 : 0
+        }));
+
+        // Move to next card or refresh if at end
+        if (currentVocabIndex < vocabCards.length - 1) {
+          setCurrentVocabIndex(prev => prev + 1);
+        } else {
+          // Refresh the list
+          fetchFlashcards();
+        }
+      }
+    } catch (error) {
+      console.error("Failed to update progress:", error);
     }
-  };
+  }
 
   const handleVocabNext = () => {
     if (currentVocabIndex < vocabCards.length - 1) {
@@ -520,13 +551,44 @@ export function EnhancedFlashcardList() {
     }
   };
 
-  const handleGrammarSkip = () => {
-    if (currentGrammarIndex < grammarCards.length - 1) {
-      setCurrentGrammarIndex(prev => prev + 1);
-    } else {
-      setCurrentGrammarIndex(0); // Loop back to first card
+  const handleGrammarMaster = async (master: boolean, type: 'vocab' | 'grammar') => {
+    const currentCard = grammarCards[currentGrammarIndex];
+    if (!currentCard) return;
+
+    try {
+      const response = await fetch("/api/flashcards", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          item_id: currentCard.id,
+          item_type: type,
+          known: master,
+          mark_as_mastered: master, // Skip does not count as mastery
+        }),
+      });
+
+      if (response.ok) {
+        // Update session stats
+        setSessionStats(prev => ({
+          reviewed: prev.reviewed + 1,
+          correct: master ? prev.correct + 1 : prev.correct,
+          streakCount: master ? prev.streakCount + 1 : 0
+        }));
+
+        // Move to next card or refresh if at end
+        if (currentGrammarIndex < grammarCards.length - 1) {
+          setCurrentGrammarIndex(prev => prev + 1);
+        } else {
+          // Refresh the list
+          fetchFlashcards();
+        }
+      }
+    } catch (error) {
+      console.error("Failed to update progress:", error);
     }
-  };
+  }
 
   const handleGrammarNext = () => {
     if (currentGrammarIndex < grammarCards.length - 1) {
@@ -702,7 +764,7 @@ export function EnhancedFlashcardList() {
                 item={vocabCards[currentVocabIndex]}
                 itemType="vocab"
                 onReview={handleVocabReview}
-                onSkip={handleVocabSkip}
+                onMaster={handleVocabMaster}
                 onNext={handleVocabNext}
               />
             </div>
@@ -741,7 +803,7 @@ export function EnhancedFlashcardList() {
                 item={grammarCards[currentGrammarIndex]}
                 itemType="grammar"
                 onReview={handleGrammarReview}
-                onSkip={handleGrammarSkip}
+                onMaster={handleGrammarMaster}
                 onNext={handleGrammarNext}
               />
             </div>
