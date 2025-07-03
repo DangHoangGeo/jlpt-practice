@@ -32,98 +32,77 @@ export async function GET(
       return NextResponse.json({ error: "Test not found" }, { status: 404 });
     }
 
-    // Get questions from the test_questions table and join with actual question data
-    const { data: testQuestions, error: questionsError } = await supabase
+    // Get the test questions for this test
+    const { data: testQuestions, error: testQuestionsError } = await supabase
       .from('test_questions')
-      .select(`
-        *,
-        vocab_questions:question_id!inner (
-          id,
-          question_text,
-          options,
-          answer_index,
-          explanation,
-          vocabulary_items (
-            id,
-            term,
-            reading,
-            meaning_en,
-            example_jp
-          )
-        ),
-        grammar_questions:question_id!inner (
-          id,
-          question_text,
-          options,
-          answer_index,
-          explanation,
-          grammar_items (
-            id,
-            term,
-            reading,
-            meaning_en,
-            meaning_vi,
-            example_jp
-          )
-        )
-      `)
+      .select('*')
       .eq('test_record_id', testId)
-      .order('question_order', { ascending: true });
+      .order('question_order');
 
-    if (questionsError) {
-      console.error('Error fetching test questions:', questionsError);
+    if (testQuestionsError) {
+      console.error('Error fetching test questions:', testQuestionsError);
       return NextResponse.json({ error: "Failed to fetch test questions" }, { status: 500 });
     }
 
-    // Transform questions into the expected format
-    const questions = testQuestions?.map((tq: {
-      question_type: string;
-      vocab_questions?: {
-        id: string;
-        question_text: string;
-        options: string[];
-        answer_index: number;
-        explanation: string;
-        vocabulary_items?: {
-          id: string;
-          term: string;
-          reading: string;
-          meaning_en: string;
-          example_jp: string;
-        };
-      };
-      grammar_questions?: {
-        id: string;
-        question_text: string;
-        options: string[];
-        answer_index: number;
-        explanation: string;
-        grammar_items?: {
-          id: string;
-          term: string;
-          reading: string;
-          meaning_en: string;
-          meaning_vi: string;
-          example_jp: string;
-        };
-      };
-    }) => {
-      const questionData = tq.question_type === 'vocab' ? tq.vocab_questions : tq.grammar_questions;
-      if (!questionData) return null;
+    if (!testQuestions || testQuestions.length === 0) {
+      return NextResponse.json({ error: "No questions found for this test" }, { status: 404 });
+    }
 
-      return {
-        id: questionData.id,
-        question_text: questionData.question_text,
-        options: questionData.options,
-        answer_index: questionData.answer_index,
-        explanation: questionData.explanation,
-        vocabulary_items: tq.question_type === 'vocab' ? (questionData as typeof tq.vocab_questions)?.vocabulary_items : undefined,
-        grammar_items: tq.question_type === 'grammar' ? (questionData as typeof tq.grammar_questions)?.grammar_items : undefined,
-      };
-    }).filter(Boolean) || [];
+    // Now fetch the actual question details based on question_type
+    const questions = [];
+    
+    for (const testQuestion of testQuestions) {
+      let questionData = null;
+      
+      if (testQuestion.question_type === 'vocab') {
+        const { data: vocabQuestion, error: vocabError } = await supabase
+          .from('vocab_questions')
+          .select(`
+            *,
+            vocabulary_items (*)
+          `)
+          .eq('id', testQuestion.question_id)
+          .single();
+          
+        if (!vocabError && vocabQuestion) {
+          questionData = {
+            id: vocabQuestion.id,
+            question_text: vocabQuestion.question_text,
+            options: vocabQuestion.options,
+            answer_index: vocabQuestion.answer_index,
+            explanation: vocabQuestion.explanation,
+            vocabulary_items: vocabQuestion.vocabulary_items
+          };
+        }
+      } else if (testQuestion.question_type === 'grammar') {
+        const { data: grammarQuestion, error: grammarError } = await supabase
+          .from('grammar_questions')
+          .select(`
+            *,
+            grammar_items (*)
+          `)
+          .eq('id', testQuestion.question_id)
+          .single();
+          
+        if (!grammarError && grammarQuestion) {
+          questionData = {
+            id: grammarQuestion.id,
+            question_text: grammarQuestion.question_text,
+            options: grammarQuestion.options,
+            answer_index: grammarQuestion.answer_index,
+            explanation: grammarQuestion.explanation,
+            grammar_items: grammarQuestion.grammar_items
+          };
+        }
+      }
+      
+      if (questionData) {
+        questions.push(questionData);
+      }
+    }
 
     if (questions.length === 0) {
-      return NextResponse.json({ error: "No questions found for this test" }, { status: 404 });
+      return NextResponse.json({ error: "No valid questions found for this test" }, { status: 404 });
     }
 
     return NextResponse.json({ 
