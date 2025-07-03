@@ -6,6 +6,7 @@ import { extractJsonFromText } from '@/lib/json-extractor'
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY!)
 
+
 // Type definitions
 interface RecommendedItem {
   id: string
@@ -16,6 +17,19 @@ interface RecommendedItem {
   type: string
   difficulty_score: number
   priority: number
+}
+
+type TestStrategy = {
+	performance_summary: string
+	recommended_focus: string[]
+	difficulty_distribution: {
+		easy: number
+		medium: number
+		hard: number
+	}
+	recommended_items: Array<RecommendedItem>
+	test_strategy: string
+	estimated_difficulty: 'easy' | 'medium' | 'hard' | 'mixed'
 }
 
 export async function GET(request: NextRequest) {
@@ -104,7 +118,7 @@ export async function POST(request: NextRequest) {
     // Generate AI analysis and recommendations
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" })
     const aiResponse = await model.generateContent(analysisPrompt)
-    const aiAnalysis = extractJsonFromText(aiResponse.response.text())
+    const aiAnalysis = extractJsonFromText(aiResponse.response.text()) as TestStrategy
     
     // Create test record
     const { data: test, error: testError } = await supabase

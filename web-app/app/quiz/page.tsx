@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface PageProps {
-  searchParams: { test_id?: string };
+  searchParams: Promise<{ test_id?: string }>;
 }
 
 export default async function QuizPage({ searchParams }: PageProps) {
@@ -21,7 +21,8 @@ export default async function QuizPage({ searchParams }: PageProps) {
   }
 
   // Check if this is a personalized test
-  const { test_id } = searchParams;
+  const resolvedSearchParams = await searchParams;
+  const { test_id } = resolvedSearchParams;
   
   if (!test_id) {
     // No test_id provided, redirect to main dashboard or show error
