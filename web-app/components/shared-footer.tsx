@@ -68,6 +68,22 @@ export function SharedFooter() {
               </li>
               <li>
                 <Link 
+                  href="/practice-lists" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Practice Lists
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/personalized-tests" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Smart Tests
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/tips" 
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >

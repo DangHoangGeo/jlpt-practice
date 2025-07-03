@@ -11,7 +11,9 @@ import {
   BarChart3,
   User,
   Menu,
-  Bot
+  Bot,
+  ListChecks,
+  Target
 } from "lucide-react";
 import {
   Sheet,
@@ -31,6 +33,8 @@ export async function SharedHeader() {
     { href: "/quiz/vocab", icon: BookOpen, text: "Vocabulary Quiz" },
     { href: "/quiz/grammar", icon: FileText, text: "Grammar Quiz" },
     { href: "/flashcards", icon: Brain, text: "Flashcards" },
+    { href: "/practice-lists", icon: ListChecks, text: "Practice Lists" },
+    { href: "/personalized-tests", icon: Target, text: "Smart Tests" },
     { href: "/my-content", icon: User, text: "My Content" },
     { href: "/tips", icon: Lightbulb, text: "Tips" },
   ];

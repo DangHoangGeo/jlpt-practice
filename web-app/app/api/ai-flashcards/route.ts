@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
     if (section === 'vocab') {
       // Get user's difficult vocabulary items
       const { data: progressData } = await supabase
-        .from('flashcard_progress')
+        .from('user_progress')
         .select(`
           item_id,
           interval,
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
     } else {
       // Get user's difficult grammar items
       const { data: progressData } = await supabase
-        .from('flashcard_progress')
+        .from('user_progress')
         .select(`
           item_id,
           interval,

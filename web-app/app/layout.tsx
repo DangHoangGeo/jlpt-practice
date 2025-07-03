@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { SharedHeader } from "@/components/shared-header";
 import { SharedFooter } from "@/components/shared-footer";
+import { ToastProvider } from "@/hooks/use-toast";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -35,13 +36,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col">
-            <SharedHeader />
-            <main className="flex-1">
-              {children}
-            </main>
-            <SharedFooter />
-          </div>
+          <ToastProvider>
+            <div className="flex flex-col">
+              <SharedHeader />
+              <main className="flex-1">
+                {children}
+              </main>
+              <SharedFooter />
+            </div>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
