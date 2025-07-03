@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Update user progress if this is a quiz answer or flashcard review
-    if (activity_type === 'quiz_answer' || activity_type === 'flashcard_review') {
+    if (activity_type === 'quiz_answer' || activity_type === 'enhanced_quiz_answer' || activity_type === 'flashcard_review') {
       if (!item_id || !item_type) {
         return NextResponse.json({ error: 'item_id and item_type required for progress tracking' }, { status: 400 })
       }

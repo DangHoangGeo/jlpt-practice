@@ -25,7 +25,7 @@ function calculateNextReview(quality: number, interval: number, easiness: number
   return {
     interval: newInterval,
     easiness: newEasiness,
-    next_review: nextReview.toISOString().split('T')[0]
+    next_review_at: nextReview.toISOString().split('T')[0] // Changed from next_review to next_review_at
   }
 }
 
@@ -99,7 +99,7 @@ export async function GET(request: NextRequest) {
     // Get progress for all items
     const itemIds = itemsData?.map(item => item.id) || []
     const { data: progressData } = await supabase
-      .from('flashcard_progress')
+      .from('user_progress')
       .select('*')
       .eq('user_id', user.id)
       .eq('item_type', section)
@@ -121,7 +121,7 @@ export async function GET(request: NextRequest) {
           return !progress
         case 'due':
           if (!progress) return true // New items are due
-          return progress.next_review <= today && !progress.is_mastered
+          return progress.next_review_at <= today && !progress.is_mastered
         case 'mastered':
           return progress?.is_mastered
         case 'difficult':
@@ -163,7 +163,7 @@ export async function PATCH(request: NextRequest) {
     }
     
     const body = await request.json()
-    const { item_id, item_type, known } = body
+    const { item_id, item_type, known, mark_as_mastered } = body
     const userId = user.id
     
     if (!item_id || !item_type || typeof known !== 'boolean') {
@@ -174,7 +174,7 @@ export async function PATCH(request: NextRequest) {
     
     // Get current progress
     const { data: currentProgress } = await supabase
-      .from('flashcard_progress')
+      .from('user_progress')
       .select('*')
       .eq('user_id', userId)
       .eq('item_id', item_id)
@@ -192,13 +192,24 @@ export async function PATCH(request: NextRequest) {
         currentProgress.easiness
       )
       
+      // Determine mastery level
+      const masteryLevel = mark_as_mastered || (known && currentProgress.interval >= 10) ? 'mastered' : 
+                          currentProgress.interval > 6 ? 'review' :
+                          currentProgress.interval > 1 ? 'learning' : 'new'
+      
       newProgress = {
-        ...nextReview,
-        is_mastered: known && currentProgress.interval >= 10 // Mark as mastered if known and interval is high
+        correct_count: known ? currentProgress.correct_count + 1 : currentProgress.correct_count,
+        incorrect_count: known ? currentProgress.incorrect_count : currentProgress.incorrect_count + 1,
+        last_reviewed_at: new Date().toISOString(),
+        next_review_at: nextReview.next_review_at,
+        mastery_level: masteryLevel,
+        interval: nextReview.interval,
+        easiness: nextReview.easiness,
+        is_mastered: mark_as_mastered || (known && currentProgress.interval >= 10)
       }
       
       const { error: updateError } = await supabase
-        .from('flashcard_progress')
+        .from('user_progress')
         .update(newProgress)
         .eq('user_id', userId)
         .eq('item_id', item_id)
@@ -212,16 +223,27 @@ export async function PATCH(request: NextRequest) {
       // Create new progress record
       const nextReview = calculateNextReview(quality, 1, 2.5)
       
+      // Determine initial mastery level
+      const masteryLevel = mark_as_mastered ? 'mastered' : 
+                          nextReview.interval > 6 ? 'review' :
+                          nextReview.interval > 1 ? 'learning' : 'new'
+      
       newProgress = {
         user_id: userId,
         item_id,
         item_type,
-        ...nextReview,
-        is_mastered: false
+        correct_count: known ? 1 : 0,
+        incorrect_count: known ? 0 : 1,
+        last_reviewed_at: new Date().toISOString(),
+        next_review_at: nextReview.next_review_at,
+        mastery_level: masteryLevel,
+        interval: nextReview.interval,
+        easiness: nextReview.easiness,
+        is_mastered: mark_as_mastered || false
       }
       
       const { error: insertError } = await supabase
-        .from('flashcard_progress')
+        .from('user_progress')
         .insert(newProgress)
       
       if (insertError) {

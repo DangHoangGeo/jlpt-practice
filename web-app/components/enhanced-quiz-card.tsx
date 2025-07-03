@@ -58,8 +58,8 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
   const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
   const [showDetailedResults, setShowDetailedResults] = useState(false);
   
-  // Enhanced features
-  const [filter, setFilter] = useState<FilterType>('all');
+  // Enhanced features - Default to 'due' for better learning experience
+  const [filter, setFilter] = useState<FilterType>('due');
   const [searchTerm, setSearchTerm] = useState('');
   const [batchSize, setBatchSize] = useState(10);
   const [difficulty, setDifficulty] = useState<DifficultyType>('medium');
@@ -74,6 +74,7 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
       const actualFilter = customFilter || filter;
       const actualBatchSize = customBatchSize || batchSize;
       
+      // Try preferred filter first
       let url = `/api/questions?section=${section}&filter=${actualFilter}&limit=${actualBatchSize}`;
       if (searchTerm) {
         url += `&search=${encodeURIComponent(searchTerm)}`;
@@ -88,11 +89,36 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
       const data = await response.json();
       console.log('Enhanced Quiz API response:', data);
       
-      setQuestions(data.questions || []);
-      
-      if (data.questions?.length === 0) {
-        setError(`No ${actualFilter} questions available. Try a different filter or generate new ones!`);
+      // If no questions found, try fallback filters
+      if (data.questions?.length === 0 && actualFilter !== 'all') {
+        console.log(`No questions found with filter: ${actualFilter}, trying fallback filters...`);
+        
+        const fallbackFilters = ['due', 'new', 'all'];
+        const currentFilterIndex = fallbackFilters.indexOf(actualFilter);
+        
+        for (let i = currentFilterIndex + 1; i < fallbackFilters.length; i++) {
+          const fallbackFilter = fallbackFilters[i];
+          console.log(`Trying fallback filter: ${fallbackFilter}`);
+          
+          const fallbackUrl = `/api/questions?section=${section}&filter=${fallbackFilter}&limit=${actualBatchSize}`;
+          const fallbackResponse = await fetch(fallbackUrl);
+          
+          if (fallbackResponse.ok) {
+            const fallbackData = await fallbackResponse.json();
+            if (fallbackData.questions?.length > 0) {
+              console.log(`Found ${fallbackData.questions.length} questions with fallback filter: ${fallbackFilter}`);
+              setQuestions(fallbackData.questions);
+              setError(null);
+              return;
+            }
+          }
+        }
+        
+        // If all filters failed, show error
+        setQuestions([]);
+        setError(`No questions available for ${section}. Try generating AI questions!`);
       } else {
+        setQuestions(data.questions || []);
         setError(null);
       }
     } catch (err) {
@@ -141,7 +167,61 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
   };
 
   const loadMoreQuestions = async () => {
-    await fetchQuestions(filter, 5); // Load 5 more questions
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      let url = `/api/questions?section=${section}&filter=${filter}&limit=5`;
+      if (searchTerm) {
+        url += `&search=${encodeURIComponent(searchTerm)}`;
+      }
+      
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error("Failed to fetch more questions");
+      }
+      
+      const data = await response.json();
+      console.log('Load more questions API response:', data);
+      
+      // Append new questions to existing ones, avoiding duplicates
+      const newQuestions = data.questions || [];
+      const existingIds = new Set(questions.map((q: Question) => q.id));
+      const uniqueNewQuestions = newQuestions.filter((q: Question) => !existingIds.has(q.id));
+      
+      if (uniqueNewQuestions.length > 0) {
+        setQuestions(prev => [...prev, ...uniqueNewQuestions]);
+        setError(null);
+      } else {
+        // If no new questions available with current filter, try 'all' filter
+        if (filter !== 'all') {
+          const fallbackUrl = `/api/questions?section=${section}&filter=all&limit=5`;
+          const fallbackResponse = await fetch(fallbackUrl);
+          
+          if (fallbackResponse.ok) {
+            const fallbackData = await fallbackResponse.json();
+            const fallbackQuestions = fallbackData.questions || [];
+            const uniqueFallbackQuestions = fallbackQuestions.filter((q: Question) => !existingIds.has(q.id));
+            
+            if (uniqueFallbackQuestions.length > 0) {
+              setQuestions(prev => [...prev, ...uniqueFallbackQuestions]);
+              setError(null);
+            } else {
+              setError(`No more questions available. Try generating AI questions!`);
+            }
+          } else {
+            setError(`No more ${filter} questions available. Try a different filter or generate AI questions!`);
+          }
+        } else {
+          setError(`No more questions available. Try generating AI questions!`);
+        }
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load more questions");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -153,7 +233,7 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
     setSelectedAnswer(answerIndex);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (selectedAnswer === null) return;
     
     const isCorrect = selectedAnswer === currentQuestion.answer_index;
@@ -174,7 +254,8 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
     };
     setQuizResults(prev => [...prev, result]);
 
-    logActivity(isCorrect);
+    // Wait for activity logging to complete
+    await logActivity(isCorrect);
   };
 
   const logActivity = async (isCorrect: boolean) => {
@@ -185,7 +266,7 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          activity_type: 'enhanced_quiz_answer',
+          activity_type: 'quiz_answer', // Use consistent activity type for progress tracking
           item_id: currentQuestion.vocabulary_items?.id || currentQuestion.grammar_items?.id,
           item_type: section,
           details: {
@@ -217,7 +298,7 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
     // Note: Quiz completion is handled by the isQuizComplete computed value
   };
 
-  const handleRestart = () => {
+  const handleRestart = async () => {
     setCurrentQuestionIndex(0);
     setSelectedAnswer(null);
     setShowResult(false);
@@ -225,7 +306,11 @@ export function EnhancedQuizCard({ section }: EnhancedQuizCardProps) {
     setQuestionStartTime(Date.now());
     setQuizResults([]);
     setShowDetailedResults(false);
-    fetchQuestions();
+    
+    // Add a small delay to ensure progress tracking is complete
+    setTimeout(() => {
+      fetchQuestions();
+    }, 500);
   };
 
   if (isLoading) {

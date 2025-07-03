@@ -76,10 +76,10 @@ export async function GET(request: NextRequest) {
     if (filter === 'due' || filter === 'new' || filter === 'difficult' || filter === 'ai-generated') {
       console.log('Filtering by:', filter, 'for section:', section, 'user:', userId)
       
-      // Join with flashcard_progress to filter by review status
+      // Get quiz progress from user_progress table (not flashcard_progress)
       const { data: progressData, error: progressError } = await supabase
-        .from('flashcard_progress')
-        .select('item_id, next_review, is_mastered, correct_count, incorrect_count')
+        .from('user_progress')
+        .select('item_id, next_review_at, mastery_level, correct_count, incorrect_count, last_reviewed_at')
         .eq('user_id', userId)
         .eq('item_type', section)
       
@@ -88,7 +88,7 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: 'Failed to fetch progress' }, { status: 500 })
       }
       
-      console.log('Progress data:', progressData?.length, 'records')
+      console.log('Quiz progress data:', progressData?.length, 'records')
       const progressMap = new Map(progressData.map(p => [p.item_id, p]))
       
       // Get AI-generated questions if filter is ai-generated
@@ -108,16 +108,12 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ questions: aiQuestions || [] })
       }
       
-      const { data: questionsData, error: questionsError } = await query.limit(limit * 3) // Get more to filter
+      const { data: questionsData, error: questionsError } = await query.limit(limit * 5) // Get more to filter and randomize
       
       if (questionsError) {
         console.error('Questions fetch error:', questionsError)
         return NextResponse.json({ error: 'Failed to fetch questions' }, { status: 500 })
       }
-      
-      console.log('Questions data:', questionsData?.length, 'records found')
-      console.log('Sample question structure:', questionsData?.[0] ? JSON.stringify(questionsData[0], null, 2) : 'none')
-      console.log('Progress map keys:', Array.from(progressMap.keys()))
       
       let filteredQuestions = questionsData?.filter(q => {
         const itemId = section === 'vocab' ? q.vocabulary_item_id : q.grammar_item_id
@@ -138,8 +134,8 @@ export async function GET(request: NextRequest) {
             return true // New items are also due
           }
           const today = new Date().toISOString().split('T')[0]
-          const isDue = progress.next_review <= today && !progress.is_mastered
-          console.log(`Due check: next_review=${progress.next_review}, today=${today}, is_mastered=${progress.is_mastered}, result=${isDue}`)
+          const isDue = progress.next_review_at <= today && progress.mastery_level !== 'mastered'
+          console.log(`Due check: next_review_at=${progress.next_review_at}, today=${today}, mastery_level=${progress.mastery_level}, result=${isDue}`)
           return isDue
         } else if (filter === 'difficult') {
           if (!progress) return false // Need progress data to determine difficulty
@@ -154,25 +150,32 @@ export async function GET(request: NextRequest) {
       
       console.log('Filtered questions:', filteredQuestions.length, 'after filtering')
       
-      // Limit after filtering
-      filteredQuestions = filteredQuestions.slice(0, limit)
+      // Randomize the questions to avoid same order every time
+      filteredQuestions = filteredQuestions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, limit)
       
-      console.log('Final questions:', filteredQuestions.length, 'after limit')
+      console.log('Final questions:', filteredQuestions.length, 'after randomization and limit')
       console.log('Sample question:', filteredQuestions[0] ? JSON.stringify(filteredQuestions[0], null, 2) : 'none')
       
       return NextResponse.json({ questions: filteredQuestions })
     } else {
-      // Return all questions
+      // Return all questions with randomization
       console.log('Fetching all questions for section:', section, 'limit:', limit)
-      const { data, error } = await query.limit(limit)
+      const { data, error } = await query.limit(limit * 3) // Get more for randomization
       
       if (error) {
         console.error('Questions fetch error:', error)
         return NextResponse.json({ error: 'Failed to fetch questions' }, { status: 500 })
       }
       
-      console.log('All questions data:', data?.length, 'records found')
-      return NextResponse.json({ questions: data || [] })
+      // Randomize and limit the results
+      const randomizedQuestions = (data || [])
+        .sort(() => Math.random() - 0.5)
+        .slice(0, limit)
+      
+      console.log('All questions data:', randomizedQuestions?.length, 'records found after randomization')
+      return NextResponse.json({ questions: randomizedQuestions })
     }
     
   } catch (error) {
