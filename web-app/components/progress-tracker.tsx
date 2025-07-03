@@ -30,15 +30,19 @@ export function ProgressTracker() {
       const response = await fetch('/api/dashboard-stats');
       if (response.ok) {
         const data = await response.json();
+        const totalMastered = (data.vocab_mastered || 0) + (data.grammar_mastered || 0);
+        const totalDue = (data.vocab_due || 0) + (data.grammar_due || 0);
+        const overallProgress = Math.min(100, Math.round(((totalMastered) / Math.max(totalMastered + totalDue, 20)) * 100));
+        
         setProgressData({
-          vocabularyMastered: data.vocabulary_mastered || 0,
+          vocabularyMastered: data.vocab_mastered || 0,
           grammarMastered: data.grammar_mastered || 0,
-          overallProgress: Math.round(((data.vocabulary_mastered + data.grammar_mastered) / 20) * 100),
-          studyStreak: data.study_streak || 0,
+          overallProgress: overallProgress,
+          studyStreak: data.streak_days || 0,
           weeklyGoal: 50, // questions per week
-          weeklyProgress: data.weekly_activity || 0,
-          timeStudiedToday: data.time_studied_today || 0,
-          estimatedReadiness: data.estimated_readiness || 0,
+          weeklyProgress: data.weekly_studied || 0,
+          timeStudiedToday: Math.round((data.total_studied_today || 0) * 2), // Estimate 2 minutes per question
+          estimatedReadiness: data.weekly_accuracy || 0,
         });
       }
     } catch (error) {

@@ -47,13 +47,21 @@ export async function GET() {
       .eq('item_type', 'grammar')
       .eq('mastery_level', 'mastered')
 
-    // Get today's study count
+    // Get today's and weekly study count
     const { count: todayStudyCount } = await supabase
       .from('activity_log')
       .select('*', { count: 'exact', head: true })
       .eq('user_id', user.id)
       .in('activity_type', ['quiz_answer', 'flashcard_review'])
       .gte('timestamp', today)
+
+    // Get weekly study count
+    const { count: weeklyStudyCount } = await supabase
+      .from('activity_log')
+      .select('*', { count: 'exact', head: true })
+      .eq('user_id', user.id)
+      .in('activity_type', ['quiz_answer', 'flashcard_review'])
+      .gte('timestamp', weekAgo.toISOString())
 
     // Calculate weekly accuracy
     const { data: weeklyActivities } = await supabase
@@ -107,6 +115,7 @@ export async function GET() {
       grammar_mastered: grammarMasteredCount || 0,
       streak_days: streakDays,
       total_studied_today: todayStudyCount || 0,
+      weekly_studied: weeklyStudyCount || 0,
       weekly_accuracy: Math.round(weeklyAccuracy)
     })
 

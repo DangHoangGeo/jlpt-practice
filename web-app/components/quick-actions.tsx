@@ -33,7 +33,7 @@ export function QuickActions() {
     {
       id: 'vocab-quick',
       title: 'Quick Vocab',
-      description: '5-minute vocabulary sprint',
+      description: '5-min vocab sprint',
       icon: BookOpen,
       href: '/quiz/vocab?mode=quick',
       color: 'bg-blue-500',
@@ -42,8 +42,8 @@ export function QuickActions() {
     },
     {
       id: 'grammar-drill',
-      title: 'Grammar Drill',
-      description: 'Focus on weak grammar points',
+      title: 'Grammar',
+      description: 'Focus on weak points',
       icon: FileText,
       href: '/quiz/grammar?mode=drill',
       color: 'bg-green-500',
@@ -52,8 +52,8 @@ export function QuickActions() {
     },
     {
       id: 'flashcards-review',
-      title: 'Quick Review',
-      description: 'Review due flashcards',
+      title: 'Review',
+      description: 'Due flashcards',
       icon: Brain,
       href: '/flashcards?filter=due',
       color: 'bg-purple-500',
@@ -63,7 +63,7 @@ export function QuickActions() {
     {
       id: 'reading-practice',
       title: 'Reading',
-      description: 'Comprehension practice',
+      description: 'Comprehension',
       icon: BookOpen,
       href: '/reading',
       color: 'bg-indigo-500',
@@ -73,7 +73,7 @@ export function QuickActions() {
     {
       id: 'mock-test',
       title: 'Mock Exam',
-      description: 'Timed practice test',
+      description: 'Timed test',
       icon: Target,
       href: '/mock-exam',
       color: 'bg-red-500',
@@ -83,7 +83,7 @@ export function QuickActions() {
     {
       id: 'ai-practice',
       title: 'AI Challenge',
-      description: 'AI-generated practice questions',
+      description: 'Smart questions',
       icon: Zap,
       href: '#',
       color: 'bg-yellow-500',
@@ -108,10 +108,10 @@ export function QuickActions() {
 
   const getDifficultyColor = (difficulty?: string) => {
     switch (difficulty) {
-      case 'easy': return 'bg-green-100 text-green-800';
-      case 'medium': return 'bg-yellow-100 text-yellow-800';
-      case 'hard': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'easy': return 'border-green-200 bg-green-50 text-green-700';
+      case 'medium': return 'border-yellow-200 bg-yellow-50 text-yellow-700';
+      case 'hard': return 'border-red-200 bg-red-50 text-red-700';
+      default: return 'border-gray-200 bg-gray-50 text-gray-700';
     }
   };
 
@@ -134,25 +134,27 @@ export function QuickActions() {
                 <Button
                   key={action.id}
                   variant="outline"
-                  className="h-auto p-4 flex flex-col items-center gap-2 text-left relative"
+                  className="h-auto p-3 flex flex-col items-center gap-1 text-center relative min-h-[130px] justify-between"
                   onClick={handleAIChallenge}
                   disabled={isGenerating}
                 >
-                  <div className={`w-8 h-8 rounded-full ${action.color} flex items-center justify-center mb-1`}>
+                  <div className={`w-8 h-8 rounded-full ${action.color} flex items-center justify-center`}>
                     <Icon className="h-4 w-4 text-white" />
                   </div>
-                  <div className="flex-1 w-full">
-                    <h4 className="font-medium text-sm mb-1">{action.title}</h4>
-                    <p className="text-xs text-muted-foreground mb-2">
-                      {isGenerating ? 'Generating...' : action.description}
-                    </p>
-                    <div className="flex items-center justify-between">
+                  <div className="flex-1 w-full space-y-1 flex flex-col justify-between">
+                    <div className="space-y-1">
+                      <h4 className="font-medium text-sm leading-tight">{action.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-tight line-clamp-2">
+                        {isGenerating ? 'Generating...' : action.description}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between w-full">
                       <div className="flex items-center gap-1 text-xs text-muted-foreground">
                         <Timer className="h-3 w-3" />
-                        {action.estimatedTime}
+                        <span className="truncate text-xs">{action.estimatedTime}</span>
                       </div>
                       {action.difficulty && (
-                        <Badge className={`text-xs ${getDifficultyColor(action.difficulty)}`}>
+                        <Badge variant="secondary" className={`text-xs px-1 py-0 ${getDifficultyColor(action.difficulty)}`}>
                           {action.difficulty}
                         </Badge>
                       )}
@@ -166,23 +168,25 @@ export function QuickActions() {
               <Link key={action.id} href={action.href}>
                 <Button
                   variant="outline"
-                  className="h-auto p-4 flex flex-col items-center gap-2 text-left relative w-full hover:shadow-md transition-shadow"
+                  className="h-auto p-3 flex flex-col items-center gap-1 text-center relative w-full hover:shadow-md transition-shadow min-h-[130px] justify-between"
                 >
-                  <div className={`w-8 h-8 rounded-full ${action.color} flex items-center justify-center mb-1`}>
+                  <div className={`w-8 h-8 rounded-full ${action.color} flex items-center justify-center`}>
                     <Icon className="h-4 w-4 text-white" />
                   </div>
-                  <div className="flex-1 w-full">
-                    <h4 className="font-medium text-sm mb-1">{action.title}</h4>
-                    <p className="text-xs text-muted-foreground mb-2">
-                      {action.description}
-                    </p>
-                    <div className="flex items-center justify-between">
+                  <div className="flex-1 w-full space-y-1 flex flex-col justify-between">
+                    <div className="space-y-1">
+                      <h4 className="font-medium text-sm leading-tight">{action.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-tight line-clamp-2">
+                        {action.description}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between w-full">
                       <div className="flex items-center gap-1 text-xs text-muted-foreground">
                         <Timer className="h-3 w-3" />
-                        {action.estimatedTime}
+                        <span className="truncate text-xs">{action.estimatedTime}</span>
                       </div>
                       {action.difficulty && (
-                        <Badge className={`text-xs ${getDifficultyColor(action.difficulty)}`}>
+                        <Badge variant="secondary" className={`text-xs px-1 py-0 ${getDifficultyColor(action.difficulty)}`}>
                           {action.difficulty}
                         </Badge>
                       )}
