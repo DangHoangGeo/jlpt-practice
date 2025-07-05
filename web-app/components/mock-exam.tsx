@@ -111,41 +111,666 @@ export function MockExam() {
     setIsLoading(true);
     
     try {
-      // Generate sample exam data
+      // Generate comprehensive exam data from study material
       // In real app, this would fetch from API
       const sampleQuestions: MockExamQuestion[] = [
+        // ALL 20 Kanji Questions
         {
-          id: '1',
+          id: 'kanji-1',
           section: 'vocabulary',
-          question: '次の文の（　）に入る最も適当なものを選びなさい。\n彼の提案は非常に（　）で、すぐに採用された。',
-          options: ['独創的', '保守的', '消極的', '一般的'],
+          question: '「智」の漢字の読み方として、最も適切なものはどれですか。',
+          options: ['ち', 'さと', 'とも', 'し'],
           correctAnswer: 0,
           points: 1
         },
         {
-          id: '2',
-          section: 'grammar',
-          question: '次の文の（　）に入る最も適当なものを選びなさい。\n雨が降って（　）、運動会は中止になった。',
-          options: ['いるから', 'きたため', 'いるので', 'くるから'],
+          id: 'kanji-2',
+          section: 'vocabulary',
+          question: '「暇」の正しい読み方はどれですか。',
+          options: ['ひま', 'あき', 'ゆとり', 'じかん'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-3',
+          section: 'vocabulary',
+          question: '「繁栄」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['複雑', '忙しい', '栄えること', '静かな'],
+          correctAnswer: 2,
+          points: 1
+        },
+        {
+          id: 'kanji-4',
+          section: 'vocabulary',
+          question: '「揺れる」の正しい読み方はどれですか。',
+          options: ['ゆれる', 'ようれる', 'よろれる', 'ゆうれる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-5',
+          section: 'vocabulary',
+          question: '「儀式」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['会議', 'セレモニー', '議論', '作業'],
           correctAnswer: 1,
           points: 1
         },
         {
-          id: '3',
-          section: 'reading',
-          question: '次の文章を読んで、問いに答えなさい。\n\n現代社会において、テクノロジーの進歩は目覚ましいものがある。特に人工知能の発達により、私たちの生活は大きく変化している。\n\n筆者が最も強調していることは何ですか。',
-          options: ['現代社会の問題', 'テクノロジーの進歩', '人工知能の危険性', '生活の変化'],
+          id: 'kanji-6',
+          section: 'vocabulary',
+          question: '「修理」の「修」という漢字の意味はどれですか。',
+          options: ['壊す', '直す', '作る', '売る'],
           correctAnswer: 1,
-          points: 2
+          points: 1
+        },
+        {
+          id: 'kanji-7',
+          section: 'vocabulary',
+          question: '「渋滞」の「渋」という漢字は、どんな意味で使われていますか。',
+          options: ['苦い', '滞る', '静か', '悲しい'],
+          correctAnswer: 1,
+          points: 1
+        },
+        {
+          id: 'kanji-8',
+          section: 'vocabulary',
+          question: '「凌ぐ」の正しい読み方はどれですか。',
+          options: ['しのぐ', 'りょうぐ', 'しのぶ', 'りょうぶ'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-9',
+          section: 'vocabulary',
+          question: '「繕う」の正しい読み方はどれですか。',
+          options: ['つくろう', 'ぜんう', 'つくのう', 'ぜんろう'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-10',
+          section: 'vocabulary',
+          question: '「如実」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['嘘のように', 'ありのままに', '少しずつ', '突然に'],
+          correctAnswer: 1,
+          points: 1
+        },
+        {
+          id: 'kanji-11',
+          section: 'vocabulary',
+          question: '「擁護」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['抱きしめる', '支持する', '反対する', '攻撃する'],
+          correctAnswer: 1,
+          points: 1
+        },
+        {
+          id: 'kanji-12',
+          section: 'vocabulary',
+          question: '「遮る」の正しい読み方はどれですか。',
+          options: ['さえぎる', 'しゃる', 'さえきる', 'しゃぎる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-13',
+          section: 'vocabulary',
+          question: '「赴く」の正しい読み方はどれですか。',
+          options: ['おもむく', 'ふく', 'おもく', 'ふむく'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-14',
+          section: 'vocabulary',
+          question: '「逐一」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['一つ一つ', '急いで', '全て', '時々'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-15',
+          section: 'vocabulary',
+          question: '「憂鬱」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['喜び', '悲しみ', '怒り', '気分が沈むこと'],
+          correctAnswer: 3,
+          points: 1
+        },
+        {
+          id: 'kanji-16',
+          section: 'vocabulary',
+          question: '「懲りる」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['失敗から学ぶ', '罰を与える', '許す', '忘れる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-17',
+          section: 'vocabulary',
+          question: '「錯覚」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['思い違い', '正しい理解', '現実', '夢'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-18',
+          section: 'vocabulary',
+          question: '「挫折」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['成功', '途中での失敗', '挑戦', '休憩'],
+          correctAnswer: 1,
+          points: 1
+        },
+        {
+          id: 'kanji-19',
+          section: 'vocabulary',
+          question: '「遵守」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['規則などを守ること', '破ること', '無視すること', '作ること'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'kanji-20',
+          section: 'vocabulary',
+          question: '「極まりない」という言葉の意味として、最も適切なものはどれですか。',
+          options: ['少し', '普通', '非常に', '全くない'],
+          correctAnswer: 2,
+          points: 1
+        },
+
+        // ALL 30 Vocabulary Questions
+        {
+          id: 'vocab-1',
+          section: 'vocabulary',
+          question: '急激な為替変動が企業業績を大きく（　）。',
+          options: ['揺さぶっている', '喜ばせている', '落ち着かせている', '成長させている'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-2',
+          section: 'vocabulary',
+          question: '時間の（　）が大きい。',
+          options: ['ロス', 'ゲイン', 'プラス', 'メリット'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-3',
+          section: 'vocabulary',
+          question: 'カタカナの「ソ」と「リ」は（　）。',
+          options: ['紛らわしい', '楽しい', '美しい', '新しい'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-4',
+          section: 'vocabulary',
+          question: '昨年、彼は（　）社長の後を継いだ。',
+          options: ['先代', '現在', '未来', '新人'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-5',
+          section: 'vocabulary',
+          question: '状況が（　）動いている。',
+          options: ['めまぐるしく', 'ゆっくり', '静かに', '穏やかに'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-6',
+          section: 'vocabulary',
+          question: '記者たちは急いで現場に（　）。',
+          options: ['駆けつけた', '歩いて行った', 'ゆっくり向かった', '戻った'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-7',
+          section: 'vocabulary',
+          question: '突然の（　）にスタッフ一同が喜んだ。',
+          options: ['朗報', '悪報', '知らせ', '連絡'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-8',
+          section: 'vocabulary',
+          question: '初心者には（　）が高い。',
+          options: ['ハードル', 'レベル', '点数', '価格'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-9',
+          section: 'vocabulary',
+          question: '魚を缶詰に（　）する。',
+          options: ['加工', '製造', '生産', '作成'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-10',
+          section: 'vocabulary',
+          question: 'トラブル発生時には（　）対応が必要だ。',
+          options: ['すばやい', '慎重な', 'ゆっくりした', '適当な'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-11',
+          section: 'vocabulary',
+          question: '（　）、彼は来なかった。',
+          options: ['案の定', '早速', '突然', '偶然'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-12',
+          section: 'vocabulary',
+          question: '厳しい冬を（　）。',
+          options: ['凌ぐ', '楽しむ', '無視する', '避ける'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-13',
+          section: 'vocabulary',
+          question: '遺産を巡る（　）争い。',
+          options: ['浅ましい', '美しい', '楽しい', '新しい'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-14',
+          section: 'vocabulary',
+          question: '人を（　）のはよくない。',
+          options: ['けなす', 'ほめる', '助ける', '見る'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-15',
+          section: 'vocabulary',
+          question: '受賞したことは作家と認められた（　）だ。',
+          options: ['証', '印', '記号', 'サイン'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-16',
+          section: 'vocabulary',
+          question: '彼女は内に情熱を（　）いる。',
+          options: ['秘めて', '表して', '見せて', '話して'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-17',
+          section: 'vocabulary',
+          question: '（　）な提案をした。',
+          options: ['タイムリー', 'ラッキー', 'ハッピー', 'イージー'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-18',
+          section: 'vocabulary',
+          question: '（　）な暮らしをしている。',
+          options: ['質素', '贅沢', '派手', '華やか'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-19',
+          section: 'vocabulary',
+          question: '彼女は薬品の開発に（　）いる。',
+          options: ['携わって', '関係して', '接触して', '連絡して'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-20',
+          section: 'vocabulary',
+          question: 'この（　）の事件について調べる。',
+          options: ['一連', '一部', '一時', '一方'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-21',
+          section: 'vocabulary',
+          question: '病人を（　）。',
+          options: ['労る', '怒る', '叱る', '急がせる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-22',
+          section: 'vocabulary',
+          question: '（　）て人を動かす。',
+          options: ['煽て', '叱っ', '怒っ', '急かし'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-23',
+          section: 'vocabulary',
+          question: '彼の話は（　）が合わない。',
+          options: ['辻褄', '意味', '言葉', '音'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-24',
+          section: 'vocabulary',
+          question: '失敗に（　）て同じ過ちを犯さない。',
+          options: ['懲り', '喜ん', '驚い', '困っ'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-25',
+          section: 'vocabulary',
+          question: '週末は（　）勉強だ。',
+          options: ['専ら', '時々', 'いつも', '決して'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-26',
+          section: 'vocabulary',
+          question: '（　）今日は休みだと思っていた。',
+          options: ['てっきり', '多分', 'もし', 'きっと'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-27',
+          section: 'vocabulary',
+          question: '（　）手遅れだ。',
+          options: ['もはや', 'まだ', 'これから', 'すぐに'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-28',
+          section: 'vocabulary',
+          question: '彼は（　）交渉者だ。',
+          options: ['しぶとい', '親切な', '弱い', '静かな'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-29',
+          section: 'vocabulary',
+          question: 'このプロジェクトは完成の（　）が立っていない。',
+          options: ['目処', '計画', '予定', '準備'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'vocab-30',
+          section: 'vocabulary',
+          question: '彼女は（　）な努力で目標を達成した。',
+          options: ['ひたむき', '適当', '簡単', '楽'],
+          correctAnswer: 0,
+          points: 1
+        },
+
+        // ALL 10 Phrase Questions
+        {
+          id: 'phrase-1',
+          section: 'reading',
+          question: '難しい問題に（　）。',
+          options: ['頭を抱える', '手を上げる', '足を向ける', '目を閉じる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-2',
+          section: 'reading',
+          question: '世界の一流企業と（　）。',
+          options: ['肩を並べる', '手を組む', '足を引っ張る', '目を向ける'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-3',
+          section: 'reading',
+          question: '解決の（　）。',
+          options: ['目処が立った', '手が出た', '足が向いた', '目が覚めた'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-4',
+          section: 'reading',
+          question: 'インフレに（　）。',
+          options: ['拍車をかける', '手を貸す', '足を止める', '目を通す'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-5',
+          section: 'reading',
+          question: '彼には（　）いる。',
+          options: ['一目置いて', '手を出して', '足を向けて', '目を覚まして'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-6',
+          section: 'reading',
+          question: '人の話に（　）ないでください。',
+          options: ['口を挟ま', '手を出さ', '足を向けな', '目を向けな'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-7',
+          section: 'reading',
+          question: '彼が犯人だなんて、（　）。',
+          options: ['耳を疑った', '目を疑った', '手を疑った', '足を疑った'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-8',
+          section: 'reading',
+          question: '彼女は（　）。',
+          options: ['一筋縄ではいかない', '一本道で行く', '一直線に進む', '一歩ずつ歩く'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-9',
+          section: 'reading',
+          question: '仕事を失い（　）いる。',
+          options: ['途方に暮れて', '元気に過ごして', '楽しく生活して', '忙しく働いて'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'phrase-10',
+          section: 'reading',
+          question: 'もう何をしても直せないなんて、本当に（　）。',
+          options: ['お手上げだ', '手を下ろす', '足を上げる', '目を下げる'],
+          correctAnswer: 0,
+          points: 1
+        },
+
+        // ALL 15 Grammar Questions
+        {
+          id: 'grammar-1',
+          section: 'grammar',
+          question: '日本に長く住んでいる（　）、敬語には慣れない。',
+          options: ['ものの', 'とはいえ', 'ざるを得ない', 'を余儀なくされる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-2',
+          section: 'grammar',
+          question: '週末（　）、仕事しなければならない。',
+          options: ['とはいえ', 'ものの', 'ざるを得ない', 'を余儀なくされる'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-3',
+          section: 'grammar',
+          question: 'この状況では決断（　）。',
+          options: ['せざるを得ない', 'を禁じ得ない', 'に越したことはない', 'かねない'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-4',
+          section: 'grammar',
+          question: '大雨のため試合は中止（　）。',
+          options: ['を余儀なくされた', 'までもない', 'ずにはすまない', 'かたがた'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-5',
+          section: 'grammar',
+          question: '彼の失礼な発言に怒り（　）。',
+          options: ['を禁じ得ない', 'たりとも', 'てやまない', 'をおいて他にない'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-6',
+          section: 'grammar',
+          question: '用心する（　）。',
+          options: ['に越したことはない', '極まりない', 'ものの', 'とはいえ'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-7',
+          section: 'grammar',
+          question: 'このままだと試験に落ち（　）。',
+          options: ['かねない', 'までもない', 'ものの', 'とはいえ'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-8',
+          section: 'grammar',
+          question: '言う（　）ことですが…。',
+          options: ['までもない', 'かねない', 'ものの', 'とはいえ'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-9',
+          section: 'grammar',
+          question: '誤ったなら謝ら（　）。',
+          options: ['ずにはすまない', 'までもない', 'かねない', 'ものの'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-10',
+          section: 'grammar',
+          question: '上司に報告（　）ご挨拶に伺った。',
+          options: ['かたがた', 'ずにはすまない', 'までもない', 'かねない'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-11',
+          section: 'grammar',
+          question: '一瞬（　）気が抜けない。',
+          options: ['たりとも', 'かねない', 'までもない', 'ものの'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-12',
+          section: 'grammar',
+          question: '結果の（　）にかかわらず、努力を称賛します。',
+          options: ['いかん', 'すべて', '一つ', '理由'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-13',
+          section: 'grammar',
+          question: '皆様の幸せを願っ（　）。',
+          options: ['てやまない', 'かねない', 'までもない', 'ものの'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-14',
+          section: 'grammar',
+          question: '彼（　）リーダーに適任な人はいない。',
+          options: ['をおいて他にない', 'たりとも', 'てやまない', 'までもない'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'grammar-15',
+          section: 'grammar',
+          question: '失礼（　）。',
+          options: ['極まりない', 'をおいて他にない', 'たりとも', 'てやまない'],
+          correctAnswer: 0,
+          points: 1
+        },
+
+        // Listening Phrases Questions
+        {
+          id: 'listening-1',
+          section: 'reading',
+          question: '会話で「やっぱり」が使われるのはどんな時ですか。',
+          options: ['予想が当たった時', '驚いた時', '怒った時', '悲しい時'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'listening-2',
+          section: 'reading',
+          question: '「申し訳ありません」はどんな場面で使いますか。',
+          options: ['正式な謝罪', '軽い謝罪', '感謝', '挨拶'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'listening-3',
+          section: 'reading',
+          question: '「差し支えない」の意味として正しいものはどれですか。',
+          options: ['問題ない', '困る', '嫌だ', '忙しい'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'listening-4',
+          section: 'reading',
+          question: '「一石二鳥」の意味はどれですか。',
+          options: ['一つの行為で二つの利益', '石を二つ投げる', '鳥を二羽捕まえる', '一つずつ進める'],
+          correctAnswer: 0,
+          points: 1
+        },
+        {
+          id: 'listening-5',
+          section: 'reading',
+          question: '「破竹の勢い」の意味はどれですか。',
+          options: ['止まらない勢い', '竹を破る力', '速い動き', '強い意志'],
+          correctAnswer: 0,
+          points: 1
         }
       ];
 
       const session: ExamSession = {
         id: Date.now().toString(),
-        totalQuestions: type === 'mini' ? 3 : 10,
-        totalPoints: type === 'mini' ? 4 : 20,
-        timeLimit: type === 'mini' ? 5 : 30, // minutes
-        questions: sampleQuestions.slice(0, type === 'mini' ? 3 : 10)
+        totalQuestions: sampleQuestions.length,
+        totalPoints: sampleQuestions.reduce((acc, q) => acc + q.points, 0),
+        timeLimit: type === 'mini' ? 15 : 45, // minutes
+        questions: sampleQuestions
       };
 
       setExamSession(session);
@@ -216,15 +841,15 @@ export function MockExam() {
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span>Questions:</span>
-                    <span>3</span>
+                    <span>20</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Time:</span>
-                    <span>5 minutes</span>
+                    <span>15 minutes</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Points:</span>
-                    <span>4</span>
+                    <span>20</span>
                   </div>
                 </div>
                 <Button className="w-full mt-4" disabled={isLoading}>
@@ -246,15 +871,15 @@ export function MockExam() {
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span>Questions:</span>
-                    <span>10</span>
+                    <span>90</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Time:</span>
-                    <span>30 minutes</span>
+                    <span>45 minutes</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Points:</span>
-                    <span>20</span>
+                    <span>90</span>
                   </div>
                 </div>
                 <Button className="w-full mt-4" disabled={isLoading}>
